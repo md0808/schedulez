@@ -1,6 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
     var Availability = sequelize.define("Availability", {
-        EmployeeNum: DataTypes.INTEGER,
+        EmployeeNum: {
+           type: DataTypes.INTEGER,
+           primaryKey: true
+        },
         Sunday: DataTypes.STRING,
         Monday: DataTypes.STRING,
         Tuesday: DataTypes.STRING,
