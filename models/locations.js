@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        Company: DataTypes.INTEGER,
+        CompanyNum: DataTypes.INTEGER,
         Address: DataTypes.STRING,
         City: DataTypes.STRING,
         State: DataTypes.STRING,
