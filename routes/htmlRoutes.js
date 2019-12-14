@@ -3,9 +3,9 @@ const db = require("../models");
 module.exports = app => {
   // Load index page
   app.get("/", (req, res) => {
-    res.render("index", {
-      msg: "Welcome!",
-      examples: dbExamples
+    res.render("login", {
+      msg: "Welcome!"
+      // examples: dbExamples
     });
 
     // db.Example.findAll({}).then(function(dbExamples) {
