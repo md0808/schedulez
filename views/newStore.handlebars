@@ -1,105 +1,78 @@
 <div class="container">
-
-
-    <div class="row">
-        <div class="col s12">
-            <div class="card white darken-1 padding40 margin100">
-                <div class="title center-align blue-grey-text darken-4-text">
-                    <h3>
-                            Create a Company Account
-                    </h3>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <div class="col s1"> <i class="material-icons blue-grey-text darken-4-text">person</i> </div>
-
-
-                        <div class="col s11">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
+    <div class="carousel carousel-slider center" data-indicators="true">
+        <div class="carousel-fixed-item center">
+            <a class="btn waves-effect white grey-text darken-text-2">button</a>
+        </div>
+        <div class="carousel-item red white-text" href="#one!">
+            <h2>First Panel</h2>
+            <p class="white-text">This is your first panel</p>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
                         </div>
                     </div>
-                    <div class="input-field col s8 offset-s2">
-                        <div class="col s1"> <i class="material-icons blue-grey-text darken-4-text">vpn_key</i> </div>
-                        <div class="col s11">
-
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row center-align">
-
-                    <button class="btn waves-effect blue-grey darken-1 waves-light" type="submit" name="action">Submit
-
-                    </button>
-                </div>
-
+                </form>
             </div>
+        </div>
+        <div class="carousel-item amber white-text" href="#two!">
+            <h2>Second Panel</h2>
+            <p class="white-text">This is your second panel</p>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="carousel-item green white-text" href="#three!">
+            <h2>Third Panel</h2>
+            <p class="white-text">This is your third panel</p>
+        </div>
+        <div class="carousel-item blue white-text" href="#four!">
+            <h2>Fourth Panel</h2>
+            <p class="white-text">This is your fourth panel</p>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <script>
+        $(document).ready(() => {
+            let carouselTest = $('.carousel').carousel();
+            // let elems = document.querySelectorAll('.carousel');
+            // // let instance = M.Carousel.getInstance(carouselTest);
 
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+                // indicators: true
+            });
 
-</div>
+            $('.btn').on("click", (e) => {
+                console.log('im being clicked');
 
+                e.preventDefault();
+                e.stopPropagation();
+                $('.carousel').carousel('next');
+            });
+        });
+    </script>
 
-{{!-- <div class="container">
-
-
-    <div class="row margin100">
-        <div class="col s12 m8">
-            <div class="card green accent-1 padding40">
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="company-name" class="validate">
-                        <label for="company-name">Company Name</label>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="address" class="validate">
-                            <label for="addresss">Address</label>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="city" type="email" class="validate">
-                                <label for="city">City</label>
-                            </div>
-
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="state" class="validate">
-                                    <label for="state">state</label>
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="zipcode" class="validate">
-                                        <label for="zipcode">Zipcode</label>
-                                    </div>
-
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-
-                                    </button>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div> --}}
