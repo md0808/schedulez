@@ -7,6 +7,13 @@ module.exports = function(app) {
             res.json(dbExamples);
         });
     });
+    app.get("/api/company/:name", (req, res) => {
+        db.Company.count({
+            where: {Name: req.params.name}
+        }).then(count => {
+            res.json(count);
+        });
+    });
     app.get("/api/allEmployees", function(req, res) {
         db.dbEmployees.findAll({}).then(function(dbEmployees) {
             res.json(dbEmployees);
@@ -29,9 +36,9 @@ module.exports = function(app) {
             res.json(dbExample);
         });
     });
-    app.post("/api/newStore", function(req, res) {
-        db.newStore.create(req.body).then(function(dbnewStore) {
-            res.json(dbnewStore);
+    app.post("/api/newCompany", function(req, res) {
+        db.Company.create(req.body).then((dbCompany) => {
+            res.json(dbCompany);
         });
     });
     app.post("/api/newLocation", function(req, res) {
