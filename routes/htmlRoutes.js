@@ -12,6 +12,12 @@ module.exports = app => {
     // });
   });
 
+  app.get("/create-store", (req, res) => {
+    res.render("newStore", {
+      msg: "Create A Store!"
+    });
+  });
+
   app.get("/test", (req, res) => {
     res.render("newStore", {
       msg: "Welcome!"
