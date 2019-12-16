@@ -2,7 +2,7 @@ const submitBtn = $("#login-btn");
 
 $(submitBtn).on("click", function(){
     var companyName = "Walmart";
-    var companyExists = checkCompanyInDB(companyName);
+    var companyExists = lookForCompanyInDB(companyName);
 
     console.log("Company: " + companyExists);
 
@@ -18,7 +18,7 @@ $(submitBtn).on("click", function(){
     };
 });
 
-function checkCompanyInDB(companyName){
+function lookForCompanyInDB(companyName){
     var foundCompany = false;
 
     $.get("/api/company/" + companyName, (result) => {
