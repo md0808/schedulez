@@ -13,3 +13,9 @@ body{
 .margin100{
   margin-top: 100px;
 }
+.front {
+  z-index: 5000;
+}
+.carousel{
+  min-height: 500px;
+}
