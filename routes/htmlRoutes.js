@@ -18,14 +18,29 @@ module.exports = app => {
     });
   });
 
-  app.get("/manager-view", (req, res) => {
-    res.render("managerView", {
-      msg: "Welcome!"
-      // examples: dbExamples
-    });
+  const locations = [
+    {
+      locationNum: 10,
+      companyNum: 12,
+      address: "pickles",
+      city: "pickles",
+      state: "pickles",
+      openingTime: "pickles",
+      closingTime: "pickles"
+    },
+    {
+      locationNum: 11,
+      companyNum: 13,
+      address: "test",
+      city: "test",
+      state: "test",
+      openingTime: "test",
+      closingTime: "test"
+    }
+  ];
 
-    // db.Example.findAll({}).then(function(dbExamples) {
-    // });
+  app.get("/manager-view", (req, res) => {
+    res.render("managerView", { locations });
   });
 
   // Load example page and pass in an example by id
