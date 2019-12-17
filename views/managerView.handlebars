@@ -8,23 +8,23 @@
             <h6 class="center">Manager Dashboard</h6>
             <h4 class="user-name center">User Name</h4>
             <div class="row center">
-                <a href="#notifications"><i class="tooltipped material-icons medium padding40" data-position="right"
-                        data-tooltip="View Notification">notifications</i>
+                <a href="#notifications" id="notifications-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Notification">notifications</i>
                 </a>
             </div>
             <div class="row center">
-                <a href="#employee-list"><i class="tooltipped material-icons medium padding40" data-position="right"
-                        data-tooltip="View Employees">group</i>
+                <a href="#employee-list" id="employees-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Employees">group</i>
                 </a>
             </div>
             <div class="row center">
-                <a href="#locations-list"><i class="tooltipped material-icons medium padding40" data-position="right"
-                        data-tooltip="View Locations">business</i>
+                <a href="#locations-list" id="locations-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Locations">business</i>
                 </a>
             </div>
             <div class="row center">
-                <a href="#schedule"><i class="tooltipped material-icons medium padding40" data-position="right"
-                        data-tooltip="View Schedule">event</i>
+                <a href="#schedule" id="schedule-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Schedule">event</i>
                 </a>
             </div>
 
@@ -155,7 +155,7 @@
         </div>
         <div class="col s12 margin100" id="location-list">
             <div class="card white blue-grey-text darken-4-text padding40">
-                <a href="#modal-locations" class="modal-trigger"> 
+                <a href="#modal-locations" class="modal-trigger">
                     <i class=" tooltipped right material-icons medium red-text" id="new-location-btn"
                         data-tooltip="Add a new location">add_circle</i></a>
 
@@ -403,11 +403,41 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(() => {
         $(".sidenav").sidenav();
-        $(".tooltipped"arguments).tooltip();
+        $(".tooltipped").tooltip();
         $(".collapsible").collapsible();
         $(".modal").modal()
     });
+
+    $("#schedule-btn").on("click", () => {
+        $("#schedule").show();
+        $("#notifications").hide();
+        $("#employee-list").hide();
+        $("#location-list").hide();
+
+    })
+
+    $("#notifications-btn").on("click", () => {
+        $("#notifications").show();
+        $("#schedule").hide();
+        $("#employee-list").hide();
+        $("#location-list").hide();
+
+    })
+    $("#employees-btn").on("click", () => {
+        $("#employee-list").show();
+        $("#notifications").hide();
+        $("#schedule").hide();
+        $("#location-list").hide();
+
+    })
+    $("#locations-btn").on("click", () => {
+        $("#location-list").show();
+        $("#schedule").hide();
+        $("#employee-list").hide();
+        $("#notifications").hide();
+
+    })
 
 </script>
