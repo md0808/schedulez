@@ -1,8 +1,6 @@
 body{
   background-image: url("../images/8.png");
   background-position: fixed;
-  /* background-size: 50%; */
-  background-color: #b9f6ca;
 }
 
 .list-group-item {
@@ -24,7 +22,7 @@ body{
 }
 
 
-header, main, footer, .container{
+header, main, footer, .adjusted-container{
   padding-left: 300px;
 }
 /* #new-employee-btn {
