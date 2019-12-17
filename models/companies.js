@@ -8,5 +8,11 @@ module.exports = function(sequelize, DataTypes) {
     Name: DataTypes.STRING
   });
 
+  // Company.associate = (models) => {
+  //   Company.hasMany(models.Location, {
+  //     onDelete: "cascade"
+  //   });
+  // };
+
   return Company;
 };
