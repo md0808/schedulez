@@ -88,6 +88,12 @@
 
                 <h3 class="center">Employees</h3>
                 <ul class="collapsible expandable">
+                    <ul class="collapsible">
+                        {{#each locations}}
+                            {{> location-block}}
+                        {{/each}}
+
+                    {{!-- placeholders to be removed --}}
                     <li>
                         <div class="collapsible-header employee-list-name">Paxton Sharp</div>
                         <div class="collapsible-body employee-list-info">
