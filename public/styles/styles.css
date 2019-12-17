@@ -1,4 +1,7 @@
 body{
+  background-image: url("../images/8.png");
+  background-position: fixed;
+  /* background-size: 50%; */
   background-color: #b9f6ca;
 }
 
@@ -18,4 +21,20 @@ body{
 }
 .carousel{
   min-height: 500px;
+}
+
+
+header, main, footer, .container{
+  padding-left: 300px;
+}
+/* #new-employee-btn {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+} */
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
 }

@@ -18,8 +18,8 @@ module.exports = app => {
     });
   });
 
-  app.get("/test", (req, res) => {
-    res.render("newStore", {
+  app.get("/manager-view", (req, res) => {
+    res.render("managerView", {
       msg: "Welcome!"
       // examples: dbExamples
     });
