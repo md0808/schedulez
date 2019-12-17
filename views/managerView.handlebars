@@ -2,27 +2,49 @@
 <ul id="slide-out" class="blue-grey-text darken-4-text sidenav sidenav-fixed">
     <li>
         <div class="user-view">
+            <h6 class="center">Manager Dashboard</h6>
             <h4 class="user-name center">User Name</h4>
             <div class="row center">
-                <i class="tooltipped material-icons medium padding40" data-position="right" data-tooltip="View Notification">notifications</i>
+                <a href="#notifications" id="notifications-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Notification">notifications</i>
+                </a>
             </div>
             <div class="row center">
-                <i class="tooltipped material-icons medium padding40" data-position="right" data-tooltip="View Employees">group</i>
+                <a href="#employee-list" id="employees-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Employees">group</i>
+                </a>
             </div>
             <div class="row center">
-                <i class="tooltipped material-icons medium padding40" data-position="right" data-tooltip="View Schedule">event</i>
+                <a href="#locations-list" id="locations-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Locations">business</i>
+                </a>
+            </div>
+            <div class="row center">
+                <a href="#schedule" id="schedule-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Schedule">event</i>
+                </a>
             </div>
 
 </ul>
 
 <div class="container adjusted-container">
     <div class="row">
-        <div class="col s12 margin100">
+
+        <div class="col s12 margin100" id="notifications">
             <div class="card white blue-grey-text darken-4-text padding40">
-                <i class="tooltipped right material-icons medium red-text" id="new-employee-btn" data-tooltip="Add a new employee">add_circle</i>
+                <h3 class="center">Notifications</h3>
+                <p>This is is a request off</p>
+            </div>
+
+        </div>
+        <div class="col s12 margin100" id="employee-list">
+            <div class="card white blue-grey-text darken-4-text padding40">
+                <a href="#modal-employees" class="modal-trigger" id="new-employee-btn"><i
+                        class="tooltipped right material-icons medium red-text"
+                        data-tooltip="Add a new employee">add_circle</i></a>
 
                 <h3 class="center">Employees</h3>
-                <ul class="collapsible">
+                <ul class="collapsible expandable">
                     <li>
                         <div class="collapsible-header employee-list-name">Paxton Sharp</div>
                         <div class="collapsible-body employee-list-info">
@@ -98,9 +120,22 @@
 
                         </div>
                     </li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="col s12 margin100" id="location-list">
+            <div class="card white blue-grey-text darken-4-text padding40">
+                <a class="modal-trigger" id="new-location-btn" href="#modal-locations">
+                    <i class=" tooltipped right material-icons medium red-text"
+                        data-tooltip="Add a new location">add_circle</i></a>
+
+                <h3 class="center">Locations</h3>
+                <ul class="collapsible">
                     <li>
-                        <div class="collapsible-header employee-list-name">Monica Dixon</div>
-                        <div class="collapsible-body employee-list-info">
+                        <div class="collapsible-header location-list-name">Kansas City #2342</div>
+                        <div class="collapsible-body location-list-info">
                             <strong>Status: </strong><span>Full-time</span><br>
                             <strong>Role: </strong><span>Back-end</span><br>
                             <strong>Position Type: </strong><span>Temporary</span><br><br>
@@ -123,14 +158,416 @@
 
                         </div>
                     </li>
-
                 </ul>
-
             </div>
+        </div>
+        <div class="col s12 margin100" id="schedule">
+            <div class="card white blue-grey-text darken-4-text padding40">
+                <a href="#" class=""> <i class="tooltipped right material-icons medium red-text" id="new-schedule-btn"
+                        data-tooltip="Generate Next Schedule">add_circle</i></a>
+
+                <h3 class="center">Schedule</h3>
+                <p>This is where the schedule will go</p>
+            </div>
+
         </div>
     </div>
 </div>
 
+</div>
+
+<!-- LOCATION Modal Structure -->
+<div id="modal-locations" class="modal">
+    <div class="modal-content blue-grey-text darken-4-text">
+        <h2 class="center">Add Locations</h2>
+        <form>
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <input class="location-street">
+                    <label for="location-street">Street Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s2">
+                    <input class="location-city">
+                    <label for="location-city">City</label>
+                </div>
+                <div class="input-field col s4 ">
+                    <select class="front">
+                        <option value="" disabled selected>State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    <label>Select State</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s2">
+                    <input class="location-zipcode">
+                    <label for="location-zipcode">Zipcode</label>
+                </div>
+                <div class="input-field col s4">
+                    <input class="location-country">
+                    <label for="company-country">Country</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4 offset-s2">
+                    <p>Shifts Start at:</p>
+                    <div class="row">
+                        <div class="input-field col s6">
+
+                            <select class="start-hour front">
+                                <option value="" disable selected>Hour</option>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select class="start-minute front">
+                                <option value="" disable selected>minutes </option>
+                                <option value="00">00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        <p>Shifts End at:</p>
+                        <div class="row">
+                            <div class="input-field col s6">
+
+                                <select class="start-hour front">
+                                    <option value="" disable selected>Hour</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s6">
+                                <select class="start-minute front">
+                                    <option value="" disable selected>minutes </option>
+                                    <option value="00">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center">
+                    <button class="another-location waves-effect waves-light btn blue-grey darken-1">Add
+                        Another</button>
+                    <button class="finish-location waves-effect waves-light btn blue-grey darken-1">Finished</button>
+                </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+</div>
+{{!-- location modal ends --}}
+
+{{!-- EMPLOYEE modal begins --}}
+
+<div id="modal-employees" class="modal">
+    <div class="modal-content blue-grey-text darken-4-text">
+        <h2 class="center">Add A New Employee</h2>
+        <form>
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <input class="employee-name">
+                    <label for="employee-name">Employee Name</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input class="employee-role">
+                        <label for="employee-role">Role</label>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input class="location-street">
+                            <label for="location-street">Street Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4 offset-s2">
+                            <input class="location-city">
+                            <label for="location-city">City</label>
+                        </div>
+                        <div class="input-field col s4 ">
+                            <select class="front">
+                                <option value="" disabled selected>State</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                            <label>Select State</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4 offset-s2">
+                            <input class="location-zipcode">
+                            <label for="location-zipcode">Zipcode</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input class="location-country">
+                            <label for="company-country">Country</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        Monday Availability:
+                        <div class="col s4 offset-s2">
+                            <p>Shifts Start at:</p>
+                            <div class="row">
+                                <div class="input-field col s6">
+
+                                    <select class="start-hour front">
+                                        <option value="" disable selected>Hour</option>
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="start-minute front">
+                                        <option value="" disable selected>minutes </option>
+                                        <option value="00">00</option>
+                                        <option value="15">15</option>
+                                        <option value="30">30</option>
+                                        <option value="45">45</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s4">
+                                <p>Shifts End at:</p>
+                                <div class="row">
+                                    <div class="input-field col s6">
+
+                                        <select class="start-hour front">
+                                            <option value="" disable selected>Hour</option>
+                                            <option value="00">00</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <select class="start-minute front">
+                                            <option value="" disable selected>minutes </option>
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <button class="another-location waves-effect waves-light btn blue-grey darken-1">Add
+                                Another</button>
+                            <button
+                                class="finish-location waves-effect waves-light btn blue-grey darken-1">Finished</button>
+                        </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+{{!-- employee modal ends --}}
 
 
 
@@ -141,11 +578,41 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script>
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-        $('.tooltipped').tooltip();
-        $('.collapsible').collapsible();
-
-
+    $(document).ready(() => {
+        $(".sidenav").sidenav();
+        $(".tooltipped").tooltip();
+        $(".collapsible").collapsible();
+        $(".modal").modal()
     });
+
+    $("#schedule-btn").on("click", () => {
+        $("#schedule").show();
+        $("#notifications").hide();
+        $("#employee-list").hide();
+        $("#location-list").hide();
+
+    })
+
+    $("#notifications-btn").on("click", () => {
+        $("#notifications").show();
+        $("#schedule").hide();
+        $("#employee-list").hide();
+        $("#location-list").hide();
+
+    })
+    $("#employees-btn").on("click", () => {
+        $("#employee-list").show();
+        $("#notifications").hide();
+        $("#schedule").hide();
+        $("#location-list").hide();
+
+    })
+    $("#locations-btn").on("click", () => {
+        $("#location-list").show();
+        $("#schedule").hide();
+        $("#employee-list").hide();
+        $("#notifications").hide();
+
+    })
+
 </script>
