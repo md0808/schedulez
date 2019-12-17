@@ -44,7 +44,7 @@
                             <label for="company-city">City</label>
                         </div>
                         <div class="input-field col s4 ">
-                            <select class="front">
+                            <select id="company-state" class="front">
                                 <option value="" disabled selected>State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -176,6 +176,8 @@
                         </tbody>
                     </table>
                 </div>
+
+                <button id="create-btn" class="waves-effect waves-light btn blue-grey darken-1">Submit</button>
             </div>
         </div>
     </div>
@@ -187,6 +189,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="/js/login-register.js" type="text/javascript"></script>
 
     <script>
         $(document).ready(() => {
