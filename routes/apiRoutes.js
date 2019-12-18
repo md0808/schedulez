@@ -9,7 +9,7 @@ module.exports = function (app) {
         }).then(count => {
             res.json(count);
         });
-    })
+    });
     app.get("/api/company/find/:name", (req, res) => {
         db.Company.findOne({
             where: {
@@ -18,7 +18,16 @@ module.exports = function (app) {
         }).then((data) => {
             res.json(data);
         });
-    })
+    });
+    app.get("/api/location/find/:city", (req, res) => {
+        db.Location.findOne({
+            where: {
+                City: req.params.city
+            }
+        }).then((data) => {
+            res.json(data);
+        });
+    });
     app.get("/api/allEmployees", function (req, res) {
         db.dbEmployees.findAll({}).then(function (dbEmployees) {
             res.json(dbEmployees);
@@ -36,28 +45,26 @@ module.exports = function (app) {
     });
 
     // Create a new example
-    app.post("/api/examples", function (req, res) {
-        db.Example.create(req.body).then(function (dbExample) {
+    app.post("/api/examples", (req, res) => {
+        db.Example.create(req.body).then((dbExample) => {
             res.json(dbExample);
         });
     });
-    app.post("/api/newCompany", function (req, res) {
+    app.post("/api/newCompany", (req, res) => {
         db.Company.create(req.body).then((dbCompany) => {
             res.json(dbCompany);
         });
     });
-    app.post("/api/newLocation", function (req, res) {
-        db.Location.create(req.body).then(function (dbLocation) {
+    app.post("/api/newLocation", (req, res) => {
+        db.Location.create(req.body).then((dbLocation) => {
             res.json(dbLocation);
         });
     });
-    app.post("/api/newEmployee", function (req, res) {
-        db.newEmployee.create(req.body).then(function (dbnewEmployee) {
-            res.json(dbnewEmployee);
+    app.post("/api/newEmployee", (req, res) => {
+        db.Employee.create(req.body).then((dbEmployee) => {
+            res.json(dbEmployee);
         });
     });
-
-
     // Delete an example by id
     app.delete("/api/examples/:id", function (req, res) {
         db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
