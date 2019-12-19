@@ -1,6 +1,6 @@
-var db = require("../models");
+const db = require("../models");
 
-module.exports = function (app) {
+module.exports = app => {
     app.get("/api/company/count/:name", (req, res) => {
         db.Company.count({
             where: { 
@@ -56,7 +56,6 @@ module.exports = function (app) {
             res.json(dbnewEmployee);
         });
     });
-
 
     // Delete an example by id
     app.delete("/api/examples/:id", function (req, res) {
