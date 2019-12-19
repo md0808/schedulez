@@ -1,10 +1,10 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var passport = require("passport")
-var session = require("express-session")
-var bodyParser = require("body-parser")
-    // var env = require("dotenv").load();
+var passport = require("passport");
+var session = require("express-session");
+var bodyParser = require("body-parser");
+// var env = require("dotenv").load();
 var db = require("./models");
 
 var app = express();
@@ -19,8 +19,7 @@ models.sequelize
         console.log("Nice! Database looks fine");
     })
     .catch(function(err) {
-        console.log(err, "Something went wrong with the Database Update!")
-
+        console.log(err, "Something went wrong with the Database Update!");
     });
 
 //For BodyParser
@@ -41,22 +40,27 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // create new user/password
-app.get("/", function(req, res) {
-    res.send("Welcome to Passport with Sequelize");
-});
+// app.get("/", function(req, res) {
+//     res.send("Welcome to Passport with Sequelize");
+// });
 
 // Handlebars
+app.set("views", "./views");
 app.engine(
     "handlebars",
     exphbs({
-        defaultLayout: "main"
+        defaultLayout: "main",
+        layoutsDir: __dirname + "/views/layouts",
+        partialsDir: __dirname + "/views/partials"
     })
 );
 app.set("view engine", "handlebars");
-
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
+//Routes
+require("./routes/auth")(app);
 
 var syncOptions = { force: false };
 
