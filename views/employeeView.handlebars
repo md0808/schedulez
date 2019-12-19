@@ -14,25 +14,25 @@
             <h6 class="center">Company Name</h6>
             <h4 class="user-name center">User Name</h4>
             <div class="row center">
-                <div class="row center">
-                    <a href="#account-info" id="account-info-btn"><i class="tooltipped material-icons medium padding40"
-                            data-position="right" data-tooltip="Edit account information">person</i>
-                    </a>
-                </div>
+                <a href="#account-info" id="account-info-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="Edit account information">person</i>
+                </a>
+            </div>
+            <div class="row center">
                 <a href="#request-off" id="request-off-btn"><i class="tooltipped material-icons medium padding40"
                         data-position="right" data-tooltip="Request Off">perm_contact_calendar
                     </i>
                 </a>
             </div>
+
             <div class="row center">
-                <a href="#notifications" id="notifications-btn"><i class="tooltipped material-icons medium padding40"
-                        data-position="right" data-tooltip="View Notification">notifications</i>
+                <a href="#emp-notifications" id="emp-notifications-btn"><i
+                        class="tooltipped material-icons medium padding40" data-position="right"
+                        data-tooltip="View Notification">notifications</i>
                 </a>
             </div>
-
-
             <div class="row center">
-                <a href="#emp-schedule" id="schedule-btn"><i class="tooltipped material-icons medium padding40"
+                <a href="#emp-schedule" id="emp-schedule-btn"><i class="tooltipped material-icons medium padding40"
                         data-position="right" data-tooltip="View Schedule">event</i>
                 </a>
             </div>
@@ -51,6 +51,7 @@
                 <div class="divider"></div>
                 <div class="row">
                     <p>This is where employees can edit information</p>
+                </div>
             </div>
         </div>
 
@@ -63,11 +64,12 @@
                 <div class="divider"></div>
                 <div class="row">
                     <p>This is where the schedule will go</p>
+                </div>
             </div>
         </div>
 
         <!--Notifications============================================ -->
-        <div class="col s12 margin100" id="notifications">
+        <div class="col s12 margin100" id="emp-notifications">
             <div class="white blue-grey-text darken-4-text padding40">
                 <h3 class="center">Notifications</h3>
                 <div class="divider"></div>
@@ -104,12 +106,13 @@
         </div>
         <!-- SCHEDULE============================-->
 
-        <div class="col s12 margin100" id="schedule">
+        <div class="col s12 margin100" id="emp-schedule">
             <div class="white blue-grey-text darken-4-text padding40">
                 <h3 class="center">Schedule</h3>
                 <div class="divider"></div>
                 <div class="row">
                     <p>This is where the schedule will go</p>
+                </div>
             </div>
         </div>
 
@@ -119,6 +122,8 @@
 
     </div>
 </div>
+
+
 <!--Container div ends -->
 
 
@@ -139,31 +144,31 @@
     $("#account-info-btn").on("click", () => {
         $("#account-info").show();
         $("#request-off").hide();
-        $("#notifcations").hide();
+        $("#emp-notifications").hide();
         $("#emp-schedule").hide();
 
-    })
+    });
 
-    $("#notifications-btn").on("click", () => {
-        $("#notifications").show();
+    $("#emp-notifications-btn").on("click", () => {
+        $("#emp-notifications").show();
         $("#emp-schedule").hide();
         $("#account-info").hide();
         $("#request-off").hide();
 
-    })
+    });
     $("#request-off-btn").on("click", () => {
         $("#request-off").show();
-        $("#notifications").hide();
+        $("#emp-notifications").hide();
         $("#emp-schedule").hide();
         $("#account-info").hide();
 
-    })
+    });
     $("#emp-schedule-btn").on("click", () => {
         $("#emp-schedule").show();
-        $("#notifications").hide();
+        $("#emp-notifications").hide();
         $("#request-off").hide();
         $("#account-info").hide();
 
-    })
+    });
 
 </script>
