@@ -18,14 +18,22 @@ body{
   z-index: 5000;
 }
 .carousel{
-  min-height: 550px;
+  min-height: 500px;
+}
+.nav-wrapper{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.carousel-btn-div{
+  position: absolute;
+  bottom: 30px;
 }
 
 #location-list, #employee-list, #schedule{
   display: none;
 }
 
-header, main, footer, .adjusted-container{
+header, main, .footer-content, .adjusted-container, .adjusted-center {
   padding-left: 300px;
 }
 

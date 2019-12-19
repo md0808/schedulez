@@ -1,46 +1,65 @@
 <div class="container margin100">
     <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-fixed-item center">
-            <a class="btn blue-grey darken-1" id="next-btn">Next</a>
+            {{!-- <a class="btn blue-grey darken-1 next-btn">Next</a> --}}
         </div>
-        <div class="carousel-item white blue-grey-text darken-4-text" href="#one!">
-            <h2>SchedulEZ</h2>
+        <div class="carousel-item white blue-grey-text" href="#one!">
+            <h2 class="blue-grey-text text-darken-4">SchedulEZ</h2>
             <p class="blue-grey-text">Create an account</p>
             <div class="row">
                 <form>
                     <div class="input-field col s8 offset-s2">
-                        <input id="company-name">
+                        <input id="company-name" type="text" class="validate">
                         <label for="company-name">Company Name</label>
                     </div>
                     <div class="input-field col s8 offset-s2">
-                        <input id="company-email">
-                        <label for="company-email">Primary email address</label>
+                        <input id="employee-password" type="password">
+                        <label for="employee-password">Password</label>
                     </div>
                     <div class="input-field col s8 offset-s2">
-                        <input id="company-password">
-                        <label for="company-password">Password</label>
-                    </div>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="company-password-confirm">
-                        <label for="company-password-confirm">Confirm Password</label>
+                        <input id="password-confirm" type="password">
+                        <label for="password-confirm">Confirm Password</label>
                     </div>
                 </form>
             </div>
+            <footer class="row center">
+                    <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
+            </footer>
         </div>
         <div class="carousel-item white blue-grey-text darken-4-text" href="#two!">
+            <h2>SchedulEZ</h2>
+            <p class="blue-grey-text">Contact Information</p>
+            <div class="row">
+                <form>
+
+                    <div class="input-field col s8 offset-s2">
+                        <input id="employee-email" type="text">
+                        <label for="employee-email">Primary email address</label>
+                    </div>
+                    <div class="input-field col s8 offset-s2">
+                        <input id="employee-fullname" type="text">
+                        <label for="employee-fullname">Full Name of Primary Contact</label>
+                    </div>
+                </form>
+            </div>
+            <footer class="row center">
+                <a class="next-btn center"><i class="material-icons">arrow_forward</i></a>
+            </footer>
+        </div>
+        <div class="carousel-item white blue-grey-text darken-4-text" href="#three!">
             <h2>SchedulEZ</h2>
             <p class="blue-grey-text">Primary Location or Headquarters</p>
             <div class="row">
                 <form>
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
-                            <input id="company-street">
+                            <input id="company-street" type="text">
                             <label for="company-street">Street Address</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s4 offset-s2">
-                            <input id="company-city">
+                            <input id="company-city" type="text">
                             <label for="company-city">City</label>
                         </div>
                         <div class="input-field col s4 ">
@@ -103,81 +122,46 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s4 offset-s2">
-                            <input id="company-zipcode">
-                            <label for="company-zipcode">Zipcode</label>
+                            <input id="company-zipcode" type="text">
+                            <label for="company-zipcode" type="text">Zipcode</label>
                         </div>
                         <div class="input-field col s4">
-                            <input id="company-country">
+                            <input id="company-country" type="text">
                             <label for="company-country">Country</label>
                         </div>
                     </div>
 
                 </form>
             </div>
+            <footer class="row center footer">
+                <a class="next-btn"><i class="material-icons">arrow_forward</i></a>
+            </footer>
         </div>
 
-        <div class="carousel-item white blue-grey-text darken-4-text" href="#three!">
-            <h2>Secondary Locations</h2>
-            <p class="margin100">Does your company have multiple locations?</p>
+
+
+        <div class="carousel-item white blue-grey-text" href="#four!">
+
             <div class="row">
-                <a href="#modal-locations" class="modal-trigger waves-effect waves-light btn blue-grey darken-1">Yes</a>
-                <a class="waves-effect waves-light btn blue-grey darken-1" id="no">No</a>
+                <h2 class=" blue-grey-text text-darken-4">Confirm Company Information</h2>
             </div>
-        </div>
-
-
-        <div class="carousel-item white blue-grey-text darken-4-text" href="#four!">
-            <h2>Confirm Company Information</h2>
             <div class="row">
-                <p><span id="company-name-confirm"><strong>Company Name</strong></span><br>
-                    <span id="company-name-confirm">Street Address</span><br>
+                <h5>Company Name: <span id="company-name-confirm"><strong>Company Name</strong></span><br>
+                    Primary Email: <span id="company-name-confirm">Email@email.com</span><br>
+                    Primary Contact: <span id="company-name-confirm">Name Nameson</span><br>
+                    <span id="company-address-confirm">Street Address</span><br>
                     <span id="company-city-confirm">City</span>, <span id="company-state-confirm">State</span><br>
                     <span id="company-zipcode-confirm">Zipcode</span> <span id="company-country-confirm">Country</span>
-                </p>
-                <div class="col s8 offset-s2">
-                    <table class="highlight">
-                        <thead>
-                            <tr>
-                                <th>Location</th>
-                                <th>Address</th>
-                                <th>Hours</th>
-                            </tr>
-                        </thead>
+                </h5>
 
-                        <tbody>
-                            <tr>
-                                <td>Location 1</td>
-                                <td><span>Street Address</span><br>
-                                    <span>City</span>, <span>State</span><br>
-                                    <span>Zipcode</span> <span>Country</span></td>
-                                <td>
-                                    <spam>Open</spam>- <span>Close</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Location 2</td>
-                                <td><span>Street Address</span><br>
-                                    <span>City</span>, <span>State</span><br>
-                                    <span>Zipcode</span> <span>Country</span></td>
-                                <td>
-                                    <spam>Open</spam>- <span>Close</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Location 3</td>
-                                <td><span>Street Address</span><br>
-                                    <span>City</span>, <span>State</span><br>
-                                    <span>Zipcode</span> <span>Country</span></td>
-                                <td>
-                                    <spam>Open</spam>- <span>Close</span>
-                                </td>
-                            </tr>
 
-                        </tbody>
-                    </table>
-                </div>
 
-                <button id="create-btn" class="waves-effect waves-light btn blue-grey darken-1">Submit</button>
+            </div>
+            <div class="row center footer">
+                <button id="create-btn" type="submit"
+                    class="waves-effect waves-light btn blue-grey darken-1">Confirm</button>
+                <button id="edit-btn" class="waves-effect waves-light btn blue-grey darken-1">Edit</button>
+
             </div>
         </div>
     </div>
@@ -205,12 +189,17 @@
                 // indicators: true
             });
 
-            $("#next-btn, #no").on("click", (e) => {
+            $(".next-btn, #no").on("click", (e) => {
                 console.log('im being clicked');
-
                 e.preventDefault();
                 e.stopPropagation();
                 $('.carousel').carousel('next');
+            });
+
+            $("#edit-btn").on("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                $(".carousel").carousel("set", 0);
             });
         });
     </script>
