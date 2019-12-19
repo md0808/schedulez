@@ -37,8 +37,8 @@ function addCompanyAndLocationToDB(companyName, cb) {
 
     function addLocationToDB(companyName) {
         $.get("/api/company/find/" + companyName, (data) => {
-            var num = data.CompanyNum;
-            addInfo(num);
+          var num = data.id;
+          addInfo(num);
         });
 
         function addInfo(companyNum) {
