@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     var Employee = sequelize.define("Employee", {
-        EmployeeNum: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+        // EmployeeNum: {
+        //     type: DataTypes.INTEGER,
+        //     primaryKey: true,
+        //     autoIncrement: true
+        // },
         LocationNum: DataTypes.INTEGER,
         Email: DataTypes.STRING,
         FullName: DataTypes.STRING,
