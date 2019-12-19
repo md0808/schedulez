@@ -34,6 +34,16 @@ module.exports = function (app) {
             res.json(dbRequests);
         });
     });
+    app.get("/api/allLocations/:company", (req, res) => {
+        db.Location.findOne({
+            where: {
+                CompanyNum: req.params.company
+             },
+            include: [db.Company]
+        }).then((data) => {
+            res.json(data)
+        })
+    });
 
     // Create a new example
     app.post("/api/examples", function (req, res) {

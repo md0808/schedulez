@@ -1,11 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
     var Location = sequelize.define("Location", {
-        LocationNum: {
+        CompanyNum: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
+            foreignKey: true
         },
-        CompanyNum: DataTypes.INTEGER,
         Address: DataTypes.STRING,
         City: DataTypes.STRING,
         State: DataTypes.STRING,
@@ -14,15 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         OpeningTime: DataTypes.STRING,
         ClosingTime: DataTypes.STRING
     });
-  
-        // Location.associate = (models) => {
-        //     Location.belongsTo(models.Company, {
-        //         foreignKey: {
-        //             allowNull: false
-        //         }
-        //     });
-        // };
+
+    Location.associate = (models) => {
+        Location.belongsTo(models.Company, {foreignKey: "CompanyNum"});
+    };
 
     return Location;
-  };
-  
+};
