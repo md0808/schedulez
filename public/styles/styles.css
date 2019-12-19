@@ -38,6 +38,20 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
   padding-left: 300px;
 }
 
+/* PARTIALS STYLES */
+
+.partial-header {
+  font-size: 1.5em;
+}
+
+.partial-main {
+  font-weight: bold;
+}
+
+.partial-button{
+  margin-top: 1em;
+}
+
 
 @media only screen and (max-width : 992px) {
   header, main, footer {
