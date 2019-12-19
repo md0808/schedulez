@@ -39,12 +39,24 @@ module.exports = app => {
     }
   ];
 
+  const days = [
+    {
+      monday: 10,
+      tuesday: 12,
+      wednesday: "pickles",
+      thursday: "pickles",
+      friday: "pickles",
+      saturday: "pickles",
+      sunday: "pickles"
+    }
+  ];
+
   app.get("/manager-view", (req, res) => {
-    res.render("managerView", { locations });
+    res.render("managerView", { locations, days });
   });
 
   app.get("/employee-view", (req, res) => {
-    res.render("employeeView", );
+    res.render("employeeView");
   });
 
   // Load example page and pass in an example by id

@@ -43,6 +43,16 @@ module.exports = app => {
             res.json(dbRequests);
         });
     });
+    app.get("/api/allLocations/:company", (req, res) => {
+        db.Location.findOne({
+            where: {
+                CompanyNum: req.params.company
+             },
+            include: [db.Company]
+        }).then((data) => {
+            res.json(data)
+        })
+    });
 
     // Create a new example
     app.post("/api/examples", (req, res) => {
@@ -65,8 +75,7 @@ module.exports = app => {
             res.json(dbEmployee);
         });
     });
-
-
+    
     // Delete an example by id
     app.delete("/api/examples/:id", function (req, res) {
         db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {

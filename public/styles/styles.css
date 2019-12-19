@@ -26,7 +26,7 @@ body{
 }
 .carousel-btn-div{
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   left: 50%
 }
 
@@ -55,7 +55,6 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
 .partial-button{
   margin-top: 1em;
 }
-
 
 @media only screen and (max-width : 992px) {
   header, main, footer {
