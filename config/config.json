@@ -1,21 +1,45 @@
 {
-  "development": {
-    "username": "root",
-    "password": "password",
-    "database": "project2main",
-    "host": "localhost",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
-  }
+
+    "development": {
+
+        "username": "root",
+
+        "password": "password",
+
+        "database": "project2main",
+
+        "host": "127.0.0.1",
+
+        "dialect": "mysql"
+
+    },
+
+    "test": {
+
+        "username": "",
+
+        "password": "password",
+
+        "database": "project2main",
+
+        "host": "",
+
+        "dialect": "mysql"
+
+    },
+
+    "production": {
+
+        "username": "",
+
+        "password": "password",
+
+        "database": "project2main",
+
+        "host": "127.0.0.1",
+
+        "dialect": "mysql"
+
+    }
+
 }
