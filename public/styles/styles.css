@@ -30,9 +30,13 @@ body{
   left: 50%
 }
 
-#location-list, #employee-list, #schedule{
+/* #location-list, 
+#employee-list, 
+#schedule, 
+#account-info, 
+#request-off{
   display: none;
-}
+} */
 
 header, main, .footer-content, .adjusted-container, .adjusted-center {
   padding-left: 300px;

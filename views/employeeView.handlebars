@@ -1,0 +1,174 @@
+<!-- Navigation bar=============== -->
+<nav class="blue-grey darken-4">
+    <div class="nav-wrapper">
+        <span class="adjusted-center"><a href="#!" class="brand-logo">SchedulEZ</a></span>
+        <span class="right"><a class="logout">Logout</a></span>
+    </div>
+</nav>
+
+<!-- Sidebar bar=============== -->
+<ul id="slide-out" class="blue-grey-text darken-4-text sidenav sidenav-fixed">
+    <li>
+        <div class="user-view">
+            <h6 class="center">Employee Dashboard</h6>
+            <h6 class="center">Company Name</h6>
+            <h4 class="user-name center">User Name</h4>
+            <div class="row center">
+                <div class="row center">
+                    <a href="#account-info" id="account-info-btn"><i class="tooltipped material-icons medium padding40"
+                            data-position="right" data-tooltip="Edit account information">person</i>
+                    </a>
+                </div>
+                <a href="#request-off" id="request-off-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="Request Off">perm_contact_calendar
+                    </i>
+                </a>
+            </div>
+            <div class="row center">
+                <a href="#notifications" id="notifications-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Notification">notifications</i>
+                </a>
+            </div>
+
+
+            <div class="row center">
+                <a href="#schedule" id="schedule-btn"><i class="tooltipped material-icons medium padding40"
+                        data-position="right" data-tooltip="View Schedule">event</i>
+                </a>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div class="container adjusted-container">
+    <div class="row">
+
+        <!-- Edit Account Information============================-->
+
+        <div class="col s12 margin100" id="account-info">
+            <div class="white blue-grey-text darken-4-text padding40">
+                <h3 class="center">Account Information</h3>
+                <div class="divider"></div>
+                <div class="row">
+                    <p>This is where employees can edit information</p>
+            </div>
+        </div>
+
+
+        <!-- Request Off============================-->
+
+        <div class="col s12 margin100" id="request-off">
+            <div class="white blue-grey-text darken-4-text padding40">
+                <h3 class="center">Request off</h3>
+                <div class="divider"></div>
+                <div class="row">
+                    <p>This is where the schedule will go</p>
+            </div>
+        </div>
+
+        <!--Notifications============================================ -->
+        <div class="col s12 margin100" id="notifications">
+            <div class="white blue-grey-text darken-4-text padding40">
+                <h3 class="center">Notifications</h3>
+                <div class="divider"></div>
+                <div class="row">
+                    <!-- This is where the individual notication starts-->
+                    <div class="card s12" id="n-123">
+                        <div class="col s3 response">
+                            <i class="material-icons medium green-text">done</i>
+                        </div>
+                        <div class="col s9">
+                            <span class="card-title">Date Requested</span>
+                            <p>Your request off for <span id="request-off-date">12/3/20</span> has been <span
+                                    class="approve-or-deny">approved</span></p>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div class="row" id="request-id">
+                    <!-- This is where the individual notication starts-->
+                    <div class="card s12" id="n-123">
+                        <div class="col s3 response">
+                            <i class="material-icons medium red-text">close</i>
+                        </div>
+                        <div class="col s9">
+                            <span class="card-title">Date Requested</span>
+                            <p>Your request off for <span id="request-off-date">12/3/20</span> has been <span
+                                    class="approve-or-deny">denied</span></p>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- SCHEDULE============================-->
+
+        <div class="col s12 margin100" id="schedule">
+            <div class="white blue-grey-text darken-4-text padding40">
+                <h3 class="center">Schedule</h3>
+                <div class="divider"></div>
+                <div class="row">
+                    <p>This is where the schedule will go</p>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+<!--Container div ends -->
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+    $(document).ready(() => {
+        $(".sidenav").sidenav();
+        $(".tooltipped").tooltip();
+        $(".collapsible").collapsible();
+        $(".modal").modal()
+        $("select").formSelect();
+    });
+
+    $("#account-info-btn").on("click", () => {
+        $("#account-info").show();
+        $("#request-off").hide();
+        $("#notifcations").hide();
+        $("#schedule").hide();
+
+    })
+
+    $("#notifications-btn").on("click", () => {
+        $("#notifications").show();
+        $("#schedule").hide();
+        $("#account-info").hide();
+        $("#request-off").hide();
+
+    })
+    $("#request-off-btn").on("click", () => {
+        $("#request-off").show();
+        $("#notifications").hide();
+        $("#schedule").hide();
+        $("#account-info").hide();
+
+    })
+    $("#schedule-btn").on("click", () => {
+        $("#schedule").show();
+        $("#notifications").hide();
+        $("#request-off").hide();
+        $("#account-info").hide();
+
+    })
+
+</script>
