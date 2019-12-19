@@ -3,8 +3,8 @@ const db = require("../models");
 module.exports = app => {
     app.get("/api/company/count/:name", (req, res) => {
         db.Company.count({
-            where: { 
-                Name: req.params.name 
+            where: {
+                Name: req.params.name
             }
         }).then(count => {
             res.json(count);
@@ -66,7 +66,7 @@ module.exports = app => {
         });
     });
 
-=======
+
     // Delete an example by id
     app.delete("/api/examples/:id", function (req, res) {
         db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {

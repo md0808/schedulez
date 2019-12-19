@@ -18,7 +18,7 @@ body{
   z-index: 5000;
 }
 .carousel{
-  min-height: 500px;
+  min-height: 600px;
 }
 .nav-wrapper{
   padding-left: 20px;
@@ -26,7 +26,8 @@ body{
 }
 .carousel-btn-div{
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
+  left: 50%
 }
 
 #location-list, #employee-list, #schedule{
