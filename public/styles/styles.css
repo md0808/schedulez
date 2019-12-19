@@ -18,19 +18,38 @@ body{
   z-index: 5000;
 }
 .carousel{
-  min-height: 550px;
+  min-height: 600px;
 }
 .nav-wrapper{
   padding-left: 20px;
   padding-right: 20px;
+}
+.carousel-btn-div{
+  position: absolute;
+  bottom: 30px;
+  left: 50%
 }
 
 #location-list, #employee-list, #schedule{
   display: none;
 }
 
-header, main, footer, .adjusted-container, .adjusted-center {
+header, main, .footer-content, .adjusted-container, .adjusted-center {
   padding-left: 300px;
+}
+
+/* PARTIALS STYLES */
+
+.partial-header {
+  font-size: 1.5em;
+}
+
+.partial-main {
+  font-weight: bold;
+}
+
+.partial-button{
+  margin-top: 1em;
 }
 
 

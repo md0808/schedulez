@@ -1,0 +1,43 @@
+<li>
+    <div class="collapsible-header location-list-name">{{ this.name }}</div>
+    <div class="collapsible-body location-list-info">
+        <div class="row">
+            <strong class="partial-header">{{this.CompanyName}}<span>#{{ this.locationNum }}</span></strong><br>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <span class="partial-main">Location Number:</span>
+                <span>{{ this.locationNum }}</span><br>
+            </div>
+            <div class="col s6">
+                <span class="partial-main">Company Number: </span><span>{{ this.companyNum }}</span><br>
+            </div>
+            <div class="col s12">
+                <span class="partial-main">Address: </span><span>{{ this.address }}</span><br>
+            </div>
+            <div class="col s6">
+                <span class="partial-main">City: </span><span>{{ this.city }}</span>
+            </div>
+            <div class="col s6">
+                <span class="partial-main">State: </span><span>{{ this.state }}</span><br>
+            </div>
+            <div class="col s12 partial-button">
+                <a class="waves-effect waves-light btn"><i class="material-icons left">group</i>View This Location's Employees</a>
+            </div>
+        </div>
+        <div class="row">
+            <strong class="partial-header">Hours</strong>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <span class="partial-main">Opening:</span><span>{{ this.openingTime }}</span>
+            </div>
+            <div class="col s6">
+                <span class="partial-main">Closing:</span><span>{{ this.closingTime }}</span><br><br>
+            </div>
+            <div class="col s12 partial-button">
+                <a class="waves-effect waves-light btn"><i class="material-icons left">event</i>View This Location's Schedule</a>
+            </div>
+        </div>
+    </div>
+</li>

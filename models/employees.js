@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
         //     autoIncrement: true
         // },
         LocationNum: DataTypes.INTEGER,
-        CompanyNum: DataTypes.INTEGER,
+        Email: DataTypes.STRING,
         FullName: DataTypes.STRING,
         Password: DataTypes.STRING,
         Status: DataTypes.STRING,

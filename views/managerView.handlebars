@@ -1,13 +1,14 @@
+
 <!-- Navigation bar=============== -->
 <nav class="blue-grey darken-4">
-  <div class="nav-wrapper">
-    <span class="adjusted-center"><a href="#!" class="brand-logo">SchedulEZ</a></span>
-    <span class="right"><a class="logout">Logout</a></span>
-  </div>
+    <div class="nav-wrapper">
+        <span class="adjusted-center"><a href="#!" class="brand-logo">SchedulEZ</a></span>
+        <span class="right"><a class="logout">Logout</a></span>
+    </div>
 </nav>
 
 <!-- Sidebar bar=============== -->
-<ul id="slide-out" class="blue-grey-text darken-4-text sidenav sidenav-fixed">
+<ul id="slide-out" class="blue-grey-text text-darken-4 sidenav sidenav-fixed">
     <li>
         <div class="user-view">
             <h6 class="center">Manager Dashboard</h6>
@@ -32,7 +33,8 @@
                         data-position="right" data-tooltip="View Schedule">event</i>
                 </a>
             </div>
-
+        </div>
+    </li>
 </ul>
 
 <div class="container adjusted-container">
@@ -41,8 +43,10 @@
 
         <!--Notifications============================================ -->
         <div class="col s12 margin100" id="notifications">
-            <div class="white blue-grey-text darken-4-text padding40">
+            <div class="white blue-grey-text text-darken-4 padding40">
                 <h3 class="center">Notifications</h3>
+                <p>This is is a request off</p>
+
                 <div class="divider"></div>
                 <div class="row">
                     <!-- This is where the individual notication starts-->
@@ -51,13 +55,13 @@
                             <form>
                                 <p>
                                     <label for="approve">
-                                        <input name="n-123" type="radio" id="approve" checked />
+                                        <input name="n-123" type="radio" id="approve" value="approve" checked />
                                         <span>Approve</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label for="decline">
-                                        <input name="n-123" type="radio" id="decline" />
+                                        <input name="n-123" type="radio" id="decline" value="decline" />
                                         <span>Decline</span>
                                     </label>
                                 </p>
@@ -81,14 +85,21 @@
         <!--Employees============================================ -->
 
         <div class="col s12 margin100" id="employee-list">
-            <div class="card white blue-grey-text darken-4-text padding40">
+            <div class="card white blue-grey-text text-darken-4  padding40">
                 <a href="#modal-employees" class="modal-trigger" id="new-employee-btn"><i
                         class="tooltipped right material-icons medium red-text"
                         data-tooltip="Add a new employee">add_circle</i></a>
 
+                {{!-- EMPLOYEES LIST --}}
                 <h3 class="center">Employees</h3>
                 <ul class="collapsible expandable">
-                    <li>
+                    {{#each employees}}
+                        {{> employee-block}}
+                    {{/each}}
+                </ul>
+
+                    {{!-- placeholders to be removed --}}
+                    {{!-- <li>
                         <div class="collapsible-header employee-list-name">Paxton Sharp</div>
                         <div class="collapsible-body employee-list-info">
                             <strong>Status: </strong><span>Full-time</span><br>
@@ -128,102 +139,117 @@
                             <span>Saturday: </span><span>12-18</span><br>
                             <span>Sunday: </span><span>12-18</span><br><br>
 
-                            <strong>Contact Information</strong><br>
-                            <span>Address: </span><br>
-                            <span>Street</span><br>
-                            <span>City</span><span>State</span><br>
-                            <span>Zipcode</span><span>Country</span><br><br>
-                            <span>Email</span><br>
-                            <span>Phone Number</span><br>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header employee-list-name">Danielle Burrage</div>
+                            <div class="collapsible-body employee-list-info">
+                                <strong>Status: </strong><span>Full-time</span><br>
+                                <strong>Role: </strong><span>Back-end</span><br>
+                                <strong>Position Type: </strong><span>Temporary</span><br><br>
+                                <strong>Availability:</strong><br>
+                                <span>Monday: </span><span>12-18</span><br>
+                                <span>Tuesday: </span><span>12-18</span><br>
+                                <span>Wednesday: </span><span>12-18</span><br>
+                                <span>Thursday: </span><span>12-18</span><br>
+                                <span>Friday: </span><span>12-18</span><br>
+                                <span>Saturday: </span><span>12-18</span><br>
+                                <span>Sunday: </span><span>12-18</span><br><br>
 
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header employee-list-name">Alex Bailey</div>
-                        <div class="collapsible-body employee-list-info">
-                            <strong>Status: </strong><span>Full-time</span><br>
-                            <strong>Role: </strong><span>Back-end</span><br>
-                            <strong>Position Type: </strong><span>Temporary</span><br><br>
-                            <strong>Availability:</strong><br>
-                            <span>Monday: </span><span>12-18</span><br>
-                            <span>Tuesday: </span><span>12-18</span><br>
-                            <span>Wednesday: </span><span>12-18</span><br>
-                            <span>Thursday: </span><span>12-18</span><br>
-                            <span>Friday: </span><span>12-18</span><br>
-                            <span>Saturday: </span><span>12-18</span><br>
-                            <span>Sunday: </span><span>12-18</span><br><br>
+                                <strong>Contact Information</strong><br>
+                                <span>Address: </span><br>
+                                <span>Street</span><br>
+                                <span>City</span><span>State</span><br>
+                                <span>Zipcode</span><span>Country</span><br><br>
+                                <span>Email</span><br>
+                                <span>Phone Number</span><br>
 
-                            <strong>Contact Information</strong><br>
-                            <span>Address: </span><br>
-                            <span>Street</span><br>
-                            <span>City</span><span>State</span><br>
-                            <span>Zipcode</span><span>Country</span><br><br>
-                            <span>Email</span><br>
-                            <span>Phone Number</span><br>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header employee-list-name">Alex Bailey</div>
+                            <div class="collapsible-body employee-list-info">
+                                <strong>Status: </strong><span>Full-time</span><br>
+                                <strong>Role: </strong><span>Back-end</span><br>
+                                <strong>Position Type: </strong><span>Temporary</span><br><br>
+                                <strong>Availability:</strong><br>
+                                <span>Monday: </span><span>12-18</span><br>
+                                <span>Tuesday: </span><span>12-18</span><br>
+                                <span>Wednesday: </span><span>12-18</span><br>
+                                <span>Thursday: </span><span>12-18</span><br>
+                                <span>Friday: </span><span>12-18</span><br>
+                                <span>Saturday: </span><span>12-18</span><br>
+                                <span>Sunday: </span><span>12-18</span><br><br>
 
-                        </div>
-                    </li>
+                                <strong>Contact Information</strong><br>
+                                <span>Address: </span><br>
+                                <span>Street</span><br>
+                                <span>City</span><span>State</span><br>
+                                <span>Zipcode</span><span>Country</span><br><br>
+                                <span>Email</span><br>
+                                <span>Phone Number</span><br>
 
-                </ul>
+                            </div>
+                        </li>
 
+                        </div> --}}
+                    {{!-- </li> --}}
             </div>
         </div>
         <!--Locations============================================ -->
         <div class="col s12 margin100" id="location-list">
-            <div class="card white blue-grey-text darken-4-text padding40">
+            <div class="card white blue-grey-text text-darken-4  padding40">
                 <a class="modal-trigger" id="new-location-btn" href="#modal-locations">
                     <i class=" tooltipped right material-icons medium red-text"
                         data-tooltip="Add a new location">add_circle</i></a>
-
                 <h3 class="center">Locations</h3>
                 <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header location-list-name">Kansas City #2342</div>
-                        <div class="collapsible-body location-list-info">
-                            <strong>Status: </strong><span>Full-time</span><br>
-                            <strong>Role: </strong><span>Back-end</span><br>
-                            <strong>Position Type: </strong><span>Temporary</span><br><br>
-                            <strong>Availability:</strong><br>
-                            <span>Monday: </span><span>12-18</span><br>
-                            <span>Tuesday: </span><span>12-18</span><br>
-                            <span>Wednesday: </span><span>12-18</span><br>
-                            <span>Thursday: </span><span>12-18</span><br>
-                            <span>Friday: </span><span>12-18</span><br>
-                            <span>Saturday: </span><span>12-18</span><br>
-                            <span>Sunday: </span><span>12-18</span><br><br>
-
-                            <strong>Contact Information</strong><br>
-                            <span>Address: </span><br>
-                            <span>Street</span><br>
-                            <span>City</span><span>State</span><br>
-                            <span>Zipcode</span><span>Country</span><br><br>
-                            <span>Email</span><br>
-                            <span>Phone Number</span><br>
-
-                        </div>
-                    </li>
+                    {{#each locations}}
+                    {{> location-block}}
+                    {{/each}}
                 </ul>
             </div>
         </div>
+        {{!-- SCHEDULE SECTION --}}
         <!--Schedule============================================ -->
         <div class="col s12 margin100" id="schedule">
-            <div class="card white blue-grey-text darken-4-text padding40">
-                <a href="#" class=""> <i class="tooltipped right material-icons medium red-text" id="new-schedule-btn"
+            <div class="card white blue-grey-text text-darken-4  padding40">
+                <a class="modal-trigger" href="#modal-schedule"> <i
+                        class="tooltipped right material-icons medium red-text" id="new-schedule-btn"
                         data-tooltip="Generate Next Schedule">add_circle</i></a>
-
                 <h3 class="center">Schedule</h3>
                 <p>This is where the schedule will go</p>
-            </div>
 
+            </div>
         </div>
     </div>
 </div>
 
+<!-- SCHEDULE Modal Structure -->
+<div id="modal-schedule" class="modal">
+    <div class="modal-content blue-grey-text text-darken-4 ">
+        <h2 class="center">Generate a New Schedule</h2>
+
+        <div class="col s8 offest-s2">
+            <span>Choose Start Date</span> <span>
+                <input type="text" class="datepicker">
+            </span><br>
+            <div class="row center">
+                <button class="btn blue-grey waves-effect">Create</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+
 </div>
+{{!-- SCHEDULE modal ends --}}
 
 <!-- LOCATION Modal Structure -->
 <div id="modal-locations" class="modal">
-    <div class="modal-content blue-grey-text darken-4-text">
+    <div class="modal-content blue-grey-text text-darken-4 ">
         <h2 class="center">Add Locations</h2>
         <form>
             <div class="row">
@@ -407,12 +433,11 @@
     </div>
 </div>
 </div>
-{{!-- location modal ends --}}
+{{!-- LOCATION MODAL ENDS --}}
 
-{{!-- EMPLOYEE modal begins --}}
-
+{{!-- EMPLOYEE MODAL BEGINS --}}
 <div id="modal-employees" class="modal">
-    <div class="modal-content blue-grey-text darken-4-text">
+    <div class="modal-content blue-grey-text text-darken-4 ">
         <h2 class="center">Add A New Employee</h2>
         <form>
             <div class="row">
@@ -505,9 +530,58 @@
                         </div>
                     </div>
                     <div class="row">
-                        Monday Availability:
-                        <div class="col s4 offset-s2">
-                            <p>Shifts Start at:</p>
+                        <div class="col s8 offset-s2">
+                            <h5>Monday Availability:</h5>
+                        </div>
+                    </div>
+                    <div class="col s4 offset-s2">
+                        <p>Can begin working at:</p>
+                        <div class="row">
+                            <div class="input-field col s6">
+
+                                <select class="start-hour front">
+                                    <option value="" disable selected>Hour</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s6">
+                                <select class="start-minute front">
+                                    <option value="" disable selected>minutes </option>
+                                    <option value="00">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s4">
+                            <p>Availability ends:</p>
                             <div class="row">
                                 <div class="input-field col s6">
 
@@ -550,67 +624,20 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col s4">
-                                <p>Shifts End at:</p>
-                                <div class="row">
-                                    <div class="input-field col s6">
-
-                                        <select class="start-hour front">
-                                            <option value="" disable selected>Hour</option>
-                                            <option value="00">00</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <select class="start-minute front">
-                                            <option value="" disable selected>minutes </option>
-                                            <option value="00">00</option>
-                                            <option value="15">15</option>
-                                            <option value="30">30</option>
-                                            <option value="45">45</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center">
-                            <button class="another-location waves-effect waves-light btn blue-grey darken-1">Add
-                                Another</button>
-                            <button
-                                class="finish-location waves-effect waves-light btn blue-grey darken-1">Finished</button>
-                        </div>
+                    </div>
+                    <div class="center">
+                        <button
+                            class="finish-location waves-effect waves-light btn blue-grey darken-1">Finished</button>
+                    </div>
         </form>
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
 </div>
-
+</div>
 {{!-- employee modal ends --}}
+
 
 
 
@@ -627,6 +654,8 @@
         $(".collapsible").collapsible();
         $(".modal").modal()
         $("select").formSelect();
+        $('.datepicker').datepicker();
+
     });
 
     $("#schedule-btn").on("click", () => {

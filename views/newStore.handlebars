@@ -1,10 +1,10 @@
 <div class="container margin100">
     <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-fixed-item center">
-            <a class="btn blue-grey darken-1" id="next-btn">Next</a>
+            {{!-- <a class="btn blue-grey darken-1 next-btn">Next</a> --}}
         </div>
-        <div class="carousel-item white blue-grey-text darken-4-text" href="#one!">
-            <h2>SchedulEZ</h2>
+        <div class="carousel-item white blue-grey-text" href="#one!">
+            <h2 class="blue-grey-text text-darken-4">SchedulEZ</h2>
             <p class="blue-grey-text">Create an account</p>
             <div class="row">
                 <form>
@@ -12,22 +12,41 @@
                         <input id="company-name" type="text" class="validate">
                         <label for="company-name">Company Name</label>
                     </div>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="company-email" type="text" >
-                        <label for="company-email">Primary email address</label>
-                    </div>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="company-password" type="password">
-                        <label for="company-password">Password</label>
-                    </div>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="company-password-confirm" type="password">
-                        <label for="company-password-confirm">Confirm Password</label>
-                    </div>
                 </form>
+            </div>
+            <div class="row carousel-btn-div">
+                <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
             </div>
         </div>
         <div class="carousel-item white blue-grey-text darken-4-text" href="#two!">
+            <h2>SchedulEZ</h2>
+            <p class="blue-grey-text">Contact Information</p>
+            <div class="row">
+                <form>
+
+                    <div class="input-field col s8 offset-s2">
+                        <input id="employee-email" type="text">
+                        <label for="employee-email">Primary email address</label>
+                    </div>
+                    <div class="input-field col s8 offset-s2">
+                        <input id="employee-fullname" type="text">
+                        <label for="employee-fullname">Full Name of Primary Contact</label>
+                    </div>
+                    <div class="input-field col s8 offset-s2">
+                        <input id="employee-password" type="password">
+                        <label for="employee-password">Password</label>
+                    </div>
+                    <div class="input-field col s8 offset-s2">
+                        <input id="password-confirm" type="password">
+                        <label for="password-confirm">Confirm Password</label>
+                    </div>
+                </form>
+            </div>
+            <div class="row center carousel-btn-div">
+                <a class="next-btn center"><i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+        <div class="carousel-item white blue-grey-text darken-4-text" href="#three!">
             <h2>SchedulEZ</h2>
             <p class="blue-grey-text">Primary Location or Headquarters</p>
             <div class="row">
@@ -43,7 +62,7 @@
                             <input id="company-city" type="text">
                             <label for="company-city">City</label>
                         </div>
-                        <div class="input-field col s4 ">
+                        <div class="input-field col s4">
                             <select id="company-state" class="front">
                                 <option value="" disabled selected>State</option>
                                 <option value="AL">Alabama</option>
@@ -114,44 +133,137 @@
 
                 </form>
             </div>
+            <div class="row center carousel-btn-div">
+                <a class="next-btn"><i class="material-icons">arrow_forward</i></a>
+            </div>
         </div>
 
+        <div class="carousel-item white blue-grey-text" href="#four!">
+            <h2 class="blue-grey-text text-darken-4">SchedulEZ</h2>
+            <p class="blue-grey-text">Set Company Hours</p>
+            <div class="row">
+                <div class="row">
+                    <div class="col s4 offset-s2">
+                        <p>Shifts Start at:</p>
+                        <div class="row">
+                            <div class="input-field col s6">
 
+                                <select class="start-hour front">
+                                    <option value="" disable selected>Hour</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s6">
+                                <select class="start-minute front">
+                                    <option value="" disable selected>minutes </option>
+                                    <option value="00">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="carousel-item white blue-grey-text darken-4-text" href="#three!">
-            <h2>Confirm Company Information</h2>
+                    <div class="row">
+                        <div class="col s4">
+                            <p>Shifts End at:</p>
+                            <div class="row">
+                                <div class="input-field col s6">
+
+                                    <select class="start-hour front">
+                                        <option value="" disable selected>Hour</option>
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="start-minute front">
+                                        <option value="" disable selected>minutes </option>
+                                        <option value="00">00</option>
+                                        <option value="15">15</option>
+                                        <option value="30">30</option>
+                                        <option value="45">45</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row carousel-btn-div">
+                <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
+            </div>
+        </div>
+
+        <div class="carousel-item white blue-grey-text" href="#five!">
+
+            <div class="row">
+                <h2 class=" blue-grey-text text-darken-4">Confirm Company Information</h2>
+            </div>
             <div class="row">
                 <p><span id="company-name-confirm"><strong>Company Name</strong></span><br>
-                    <span id="company-name-confirm">Street Address</span><br>
+                    Primary Email: <span id="company-name-confirm">Email@email.com</span><br>
+                    Primary Contact: <span id="company-name-confirm">Name Nameson</span><br>
+                    <span id="company-address-confirm">Street Address</span><br>
                     <span id="company-city-confirm">City</span>, <span id="company-state-confirm">State</span><br>
                     <span id="company-zipcode-confirm">Zipcode</span> <span id="company-country-confirm">Country</span>
                 </p>
-                <div class="col s8 offset-s2">
-                    <table class="highlight">
-                        <thead>
-                            <tr>
-                                <th>Location</th>
-                                <th>Address</th>
-                                <th>Hours</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Location 1</td>
-                                <td><span>Street Address</span><br>
-                                    <span>City</span>, <span>State</span><br>
-                                    <span>Zipcode</span> <span>Country</span></td>
-                                <td>
-                                    <spam>Open</spam>- <span>Close</span>
-                                </td>
-                            </tr>
-  
-                        </tbody>
-                    </table>
-                </div>
-
-                <button id="create-btn" class="waves-effect waves-light btn blue-grey darken-1">Submit</button>
+                <p>
+                    Shifts start at: <span id="company-open"></span><br>
+                    Shifts end at: <span id="company-close"></span>
+                </p>
+            </div>
+            <div class="row center">
+                <button id="create-btn" type="submit"
+                    class="waves-effect waves-light btn blue-grey darken-1">Confirm</button>
+                <button id="edit-btn" class="waves-effect waves-light btn blue-grey darken-1">Edit</button>
             </div>
         </div>
     </div>
@@ -179,12 +291,17 @@
                 // indicators: true
             });
 
-            $("#next-btn, #no").on("click", (e) => {
+            $(".next-btn, #no").on("click", (e) => {
                 console.log('im being clicked');
-
                 e.preventDefault();
                 e.stopPropagation();
                 $('.carousel').carousel('next');
+            });
+
+            $("#edit-btn").on("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                $(".carousel").carousel("set", 0);
             });
         });
     </script>
