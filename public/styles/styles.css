@@ -20,16 +20,19 @@ body{
 .carousel{
   min-height: 550px;
 }
+.nav-wrapper{
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
+#location-list, #employee-list, #schedule{
+  display: none;
+}
 
-header, main, footer, .adjusted-container{
+header, main, footer, .adjusted-container, .adjusted-center {
   padding-left: 300px;
 }
-/* #new-employee-btn {
-  position: absolute;
-  right: 40px;
-  top: 40px;
-} */
+
 
 @media only screen and (max-width : 992px) {
   header, main, footer {

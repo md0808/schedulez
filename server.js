@@ -47,12 +47,21 @@ app.use(express.static("public"));
 // Handlebars
 app.set("views", "./views");
 app.engine(
+<<<<<<< HEAD
     "handlebars",
     exphbs({
         defaultLayout: "main",
         layoutsDir: __dirname + "/views/layouts",
         partialsDir: __dirname + "/views/partials"
     })
+=======
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    layoutsDir: __dirname + "/views/layouts/",
+    partialsDir: __dirname + "/views/partials/"
+  })
+>>>>>>> bc9dbd65aac162e497bb66c41792a0a9ec8fce41
 );
 app.set("view engine", "handlebars");
 // Routes
