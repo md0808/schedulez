@@ -3,8 +3,8 @@ const db = require("../models");
 module.exports = app => {
     app.get("/api/company/count/:name", (req, res) => {
         db.Company.count({
-            where: { 
-                Name: req.params.name 
+            where: {
+                Name: req.params.name
             }
         }).then(count => {
             res.json(count);
