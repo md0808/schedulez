@@ -87,9 +87,9 @@ function addEmployeeToDB(companyName, storeCity) {
         employeeInfo.PositionType = "ft";
 
         $.get("/api/location/find/" + storeCity, (data) => {
-            console.log("locationResult: " + data.LocationNum);
+            console.log("locationResult: " + data.id);
     
-            employeeInfo.LocationNum = data.LocationNum;
+            employeeInfo.LocationNum = data.id;
         }).then(() => {
             addEmployee();
         });
