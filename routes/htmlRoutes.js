@@ -34,13 +34,28 @@ module.exports = app => {
     fetch(url)
       .then(r => r.json())
       .then(data => {
+        console.log(data);
         const userCompanyId = data.id;
         const url2 = `http://localhost:3000/api/allLocations/${userCompanyId}`;
         fetch(url2)
           .then(res2 => res2.json())
           .then(locations => {
             console.log(locations);
-            res.render("managerView", { locations });
+            var editedLocations = locations;
+
+            // for (var i = 0; i < editedLocations.length; i++) {
+            //   editedLocations[i].Company.CompanyNum = locations.CompanyNum;
+            //   editedLocations[i].Company.Address = locations.Address;
+            //   editedLocations[i].Company.City = locations.City;
+            //   editedLocations[i].Company.State = locations.State;
+            //   editedLocations[i].Company.Zipcode = locations.Zipcode;
+            //   editedLocations[i].Company.Country = locations.Country;
+            //   editedLocations[i].Company.OpeningTime = locations.OpeningTime;
+            //   editedLocations[i].Company.ClosingTime = locations.ClosingTime;
+            //   editedLocations[i].Company.CompanyId = locations.CompanyId;
+            // }
+            console.log(editedLocations);
+            res.render("managerView", { editedLocations });
           });
       });
   });

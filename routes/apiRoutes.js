@@ -44,7 +44,7 @@ module.exports = app => {
         });
     });
     app.get("/api/allLocations/:company", (req, res) => {
-        db.Location.findOne({
+        db.Location.findAll({
             where: {
                 CompanyNum: req.params.company
              },
