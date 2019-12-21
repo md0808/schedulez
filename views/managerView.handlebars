@@ -1,4 +1,3 @@
-
 <!-- Navigation bar=============== -->
 <nav class="blue-grey darken-4">
     <div class="nav-wrapper">
@@ -94,12 +93,12 @@
                 <h3 class="center">Employees</h3>
                 <ul class="collapsible expandable">
                     {{#each employees}}
-                        {{> employee-block}}
+                    {{> employee-block}}
                     {{/each}}
                 </ul>
 
-                    {{!-- placeholders to be removed --}}
-                    {{!-- <li>
+                {{!-- placeholders to be removed --}}
+                {{!-- <li>
                         <div class="collapsible-header employee-list-name">Paxton Sharp</div>
                         <div class="collapsible-body employee-list-info">
                             <strong>Status: </strong><span>Full-time</span><br>
@@ -193,7 +192,7 @@
                         </li>
 
                         </div> --}}
-                    {{!-- </li> --}}
+                {{!-- </li> --}}
             </div>
         </div>
         <!--Locations============================================ -->
@@ -530,8 +529,8 @@
                         </div>
                     </div>
                     <div class="row">
-                       {{#each days}}
-                            {{> availability}}
+                        {{#each days}}
+                        {{> availability}}
                         {{/each}}
                         <div class="row">
                             <div class="col s4">
@@ -646,7 +645,7 @@
 
     //DAYS OF THE WEEK FOR SCHEDULE ADD // 
     const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    for(let i = 0; i < daysOfWeek.length; i++){
+    for (let i = 0; i < daysOfWeek.length; i++) {
         console.log(daysOfWeek[i]);
         $(".days-week").append().text(daysOfWeek[i]);
     }

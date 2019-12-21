@@ -1,19 +1,19 @@
 <li>
-    <div class="collapsible-header location-list-name">{{ this.name }}</div>
+    <div class="collapsible-header location-list-name">{{ this.id }}</div>
     <div class="collapsible-body location-list-info">
         <div class="row">
-            <strong class="partial-header">{{this.Company.name}}<span>#{{ this }}</span></strong><br>
+            <strong class="partial-header">{{this.Name}}<span>#{{ this.id }}</span></strong><br>
         </div>
         <div class="row">
             <div class="col s6">
                 <span class="partial-main">Location Number:</span>
-                <span>{{ this.locationNum }}</span><br>
+                <span>{{ this.id }}</span><br>
             </div>
             <div class="col s6">
-                <span class="partial-main">Company Number: </span><span>{{ this.companyNum }}</span><br>
+                <span class="partial-main">Company Number: </span><span>{{ this.CompanyNum }}</span><br>
             </div>
             <div class="col s12">
-                <span class="partial-main">Address: </span><span>{{ this.address }}</span><br>
+                <span class="partial-main">Address: </span><span>{{ this.Address }}</span><br>
             </div>
             <div class="col s6">
                 <span class="partial-main">City: </span><span>{{ this.city }}</span>
