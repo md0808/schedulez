@@ -40,7 +40,7 @@ module.exports = app => {
           });
       });
   });
-
+  
     // $.get("/api/company/find/" + req.params.name, data => {
     //   res.json(data);
     // });
@@ -57,6 +57,10 @@ module.exports = app => {
   //         });
   //       }
   //     );
+
+  app.get("/employee-view", (req, res) => {
+    res.render("employeeView");
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", (req, res) => {
