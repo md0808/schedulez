@@ -1,6 +1,60 @@
 body{
-  background-image: url("../images/8.png");
+  background-color: #263238;
+  /* background-image: url("../images/8.png"); */
   background-position: fixed;
+}
+
+.input-field>label{
+  color: white;
+}
+
+.carousel .carousel-item>img{
+  height: 100px;
+  width: 175px;
+}
+
+.page{
+  padding-top: 100px;
+}
+
+.long-page{
+  padding-top: 6px;
+}
+
+.carousel-mid{
+  width: 75%;
+  margin: 0px auto;
+  height: 75%;
+}
+
+.next-btn{
+  color: #69f0ae;
+}
+
+.dark{
+  background-color: #263238;
+}
+
+.alt-dark{
+  background-color: #37474f;
+}
+
+.mint{
+  color: #69f0ae;
+}
+
+.white-text{
+  color: white;
+}
+
+.mint-dark-btn{
+  color: #263238;
+  font-weight: bold;
+  background-color: #69f0ae;
+}
+
+.border{
+  border: solid 20px #69f0ae;
 }
 
 .list-group-item {

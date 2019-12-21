@@ -1,269 +1,285 @@
 <div class="container margin100">
-    <div class="carousel carousel-slider center" data-indicators="true">
-        <div class="carousel-fixed-item center">
-            {{!-- <a class="btn blue-grey darken-1 next-btn">Next</a> --}}
-        </div>
-        <div class="carousel-item white blue-grey-text" href="#one!">
-            <h2 class="blue-grey-text text-darken-4">SchedulEZ</h2>
-            <p class="blue-grey-text">Create an account</p>
-            <div class="row">
-                <form>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="company-name" type="text" class="validate">
-                        <label for="company-name">Company Name</label>
-                    </div>
-                </form>
-            </div>
-            <div class="row carousel-btn-div">
-                <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
-            </div>
-        </div>
-        <div class="carousel-item white blue-grey-text darken-4-text" href="#two!">
-            <h2>SchedulEZ</h2>
-            <p class="blue-grey-text">Contact Information</p>
-            <div class="row">
-                <form>
-
-                    <div class="input-field col s8 offset-s2">
-                        <input id="employee-email" type="text">
-                        <label for="employee-email">Primary email address</label>
-                    </div>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="employee-fullname" type="text">
-                        <label for="employee-fullname">Full Name of Primary Contact</label>
-                    </div>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="employee-password" type="password">
-                        <label for="employee-password">Password</label>
-                    </div>
-                    <div class="input-field col s8 offset-s2">
-                        <input id="password-confirm" type="password">
-                        <label for="password-confirm">Confirm Password</label>
-                    </div>
-                </form>
-            </div>
-            <div class="row center carousel-btn-div">
-                <a class="next-btn center"><i class="material-icons">arrow_forward</i></a>
-            </div>
-        </div>
-        <div class="carousel-item white blue-grey-text darken-4-text" href="#three!">
-            <h2>SchedulEZ</h2>
-            <p class="blue-grey-text">Primary Location or Headquarters</p>
-            <div class="row">
-                <form>
+    <div class="carousel z-depth-4 carousel-slider center border" data-indicators="true">
+        <div class="carousel-item dark blue-grey-text" href="#one!">
+            <img class="text-logo " src="/images/schedulez-text.png" />
+            <div class="carousel-mid z-depth-4 alt-dark">
+                <div class="page">
+                    <p class="mint">Create A Store</p>
                     <div class="row">
-                        <div class="input-field col s8 offset-s2">
-                            <input id="company-street" type="text">
-                            <label for="company-street">Street Address</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s4 offset-s2">
-                            <input id="company-city" type="text">
-                            <label for="company-city">City</label>
-                        </div>
-                        <div class="input-field col s4">
-                            <select id="company-state" class="front">
-                                <option value="" disabled selected>State</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District Of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>
-                            <label>Select State</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s4 offset-s2">
-                            <input id="company-zipcode" type="text">
-                            <label for="company-zipcode" type="text">Zipcode</label>
-                        </div>
-                        <div class="input-field col s4">
-                            <input id="company-country" type="text">
-                            <label for="company-country">Country</label>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-            <div class="row center carousel-btn-div">
-                <a class="next-btn"><i class="material-icons">arrow_forward</i></a>
-            </div>
-        </div>
-
-        <div class="carousel-item white blue-grey-text" href="#four!">
-            <h2 class="blue-grey-text text-darken-4">SchedulEZ</h2>
-            <p class="blue-grey-text">Set Company Hours</p>
-            <div class="row">
-                <div class="row">
-                    <div class="col s4 offset-s2">
-                        <p>Shifts Start at:</p>
-                        <div class="row">
-                            <div class="input-field col s6">
-
-                                <select class="start-hour front">
-                                    <option value="" disable selected>Hour</option>
-                                    <option value="00">00</option>
-                                    <option value="01">01</option>
-                                    <option value="02">02</option>
-                                    <option value="03">03</option>
-                                    <option value="04">04</option>
-                                    <option value="05">05</option>
-                                    <option value="06">06</option>
-                                    <option value="07">07</option>
-                                    <option value="08">08</option>
-                                    <option value="09">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                </select>
+                        <form>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="company-name" type="text" class="validate">
+                                <label for="company-name">Company Name</label>
                             </div>
-                            <div class="input-field col s6">
-                                <select class="start-minute front">
-                                    <option value="" disable selected>minutes </option>
-                                    <option value="00">00</option>
-                                    <option value="15">15</option>
-                                    <option value="30">30</option>
-                                    <option value="45">45</option>
-                                </select>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-
-                    <div class="row">
-                        <div class="col s4">
-                            <p>Shifts End at:</p>
-                            <div class="row">
-                                <div class="input-field col s6">
-
-                                    <select class="start-hour front">
-                                        <option value="" disable selected>Hour</option>
-                                        <option value="00">00</option>
-                                        <option value="01">01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                    </select>
-                                </div>
-                                <div class="input-field col s6">
-                                    <select class="start-minute front">
-                                        <option value="" disable selected>minutes </option>
-                                        <option value="00">00</option>
-                                        <option value="15">15</option>
-                                        <option value="30">30</option>
-                                        <option value="45">45</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </form>
+                </div>
+                <div class="row carousel-btn-div">
+                    <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
                 </div>
             </div>
-            <div class="row carousel-btn-div">
-                <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
+        </div>
+        <div class="carousel-item dark blue-grey-text" href="#two!">
+            <img class="text-logo" src="/images/schedulez-text.png" />
+            <div class="carousel-mid z-depth-4 alt-dark">
+                <div class="long-page">
+                    <p class="mint">Contact Information</p>
+                    <div class="row">
+                        <form>
+
+                            <div class="input-field col s8 offset-s2">
+                                <input id="employee-email" type="text">
+                                <label for="employee-email">Primary email address</label>
+                            </div>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="employee-fullname" type="text">
+                                <label for="employee-fullname">Full Name of Primary Contact</label>
+                            </div>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="employee-password" type="password">
+                                <label for="employee-password">Password</label>
+                            </div>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="password-confirm" type="password">
+                                <label for="password-confirm">Confirm Password</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row center carousel-btn-div">
+                        <a class="next-btn center"><i class="material-icons">arrow_forward</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item dark blue-grey-text darken-4-text" href="#three!">
+            <img class="text-logo" src="/images/schedulez-text.png" />
+            <div class="carousel-mid z-depth-4 alt-dark">
+                <div class="long-page">
+                    <p class="mint">Primary Location or Headquarters</p>
+                    <div class="row">
+                        <form>
+                            <div class="row">
+                                <div class="input-field col s8 offset-s2">
+                                    <input id="company-street" type="text">
+                                    <label for="company-street">Street Address</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4 offset-s2">
+                                    <input id="company-city" type="text">
+                                    <label for="company-city">City</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <select id="company-state" class="front">
+                                        <option value="" disabled selected>State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    <label>Select State</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4 offset-s2">
+                                    <input id="company-zipcode" type="text">
+                                    <label for="company-zipcode" type="text">Zipcode</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="company-country" type="text">
+                                    <label for="company-country">Country</label>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="row center carousel-btn-div">
+                        <a class="next-btn"><i class="material-icons">arrow_forward</i></a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="carousel-item white blue-grey-text" href="#five!">
+        <div class="carousel-item dark blue-grey-text" href="#four!">
+            <img class="text-logo" src="/images/schedulez-text.png" />
+            <div class="carousel-mid z-depth-4 alt-dark">
+                <div class="page">
+                    <p class="mint">Set Company Hours</p>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                <p class="mint">Store Opens at:</p>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <select class="start-hour front">
+                                            <option value="" disable selected>Hour</option>
+                                            <option value="00">00</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <select class="start-minute front">
+                                            <option value="" disable selected>minutes </option>
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s4">
+                                    <p class="mint">Store Closes at:</p>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <select class="start-hour front">
+                                                <option value="" disable selected>Hour</option>
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <select class="start-minute front">
+                                                <option value="" disable selected>minutes </option>
+                                                <option value="00">00</option>
+                                                <option value="15">15</option>
+                                                <option value="30">30</option>
+                                                <option value="45">45</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row carousel-btn-div">
+                        <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="row">
-                <h2 class=" blue-grey-text text-darken-4">Confirm Company Information</h2>
-            </div>
-            <div class="row">
-                <p><span id="company-name-confirm"><strong>Company Name</strong></span><br>
-                    Primary Email: <span id="company-name-confirm">Email@email.com</span><br>
-                    Primary Contact: <span id="company-name-confirm">Name Nameson</span><br>
-                    <span id="company-address-confirm">Street Address</span><br>
-                    <span id="company-city-confirm">City</span>, <span id="company-state-confirm">State</span><br>
-                    <span id="company-zipcode-confirm">Zipcode</span> <span id="company-country-confirm">Country</span>
-                </p>
-                <p>
-                    Shifts start at: <span id="company-open"></span><br>
-                    Shifts end at: <span id="company-close"></span>
-                </p>
-            </div>
-            <div class="row center">
-                <button id="create-btn" type="submit"
-                    class="waves-effect waves-light btn blue-grey darken-1">Confirm</button>
-                <button id="edit-btn" class="waves-effect waves-light btn blue-grey darken-1">Edit</button>
+        <div class="carousel-item dark blue-grey-text" href="#five!">
+            <img class="text-logo" src="/images/schedulez-text.png" />
+            <div class="carousel-mid z-depth-4 alt-dark">
+                <div class="long-page">
+                    <div class="row">
+                        <h2 class="mint">Confirm Company Information</h2>
+                    </div>
+                    <div class="row">
+                        <p class="white-text"><span id="company-name-confirm"><strong>Company Name</strong></span><br>
+                            Primary Email: <span id="company-name-confirm">Email@email.com</span><br>
+                            Primary Contact: <span id="company-name-confirm">Name Nameson</span><br>
+                            <span id="company-address-confirm">Street Address</span><br>
+                            <span id="company-city-confirm">City</span>, <span
+                                id="company-state-confirm">State</span><br>
+                            <span id="company-zipcode-confirm">Zipcode</span> <span
+                                id="company-country-confirm">Country</span>
+                        </p>
+                        <p class="white-text">
+                            Shifts start at: <span id="company-open"></span><br>
+                            Shifts end at: <span id="company-close"></span>
+                        </p>
+                    </div>
+                    <div class="row center">
+                        <button id="create-btn" type="submit"
+                            class="waves-effect waves-light btn mint-dark-btn">Confirm</button>
+                        <button id="edit-btn" class="waves-effect waves-light btn mint-dark-btn">Edit</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
