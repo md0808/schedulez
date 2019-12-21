@@ -13,10 +13,14 @@ module.exports = app => {
     // });
   });
 
-  app.get("/create-store", (req, res) => {
+  app.get("/create-store/", (req, res) => {
     res.render("newStore", {
       msg: "Create A Store!"
     });
+  });
+
+  app.get("/manager-view/", (req, res) => {
+    res.render("managerView");
   });
 
   // REAL WORLD
@@ -25,7 +29,7 @@ module.exports = app => {
   // TESTING
   // enter url w/ companyName --> company # --> .get(/api/allLocations)
 
-  app.get("/test/:name", (req, res) => {
+  app.get("/manager-view/:name", (req, res) => {
     const url = `http://localhost:3000/api/company/find/${req.params.name}`;
     fetch(url)
       .then(r => r.json())
@@ -41,22 +45,20 @@ module.exports = app => {
       });
   });
 
-    // $.get("/api/company/find/" + req.params.name, data => {
-    //   res.json(data);
-    // });
+  // ***************
+  // dev note: need employee information to pass into here
 
-  // app.get("/testing/:name", (req, res) => {
-  //   console.log(req.params.companyNum);
-  //   $.get("/api/company/find/" + req.params.company-name, (data) => {
-  //     const userCompanyId = data.id;
-  //     console.log(userCompanyId); 
-  //   }).then(() => {
-  //         const userCompanyId = data.id;
-  //         $.get("/api/allLocations/" + userCompanyId, (data) => {
-  //           res.render("mangerView", {data})
-  //         });
-  //       }
-  //     );
+  app.get("/manager-view/:employee", (req, res) => {
+    const url = `http://localhost:3000/api/allEmployees/${req.params.id}`;
+    fetch(url)
+      .then(r => r.json())
+      .then(employeeInfo => {
+        console.log(employeeInfo);
+        res.render("managerView", { employeeInfo });
+      });
+  });
+
+  // ***************
 
   // Load example page and pass in an example by id
   app.get("/example/:id", (req, res) => {

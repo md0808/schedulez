@@ -48,6 +48,11 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
   font-weight: bold;
 }
 
+.partial-medium { 
+  font-weight: bold; 
+  text-transform: uppercase;
+}
+
 .partial-button{
   margin-top: 1em;
 }

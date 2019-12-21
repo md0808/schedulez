@@ -92,14 +92,54 @@
                 {{!-- EMPLOYEES LIST --}}
                 <h3 class="center">Employees</h3>
                 <ul class="collapsible expandable">
-                    {{#each employees}}
+                    {{!-- {{#each employees}}
                     {{> employee-block}}
                     {{/each}}
-                </ul>
+                </ul> --}}
 
-                {{!-- placeholders to be removed --}}
-                {{!-- <li>
+                    {{!-- placeholders to be removed --}}
+                    <li>
                         <div class="collapsible-header employee-list-name">Paxton Sharp</div>
+                        <div class="collapsible-body employee-list-info">
+                            <div class="section">
+                                <h5>Status: Full Time</h5>
+                                <p>Role: Back-End</p>
+                                <p>Temporary</p>
+                            </div>
+                            <div class="section">
+                                <h5>Availability <i class="tiny material-icons">brightness_low</i></h6>
+                                <div class="card-panel teal lighten-2">Monday: 12-18</div>
+                                <div class="card-panel teal lighten-2">Tuesday: 12-18</div>
+                                <div class="card-panel teal lighten-2">Thursday: 12-18</div>
+                            </div>
+                            <strong>Contact Information</strong><br>
+                            <span>Address: </span><br>
+                            <span>Street</span><br>
+                            <span>City</span><span>State</span><br>
+                            <span>Zipcode</span><span>Country</span><br><br>
+                            <span>Email</span><br>
+                            <span>Phone Number</span><br>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header employee-list-name">Danielle Burrage</div>
+                        <div class="collapsible-body employee-list-info">
+                            <strong>Status: </strong><span>Full-time</span><br>
+                            <strong>Role: </strong><span>Back-end</span><br>
+                            <strong>Position Type: </strong><span>Temporary</span><br><br>
+                            <strong>Availability:</strong><br>
+                            <span>Monday: </span><span>12-18</span><br>
+                            <span>Tuesday: </span><span>12-18</span><br>
+                            <span>Wednesday: </span><span>12-18</span><br>
+                            <span>Thursday: </span><span>12-18</span><br>
+                            <span>Friday: </span><span>12-18</span><br>
+                            <span>Saturday: </span><span>12-18</span><br>
+                            <span>Sunday: </span><span>12-18</span><br><br>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header employee-list-name">Danielle Burrage</div>
                         <div class="collapsible-body employee-list-info">
                             <strong>Status: </strong><span>Full-time</span><br>
                             <strong>Role: </strong><span>Back-end</span><br>
@@ -124,7 +164,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header employee-list-name">Danielle Burrage</div>
+                        <div class="collapsible-header employee-list-name">Alex Bailey</div>
                         <div class="collapsible-body employee-list-info">
                             <strong>Status: </strong><span>Full-time</span><br>
                             <strong>Role: </strong><span>Back-end</span><br>
@@ -138,90 +178,48 @@
                             <span>Saturday: </span><span>12-18</span><br>
                             <span>Sunday: </span><span>12-18</span><br><br>
 
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header employee-list-name">Danielle Burrage</div>
-                            <div class="collapsible-body employee-list-info">
-                                <strong>Status: </strong><span>Full-time</span><br>
-                                <strong>Role: </strong><span>Back-end</span><br>
-                                <strong>Position Type: </strong><span>Temporary</span><br><br>
-                                <strong>Availability:</strong><br>
-                                <span>Monday: </span><span>12-18</span><br>
-                                <span>Tuesday: </span><span>12-18</span><br>
-                                <span>Wednesday: </span><span>12-18</span><br>
-                                <span>Thursday: </span><span>12-18</span><br>
-                                <span>Friday: </span><span>12-18</span><br>
-                                <span>Saturday: </span><span>12-18</span><br>
-                                <span>Sunday: </span><span>12-18</span><br><br>
+                            <strong>Contact Information</strong><br>
+                            <span>Address: </span><br>
+                            <span>Street</span><br>
+                            <span>City</span><span>State</span><br>
+                            <span>Zipcode</span><span>Country</span><br><br>
+                            <span>Email</span><br>
+                            <span>Phone Number</span><br>
 
-                                <strong>Contact Information</strong><br>
-                                <span>Address: </span><br>
-                                <span>Street</span><br>
-                                <span>City</span><span>State</span><br>
-                                <span>Zipcode</span><span>Country</span><br><br>
-                                <span>Email</span><br>
-                                <span>Phone Number</span><br>
-
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header employee-list-name">Alex Bailey</div>
-                            <div class="collapsible-body employee-list-info">
-                                <strong>Status: </strong><span>Full-time</span><br>
-                                <strong>Role: </strong><span>Back-end</span><br>
-                                <strong>Position Type: </strong><span>Temporary</span><br><br>
-                                <strong>Availability:</strong><br>
-                                <span>Monday: </span><span>12-18</span><br>
-                                <span>Tuesday: </span><span>12-18</span><br>
-                                <span>Wednesday: </span><span>12-18</span><br>
-                                <span>Thursday: </span><span>12-18</span><br>
-                                <span>Friday: </span><span>12-18</span><br>
-                                <span>Saturday: </span><span>12-18</span><br>
-                                <span>Sunday: </span><span>12-18</span><br><br>
-
-                                <strong>Contact Information</strong><br>
-                                <span>Address: </span><br>
-                                <span>Street</span><br>
-                                <span>City</span><span>State</span><br>
-                                <span>Zipcode</span><span>Country</span><br><br>
-                                <span>Email</span><br>
-                                <span>Phone Number</span><br>
-
-                            </div>
-                        </li>
-
-                        </div> --}}
-                {{!-- </li> --}}
-            </div>
-        </div>
-        <!--Locations============================================ -->
-        <div class="col s12 margin100" id="location-list">
-            <div class="card white blue-grey-text text-darken-4  padding40">
-                <a class="modal-trigger" id="new-location-btn" href="#modal-locations">
-                    <i class=" tooltipped right material-icons medium red-text"
-                        data-tooltip="Add a new location">add_circle</i></a>
-                <h3 class="center">Locations</h3>
-                <ul class="collapsible">
-                    {{#each locations}}
-                    {{> location-block}}
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-        {{!-- SCHEDULE SECTION --}}
-        <!--Schedule============================================ -->
-        <div class="col s12 margin100" id="schedule">
-            <div class="card white blue-grey-text text-darken-4  padding40">
-                <a class="modal-trigger" href="#modal-schedule"> <i
-                        class="tooltipped right material-icons medium red-text" id="new-schedule-btn"
-                        data-tooltip="Generate Next Schedule">add_circle</i></a>
-                <h3 class="center">Schedule</h3>
-                <p>This is where the schedule will go</p>
+                        </div>
+                    </li>
 
             </div>
+            </li>
+            </ul>
         </div>
     </div>
+    <!--Locations============================================ -->
+    <div class="col s12 margin100" id="location-list">
+        <div class="card white blue-grey-text text-darken-4  padding40">
+            <a class="modal-trigger" id="new-location-btn" href="#modal-locations">
+                <i class=" tooltipped right material-icons medium red-text"
+                    data-tooltip="Add a new location">add_circle</i></a>
+            <h3 class="center">Locations</h3>
+            <ul class="collapsible">
+                {{#each locations}}
+                {{> location-block}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{!-- SCHEDULE SECTION --}}
+    <!--Schedule============================================ -->
+    <div class="col s12 margin100" id="schedule">
+        <div class="card white blue-grey-text text-darken-4  padding40">
+            <a class="modal-trigger" href="#modal-schedule"> <i class="tooltipped right material-icons medium red-text"
+                    id="new-schedule-btn" data-tooltip="Generate Next Schedule">add_circle</i></a>
+            <h3 class="center">Schedule</h3>
+            <p>This is where the schedule will go</p>
+
+        </div>
+    </div>
+</div>
 </div>
 
 <!-- SCHEDULE Modal Structure -->
