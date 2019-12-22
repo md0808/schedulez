@@ -4,13 +4,18 @@ body{
   background-position: fixed;
 }
 
+.login-img{
+  height: 100px;
+}
+
+
 .input-field>label{
   color: white;
 }
 
 .carousel .carousel-item>img{
   height: 100px;
-  width: 175px;
+  width: 220px;
 }
 
 .page{
