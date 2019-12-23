@@ -90,13 +90,13 @@
                 {{!-- EMPLOYEES LIST --}}
                 <h3 class="center">Employees</h3>
                 <ul class="collapsible expandable">
-                    {{!-- {{#each employees}}
+                    {{#each locationEmployees}}
                     {{> employee-block}}
                     {{/each}}
-                </ul> --}}
+                </ul>
 
                     {{!-- placeholders to be removed --}}
-                    <li>
+                    {{!-- <li>
                         <div class="collapsible-header employee-list-name">Paxton Sharp</div>
                         <div class="collapsible-body employee-list-info">
                             <div class="section">
@@ -185,7 +185,7 @@
                             <span>Phone Number</span><br>
 
                         </div>
-                    </li>
+                    </li> --}}
 
             </div>
             </li>
@@ -445,6 +445,8 @@
                         <input class="employee-role">
                         <label for="employee-role">Role</label>
                     </div>
+
+                {{!-- consider deleting this -should auto add this --}}
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
                             <input class="location-street">

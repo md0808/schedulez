@@ -103,6 +103,10 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
   font-size: 1.5em;
 }
 
+.employee-list-name {
+  font-size: 1.2em;
+}
+
 .partial-main {
   font-weight: bold;
 }
@@ -114,6 +118,30 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
 
 .partial-button{
   margin-top: 1em;
+}
+
+.day-partial {
+  font-size: 1.1em;
+}
+
+.time-partial {
+  font-size: 1.1em; 
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.profile-pic {
+  font-size: 10em;
+}
+
+.contact {
+  font-size: 1em; 
+  font-weight: bold;
+}
+
+.section-head,
+.employee-list-name {
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width : 992px) {

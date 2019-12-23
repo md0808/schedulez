@@ -17,5 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         Location.belongsTo(models.Company, {foreignKey: "CompanyNum"});
     };
 
+
+
     return Location;
 };

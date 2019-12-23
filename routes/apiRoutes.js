@@ -33,11 +33,16 @@ module.exports = app => {
             res.json(dbEmployees);
         });
     });
-    app.get("/api/allEmployees/:id", function (req, res) {
-        db.dbEmployees.findAll({}).then(function (dbEmployees) {
-            res.json(dbEmployees);
-        });
+  app.get("/api/allEmployees/:locationNum", (req, res) => {
+    db.Employee.findAll({
+      where: {
+        locationNum: req.params.locationNum
+      },
+      include: [db.Availability]
+    }).then(dbEmployees => {
+      res.json(dbEmployees);
     });
+  });
     app.get("/api/allRequests", function (req, res) {
         db.dbRequests.findAll({}).then(function (dbRequests) {
             res.json(dbRequests);

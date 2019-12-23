@@ -40,21 +40,7 @@ module.exports = app => {
         fetch(url2)
           .then(res2 => res2.json())
           .then(locations => {
-            console.log(locations);
-            var editedLocations = locations;
-
-            // for (var i = 0; i < editedLocations.length; i++) {
-            //   editedLocations[i].Company.CompanyNum = locations.CompanyNum;
-            //   editedLocations[i].Company.Address = locations.Address;
-            //   editedLocations[i].Company.City = locations.City;
-            //   editedLocations[i].Company.State = locations.State;
-            //   editedLocations[i].Company.Zipcode = locations.Zipcode;
-            //   editedLocations[i].Company.Country = locations.Country;
-            //   editedLocations[i].Company.OpeningTime = locations.OpeningTime;
-            //   editedLocations[i].Company.ClosingTime = locations.ClosingTime;
-            //   editedLocations[i].Company.CompanyId = locations.CompanyId;
-            // }
-            console.log(editedLocations);
+            const editedLocations = locations;
             res.render("managerView", { editedLocations });
           });
       });
@@ -63,13 +49,15 @@ module.exports = app => {
   // ***************
   // dev note: need employee information to pass into here
 
-  app.get("/manager-view/:employee", (req, res) => {
-    const url = `http://localhost:3000/api/allEmployees/${req.params.id}`;
+  app.get("/:locationNum/manager-view/employees", (req, res) => {
+    const locationNumber = parseInt(req.params.locationNum);
+    console.log(locationNumber);
+    const url = `http://localhost:3000/api/allEmployees/${locationNumber}`;
     fetch(url)
       .then(r => r.json())
-      .then(employeeInfo => {
-        console.log(employeeInfo);
-        res.render("managerView", { employeeInfo });
+      .then(locationEmployees => {
+        console.log(locationEmployees);
+        res.render("managerView", { locationEmployees });
       });
   });
 
