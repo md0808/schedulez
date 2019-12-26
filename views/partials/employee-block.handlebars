@@ -1,5 +1,5 @@
 <li>
-    <div class="collapsible-header employee-list-name">{{ this.FullName }}</div>
+    <div class="collapsible-header employee-list-name employee-content-cap">{{ this.FullName }}</div>
     <div class="collapsible-body employee-list-info">
         <div class="row">
             <div class="section col s4">
@@ -8,20 +8,20 @@
             <div class="section col s7 right">
                 <ul class="collection with-header">
                     <li class="collection-header">
-                        <strong>Status </strong><span class="right">{{  this.Status  }}</span>
+                        <strong>Status </strong><span class="employee-content-cap right">{{  this.Status  }}</span>
                     </li>
                     <li class="collection-header">
-                        <strong>Role </strong><span class="right">{{  this.Role  }}</span>
+                        <strong>Role </strong><span class="employee-content-cap right">{{  this.Role  }}</span>
                     </li>
                     <li class="collection-header">
-                        <strong>Position Type </strong><span class="right">{{  this.PositionType  }}</span>
+                        <strong>Position Type </strong><span class="employee-content-up right">{{  this.PositionType  }}</span>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="row">
             <div class="section">
-                <h5><i class="material-icons small">access_time</i> This Week</h5>
+                <h5 class="weekly-avail-header"><i class="material-icons small">access_time</i> This Week</h5>
                 <ul class="collection with-header">
                     <li class="collection-item teal lighten-2">
                         <span class="day-partial">Sunday </span><span

@@ -4,6 +4,10 @@ body{
   background-position: fixed;
 }
 
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
 .login-img{
   height: 100px;
 }
@@ -11,6 +15,7 @@ body{
 
 .input-field>label{
   color: white;
+  font-size: 1em;
 }
 
 .carousel .carousel-item>img{
@@ -102,14 +107,57 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
   padding-left: 300px;
 }
 
-/* PARTIALS STYLES */
+/* MODALS STYLES */
+
+.modal {
+  border-radius: 1.5em;
+}
+
+label {
+  color: #fff;
+}
+
+.newWeekLabel {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.sub-header {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.new-day {
+  border: solid #9fffe0 1px;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.employee-content-cap {
+  text-transform: capitalize; 
+}
+
+.employee-content-up {
+  text-transform: uppercase;
+}
+
+.addEmployee-btn {
+  background-color: #9fffe0; 
+  color: #263238;
+}
+
+.modal-header {
+  font-size: 2.5em;
+  color: #fff;
+}
 
 .partial-header {
   font-size: 1.5em;
 }
 
 .employee-list-name {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .partial-main {
@@ -126,11 +174,11 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
 }
 
 .day-partial {
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .time-partial {
-  font-size: 1.1em; 
+  font-size: 1em; 
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -149,8 +197,28 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
   text-transform: capitalize;
 }
 
+.weekly-avail-header { 
+  margin-bottom: 1em;
+}
+
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
   }
+}
+
+@media only screen and (min-width: 992px) {
+
+  .modal {
+    position: absolute;
+    left: 25%;
+  }
+
+  #employee-list {
+    border-radius: 1.5em;
+    margin-top: 4em;
+  }
+
+
+
 }

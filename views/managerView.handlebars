@@ -81,7 +81,7 @@
         </div>
         <!--Employees============================================ -->
 
-        <div class="col s12 margin100" id="employee-list">
+        <div class="col s12" id="employee-list">
             <div class="card white blue-grey-text text-darken-4  padding40">
                 <a href="#modal-employees" class="modal-trigger" id="new-employee-btn"><i
                         class="tooltipped right material-icons medium red-text"
@@ -94,99 +94,6 @@
                     {{> employee-block}}
                     {{/each}}
                 </ul>
-
-                {{!-- placeholders to be removed --}}
-                {{!-- <li>
-                        <div class="collapsible-header employee-list-name">Paxton Sharp</div>
-                        <div class="collapsible-body employee-list-info">
-                            <div class="section">
-                                <h5>Status: Full Time</h5>
-                                <p>Role: Back-End</p>
-                                <p>Temporary</p>
-                            </div>
-                            <div class="section">
-                                <h5>Availability <i class="tiny material-icons">brightness_low</i></h6>
-                                    <div class="card-panel teal lighten-2">Monday: 12-18</div>
-                                    <div class="card-panel teal lighten-2">Tuesday: 12-18</div>
-                                    <div class="card-panel teal lighten-2">Thursday: 12-18</div>
-                            </div>
-                            <strong>Contact Information</strong><br>
-                            <span>Address: </span><br>
-                            <span>Street</span><br>
-                            <span>City</span><span>State</span><br>
-                            <span>Zipcode</span><span>Country</span><br><br>
-                            <span>Email</span><br>
-                            <span>Phone Number</span><br>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header employee-list-name">Danielle Burrage</div>
-                        <div class="collapsible-body employee-list-info">
-                            <strong>Status: </strong><span>Full-time</span><br>
-                            <strong>Role: </strong><span>Back-end</span><br>
-                            <strong>Position Type: </strong><span>Temporary</span><br><br>
-                            <strong>Availability:</strong><br>
-                            <span>Monday: </span><span>12-18</span><br>
-                            <span>Tuesday: </span><span>12-18</span><br>
-                            <span>Wednesday: </span><span>12-18</span><br>
-                            <span>Thursday: </span><span>12-18</span><br>
-                            <span>Friday: </span><span>12-18</span><br>
-                            <span>Saturday: </span><span>12-18</span><br>
-                            <span>Sunday: </span><span>12-18</span><br><br>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header employee-list-name">Danielle Burrage</div>
-                        <div class="collapsible-body employee-list-info">
-                            <strong>Status: </strong><span>Full-time</span><br>
-                            <strong>Role: </strong><span>Back-end</span><br>
-                            <strong>Position Type: </strong><span>Temporary</span><br><br>
-                            <strong>Availability:</strong><br>
-                            <span>Monday: </span><span>12-18</span><br>
-                            <span>Tuesday: </span><span>12-18</span><br>
-                            <span>Wednesday: </span><span>12-18</span><br>
-                            <span>Thursday: </span><span>12-18</span><br>
-                            <span>Friday: </span><span>12-18</span><br>
-                            <span>Saturday: </span><span>12-18</span><br>
-                            <span>Sunday: </span><span>12-18</span><br><br>
-
-                            <strong>Contact Information</strong><br>
-                            <span>Address: </span><br>
-                            <span>Street</span><br>
-                            <span>City</span><span>State</span><br>
-                            <span>Zipcode</span><span>Country</span><br><br>
-                            <span>Email</span><br>
-                            <span>Phone Number</span><br>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header employee-list-name">Alex Bailey</div>
-                        <div class="collapsible-body employee-list-info">
-                            <strong>Status: </strong><span>Full-time</span><br>
-                            <strong>Role: </strong><span>Back-end</span><br>
-                            <strong>Position Type: </strong><span>Temporary</span><br><br>
-                            <strong>Availability:</strong><br>
-                            <span>Monday: </span><span>12-18</span><br>
-                            <span>Tuesday: </span><span>12-18</span><br>
-                            <span>Wednesday: </span><span>12-18</span><br>
-                            <span>Thursday: </span><span>12-18</span><br>
-                            <span>Friday: </span><span>12-18</span><br>
-                            <span>Saturday: </span><span>12-18</span><br>
-                            <span>Sunday: </span><span>12-18</span><br><br>
-
-                            <strong>Contact Information</strong><br>
-                            <span>Address: </span><br>
-                            <span>Street</span><br>
-                            <span>City</span><span>State</span><br>
-                            <span>Zipcode</span><span>Country</span><br><br>
-                            <span>Email</span><br>
-                            <span>Phone Number</span><br>
-
-                        </div>
-                    </li> --}}
-
             </div>
             </li>
             </ul>
@@ -206,7 +113,6 @@
             </ul>
         </div>
     </div>
-    {{!-- SCHEDULE SECTION --}}
     <!--Schedule============================================ -->
     <div class="col s12 margin100" id="schedule">
         <div class="card white blue-grey-text text-darken-4  padding40">
@@ -432,79 +338,64 @@
 
 {{!-- EMPLOYEE MODAL BEGINS --}}
 <div id="modal-employees" class="modal">
-    <div class="modal-content alt-dark blue-grey-text text-darken-4 ">
-        <h2 class="center">Add A New Employee</h2>
+    <div class="modal-content alt-dark blue-grey-text text-darken-4">
+        <h2 class="modal-header center">Add A New Employee</h2>
         <form>
             <div class="row">
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="employee-email">
-                        <label for="employee-email">Email</label>
-                    </div>
-                </div>
-                <div class="input-field col s8 offset-s2">
+                <div class="input-field col s12">
                     <input id="employee-name">
                     <label for="employee-name">Employee Name</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="employee-password">
-                        <label for="employee-password">Password</label>
-                    </div>
-
-                    {{!-- consider deleting this -should auto add this --}}
-                    <div class="row">
-                        <div class="input-field col s8 offset-s2">
-                            <input class="location-street">
-                            <label for="location-street">Street Address</label>
-                        </div>
+                <div class="input-field col s12">
+                    <input id="employee-email">
+                    <label for="employee-email">Email</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="employee-role">
-                        <label for="employee-role">Role</label>
-                    </div>
+                <div class="input-field col s12">
+                    <input id="employee-password">
+                    <label for="employee-password">Password</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s4">
-                        <select id="employee-status" class="front">
-                            <option value="employee">employee</option>
-                            <option value="manager">manager</option>
-                        </select>
-                        <label>Status</label>
-                    </div>
+                {{!-- Address Information --}}
+                <div class="input-field col s12">
+                    <input class="location-street">
+                    <label for="location-street">Street Address</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s4">
-                        <select id="employee-positionType" class="front">
-                            <option value="FT">Full-time</option>
-                            <option value="PT">Part-time</option>
-                        </select>
-                        <label>Employee Position Type</label>
-                    </div>
-                    <div class="row">
-                        <div class="row">
-                            <p>Shifts End at:</p>
-                            <div class="row">
-
-                                <div class="select-hours-minutes"></div>
-                            </div>
-                        </div>
-                    </div>
+                {{!-- Role and Status --}}
+                <div class="input-field col s12">
+                    <input id="employee-role">
+                    <label for="employee-role">Role</label>
                 </div>
-
-                <div class="center">
-                    <button class="another-location waves-effect waves-light btn blue-grey darken-1">Add
-                        Another</button>
-                    <button class="finish-location waves-effect waves-light btn blue-grey darken-1">Finished</button>
+                <div class="input-field col s6">
+                    <select id="employee-status" class="front">
+                        <option value="employee">Employee</option>
+                        <option value="manager">Manager</option>
+                    </select>
+                    <label for="employee-status">Status</label>
+                </div>
+                <div class="input-field col s6">
+                    <select id="employee-positionType" class="front">
+                        <option value="FT">Full-time</option>
+                        <option value="PT">Part-time</option>
+                    </select>
+                    <label for="employee-positionType"> Position Type</label>
                 </div>
             </div>
-            <button class="btn addEmployee-btn">Add Employee</button>
+            {{!-- Weekly Availability --}}
+            <h5 class="sub-header col s10 offset-2">Weekly Availability</h5>
+            <div class="row">  
+                <div class="select-hours-minutes"></div>
+            </div>
+            <div class="center">
+                {{!-- <button class="another-employee waves-effect waves-light btn blue-grey darken-1">Add
+                Another Employee</button>
+            <button class="finish-employee waves-effect waves-light btn blue-grey darken-1">Finished</button> --}}
+                <button class="btn addEmployee-btn">Add Employee</button>
+            </div>
         </form>
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
+</div>
 </div>
 {{!-- employee modal ends --}}
 
@@ -525,7 +416,6 @@
         $(".modal").modal()
         $("select").formSelect();
         $('.datepicker').datepicker();
-
     });
 
     $("#schedule-btn").on("click", () => {
@@ -534,39 +424,44 @@
         $("#employee-list").hide();
         $("#location-list").hide();
 
-    })
-
+    });
     $("#notifications-btn").on("click", () => {
         $("#notifications").show();
         $("#schedule").hide();
         $("#employee-list").hide();
         $("#location-list").hide();
-
-    })
+    });
     $("#employees-btn").on("click", () => {
         $("#employee-list").show();
         $("#notifications").hide();
         $("#schedule").hide();
         $("#location-list").hide();
-
-    })
+    });
     $("#locations-btn").on("click", () => {
         $("#location-list").show();
         $("#schedule").hide();
         $("#employee-list").hide();
         $("#notifications").hide();
-
     });
 
     //DAYS OF THE WEEK FOR SCHEDULE ADD // 
-
     const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
     for (let i = 0; i < daysOfWeek.length; i++) {
 
+        //To Append Date 
+        let newWeekDate = $("<div>");
+        $(newWeekDate).addClass("schedule-weekday-title col s8 offset-2");
+        let newWeekLabel = $("<label>");
+        $(newWeekLabel).addClass("newWeekLabel");
+        $(newWeekLabel).text(daysOfWeek[i]);
+        $(newWeekDate).append(newWeekLabel);
+
         //To Append Hours
+        let newRow2 = $("<div>");
+        $(newRow2).addClass("row");
         let newHourAvailability = $("<div>");
-        $(newHourAvailability).addClass("input-field col s6");
+        $(newHourAvailability).addClass("input-field col s5 offset-1");
 
         let newSelectHours = $("<select>");
         $(newSelectHours).addClass("start-hour front");
@@ -583,7 +478,7 @@
 
         //To Append Minutes
         let newMinuteAvailability = $("<div>");
-        $(newMinuteAvailability).addClass("input-field col s6");
+        $(newMinuteAvailability).addClass("input-field col s5 offset-1");
 
         let newSelectMinutes = $("<select>");
         $(newSelectMinutes).addClass("start-minute front");
@@ -609,10 +504,16 @@
             newOptionMinutes15,
             newOptionMinutes30,
             newOptionMinutes45
-            );
-        
-        $(".select-hours-minutes").append(newHourAvailability);
-        $(".select-hours-minutes").append(newMinuteAvailability);
+        );
+
+        // New Day
+        let newDay = $("<div>");
+        $(newDay).addClass("row new-day");
+        $(".select-hours-minutes").append(newDay);
+
+        $(newDay).append(newWeekDate);
+        $(newDay).append(newHourAvailability);
+        $(newDay).append(newMinuteAvailability);
     }
 </script>
 
