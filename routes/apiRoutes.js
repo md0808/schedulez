@@ -28,11 +28,17 @@ module.exports = app => {
             res.json(data);
         });
     });
-    app.get("/api/allEmployees", function (req, res) {
-        db.dbEmployees.findAll({}).then(function (dbEmployees) {
-            res.json(dbEmployees);
+    app.get("/api/employee/find/:locationNum/:firstName/:lastName", (req, res) => {
+        db.Employee.findOne({
+            where: {
+                locationNum: req.params.locationNum,
+                FullName: req.params.firstName + " " + req.params.lastName
+            }
+        }).then((data) => {
+            res.json(data);
         });
     });
+
     app.get("/api/allEmployees/:id", function (req, res) {
         db.dbEmployees.findAll({}).then(function (dbEmployees) {
             res.json(dbEmployees);
@@ -73,6 +79,11 @@ module.exports = app => {
     app.post("/api/newEmployee", (req, res) => {
         db.Employee.create(req.body).then((dbEmployee) => {
             res.json(dbEmployee);
+        });
+    });
+    app.post("/api/newAvailability", (req, res) => {
+        db.Availability.create(req.body).then((dbAvailability) => {
+            res.json(dbAvailability);
         });
     });
     
