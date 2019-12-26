@@ -90,13 +90,13 @@
                 {{!-- EMPLOYEES LIST --}}
                 <h3 class="center">Employees</h3>
                 <ul class="collapsible expandable">
-                    {{!-- {{#each employees}}
+                    {{#each locationEmployees}}
                     {{> employee-block}}
                     {{/each}}
-                </ul> --}}
+                </ul>
 
-                    {{!-- placeholders to be removed --}}
-                    <li>
+                {{!-- placeholders to be removed --}}
+                {{!-- <li>
                         <div class="collapsible-header employee-list-name">Paxton Sharp</div>
                         <div class="collapsible-body employee-list-info">
                             <div class="section">
@@ -185,7 +185,7 @@
                             <span>Phone Number</span><br>
 
                         </div>
-                    </li>
+                    </li> --}}
 
             </div>
             </li>
@@ -456,688 +456,696 @@
                         <input id="employee-password" type="text" class="validate">
                         <label for="employee-password">Password</label>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="employee-role" type="text" class="validate">
-                        <label for="employee-role">Role</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <select id="employee-status" class="front">
-                            <option value="employee">employee</option>
-                            <option value="manager">manager</option>
-                        </select>
-                        <label>Status</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <select id="employee-positionType" class="front">
-                            <option value="FT">Full-time</option>
-                            <option value="PT">Part-time</option>
-                        </select>
-                        <label>Employee Position Type</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <ul class="collapsible expandable">
-                        <li>
-                            <div
-                                class="collapsible-header altdark-mint-btn availability-select employee-availability-sunday">
-                                Sunday
-                                Availability</div>
-                            <div class="collapsible-body employee-sunday-info">
-                                <div class="start">
-                                    <p class="white-text">Start:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-sun-start-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-sun-start-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="start">
-                                    <p class="white-text">End:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-sun-end-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-sun-end-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                        <li>
-                            <div
-                                class="collapsible-header altdark-mint-btn availability-select employee-availability-sunday">
-                                Monday
-                                Availability</div>
-                            <div class="collapsible-body employee-monday-info">
-                                <div class="start">
-                                    <p class="white-text">Start:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-mon-start-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-mon-start-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="end">
-                                    <p class="white-text">End:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-mon-end-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-mon-end-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                        <li>
-                            <div
-                                class="collapsible-header altdark-mint-btn availability-select employee-availability-sunday">
-                                Tuesday
-                                Availability</div>
-                            <div class="collapsible-body employee-tues-info">
-                                <div class="start">
-                                    <p class="white-text">Start:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-tues-start-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-tues-start-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="end">
-                                    <p class="white-text">End:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-tues-end-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-tues-end-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                        <li>
-                            <div
-                                class="collapsible-header altdark-mint-btn availability-select employee-availability-wed">
-                                Wednesday
-                                Availability</div>
-                            <div class="collapsible-body employee-wed-info">
-                                <div class="start">
-                                    <p class="white-text">Start:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-wed-start-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-wed-start-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="end">
-                                    <p class="white-text">End:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-wed-end-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-wed-end-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                        <li>
-                            <div
-                                class="collapsible-header altdark-mint-btn availability-select employee-availability-thur">
-                                Thursday
-                                Availability</div>
-                            <div class="collapsible-body employee-thur-info">
-                                <div class="start">
-                                    <p class="white-text">Start:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-thur-start-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-thur-start-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="end">
-                                    <p class="white-text">End:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-thur-end-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-thur-end-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                        <li>
-                            <div
-                                class="collapsible-header altdark-mint-btn availability-select employee-availability-fri">
-                                Friday
-                                Availability</div>
-                            <div class="collapsible-body employee-fri-info">
-                                <div class="start">
-                                    <p class="white-text">Start:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-fri-start-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-fri-start-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="end">
-                                    <p class="white-text">End:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-fri-end-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-fri-end-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                        <li>
-                            <div
-                                class="collapsible-header altdark-mint-btn availability-select employee-availability-sat">
-                                Saturday
-                                Availability</div>
-                            <div class="collapsible-body employee-sat-info">
-                                <div class="start">
-                                    <p class="white-text">Start:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-sat-start-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-sat-start-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="end">
-                                    <p class="white-text">End:</p>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select id="ea-sat-end-hr" class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
-                                                <option value="00">00</option>
-                                                <option value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select id="ea-sat-end-min" class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
-                                                <option value="00">00</option>
-                                                <option value="15">15</option>
-                                                <option value="30">30</option>
-                                                <option value="45">45</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                </div>
-            </div>
 
-            <button id="addEmployee-btn" class="modal-close btn mint-dark-btn addEmployee-btn">Add Employee</button>
+                    {{!-- consider deleting this -should auto add this --}}
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input class="location-street">
+                            <label for="location-street">Street Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input id="employee-role" type="text" class="validate">
+                            <label for="employee-role">Role</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <select id="employee-status" class="front">
+                                <option value="employee">employee</option>
+                                <option value="manager">manager</option>
+                            </select>
+                            <label>Status</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <select id="employee-positionType" class="front">
+                                <option value="FT">Full-time</option>
+                                <option value="PT">Part-time</option>
+                            </select>
+                            <label>Employee Position Type</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="collapsible expandable">
+                            <li>
+                                <div
+                                    class="collapsible-header altdark-mint-btn availability-select employee-availability-sunday">
+                                    Sunday
+                                    Availability</div>
+                                <div class="collapsible-body employee-sunday-info">
+                                    <div class="start">
+                                        <p class="white-text">Start:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-sun-start-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-sun-start-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="start">
+                                        <p class="white-text">End:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-sun-end-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-sun-end-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="collapsible-header altdark-mint-btn availability-select employee-availability-sunday">
+                                    Monday
+                                    Availability</div>
+                                <div class="collapsible-body employee-monday-info">
+                                    <div class="start">
+                                        <p class="white-text">Start:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-mon-start-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-mon-start-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="end">
+                                        <p class="white-text">End:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-mon-end-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-mon-end-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="collapsible-header altdark-mint-btn availability-select employee-availability-sunday">
+                                    Tuesday
+                                    Availability</div>
+                                <div class="collapsible-body employee-tues-info">
+                                    <div class="start">
+                                        <p class="white-text">Start:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-tues-start-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-tues-start-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="end">
+                                        <p class="white-text">End:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-tues-end-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-tues-end-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="collapsible-header altdark-mint-btn availability-select employee-availability-wed">
+                                    Wednesday
+                                    Availability</div>
+                                <div class="collapsible-body employee-wed-info">
+                                    <div class="start">
+                                        <p class="white-text">Start:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-wed-start-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-wed-start-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="end">
+                                        <p class="white-text">End:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-wed-end-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-wed-end-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="collapsible-header altdark-mint-btn availability-select employee-availability-thur">
+                                    Thursday
+                                    Availability</div>
+                                <div class="collapsible-body employee-thur-info">
+                                    <div class="start">
+                                        <p class="white-text">Start:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-thur-start-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-thur-start-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="end">
+                                        <p class="white-text">End:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-thur-end-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-thur-end-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="collapsible-header altdark-mint-btn availability-select employee-availability-fri">
+                                    Friday
+                                    Availability</div>
+                                <div class="collapsible-body employee-fri-info">
+                                    <div class="start">
+                                        <p class="white-text">Start:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-fri-start-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-fri-start-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="end">
+                                        <p class="white-text">End:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-fri-end-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-fri-end-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="collapsible-header altdark-mint-btn availability-select employee-availability-sat">
+                                    Saturday
+                                    Availability</div>
+                                <div class="collapsible-body employee-sat-info">
+                                    <div class="start">
+                                        <p class="white-text">Start:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-sat-start-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-sat-start-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="end">
+                                        <p class="white-text">End:</p>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="ea-sat-end-hr" class="start-hour front">
+                                                    <option value="" disable selected>Hour</option>
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="ea-sat-end-min" class="start-minute front">
+                                                    <option value="" disable selected>minutes </option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                    </div>
+                </div>
+
+                <button id="addEmployee-btn" class="modal-close btn mint-dark-btn addEmployee-btn">Add Employee</button>
+
         </form>
     </div>
     <div class="modal-footer">
@@ -1197,10 +1205,60 @@
     });
 
     //DAYS OF THE WEEK FOR SCHEDULE ADD // 
+
     const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
     for (let i = 0; i < daysOfWeek.length; i++) {
-        console.log(daysOfWeek[i]);
-        $(".days-week").append().text(daysOfWeek[i]);
+
+        //To Append Hours
+        let newHourAvailability = $("<div>");
+        $(newHourAvailability).addClass("input-field col s6");
+
+        let newSelectHours = $("<select>");
+        $(newSelectHours).addClass("start-hour front");
+        $(newHourAvailability).append(newSelectHours);
+
+        let disableHours = $("<option value='' disable selected>Hours</options>");
+        $(newSelectHours).append(disableHours);
+
+        for (let j = 0; j < 24; j++) {
+            let newOption = $(`<option value= ${j}>`);
+            $(newOption).text(`${j}`);
+            (newSelectHours).append(newOption);
+        }
+
+        //To Append Minutes
+        let newMinuteAvailability = $("<div>");
+        $(newMinuteAvailability).addClass("input-field col s6");
+
+        let newSelectMinutes = $("<select>");
+        $(newSelectMinutes).addClass("start-minute front");
+        $(newMinuteAvailability).append(newSelectMinutes);
+
+        let disableMinutes = $("<option value='' disable selected>Minutes</options>");
+        $(newSelectMinutes).append(disableMinutes);
+
+        let newOptionMinutes00 = $("<option value=00>");
+        $(newOptionMinutes00).text("00");
+
+        let newOptionMinutes15 = $("<option value=15>");
+        $(newOptionMinutes15).text("15");
+
+        let newOptionMinutes30 = $("<option value=30>");
+        $(newOptionMinutes30).text("30");
+
+        let newOptionMinutes45 = $("<option value=45>");
+        $(newOptionMinutes45).text("45");
+
+        (newSelectMinutes).append(
+            newOptionMinutes00,
+            newOptionMinutes15,
+            newOptionMinutes30,
+            newOptionMinutes45
+        );
+
+        $(".select-hours-minutes").append(newHourAvailability);
+        $(".select-hours-minutes").append(newMinuteAvailability);
     }
 </script>
 

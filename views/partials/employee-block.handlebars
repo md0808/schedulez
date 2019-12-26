@@ -1,24 +1,62 @@
 <li>
-    <div class="collapsible-header employee-list-name">name</div>
+    <div class="collapsible-header employee-list-name">{{ this.FullName }}</div>
     <div class="collapsible-body employee-list-info">
-        <strong>Status: </strong><span>status</span><br>
-        <strong>Role: </strong><span>role</span><br>
-        <strong>Position Type: </strong><span>position type</span><br><br>
-        <strong>Availability:</strong><br>
-        <span>Monday: </span><span>12-18</span><br>
-        <span>Tuesday: </span><span>12-18</span><br>
-        <span>Wednesday: </span><span>12-18</span><br>
-        <span>Thursday: </span><span>12-18</span><br>
-        <span>Friday: </span><span>12-18</span><br>
-        <span>Saturday: </span><span>12-18</span><br>
-        <span>Sunday: </span><span>12-18</span><br><br>
-
-        <strong>Contact Information</strong><br>
-        <span>Address: </span><br>
-        <span>Street</span><br>
-        <span>City</span><span>State</span><br>
-        <span>Zipcode</span><span>Country</span><br><br>
-        <span>Email</span><br>
-        <span>Phone Number</span><br>
+        <div class="row">
+            <div class="section col s4">
+                <i class="material-icons profile-pic">account_box</i>
+            </div>
+            <div class="section col s7 right">
+                <ul class="collection with-header">
+                    <li class="collection-header">
+                        <strong>Status </strong><span class="right">{{  this.Status  }}</span>
+                    </li>
+                    <li class="collection-header">
+                        <strong>Role </strong><span class="right">{{  this.Role  }}</span>
+                    </li>
+                    <li class="collection-header">
+                        <strong>Position Type </strong><span class="right">{{  this.PositionType  }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section">
+                <h5><i class="material-icons small">access_time</i> This Week</h5>
+                <ul class="collection with-header">
+                    <li class="collection-item teal lighten-2">
+                        <span class="day-partial">Sunday </span><span
+                            class="right time-partial">{{ this.Availability.Sunday }}</span>
+                    </li>
+                    <li class="collection-item">
+                        <span class="day-partial ">Monday </span><span
+                            class="right time-partial">{{ this.Availability.Monday }}</span>
+                    </li>
+                    <li class="collection-item">
+                        <span class="day-partial">Tuesday </span><span
+                            class="right time-partial">{{ this.Availability.Tuesday }}</span>
+                    </li>
+                    <li class="collection-item">
+                        <span class="day-partial">Wednesday </span><span
+                            class="right time-partial">{{ this.Availability.Wednesday }}</span>
+                    </li>
+                    <li class="collection-item">
+                        <span class="day-partial">Thursday </span><span
+                            class="right time-partial">{{ this.Availability.Thursday }}</span>
+                    </li>
+                    <li class="collection-item">
+                        <span class="day-partial">Friday </span><span
+                            class="right time-partial">{{ this.Availability.Friday }}</span>
+                    </li>
+                    <li class="collection-item">
+                        <span class="day-partial">Saturday </span><span
+                            class="right time-partial">{{ this.Availability.Saturday }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <p class="contact">Contact Me</p>
+            <span>Email: <a href="">{{ this.Email }}</a></span><br>
+        </div>
     </div>
 </li>
