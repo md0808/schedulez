@@ -19,7 +19,7 @@ module.exports = app => {
     });
   });
 
-  app.get("/manager-view/", (req, res) => {
+  app.get("/:storeNum/manager-view/", (req, res) => {
     res.render("managerView");
   });
 
