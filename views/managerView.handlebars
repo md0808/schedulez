@@ -237,7 +237,6 @@
                     <p>Shifts Start at:</p>
                     <div class="row">
                         <div class="input-field col s6">
-
                             <select class="start-hour front">
                                 <option value="" disable selected>Hour</option>
                                 <option value="00">00</option>
@@ -321,6 +320,12 @@
                                     <option value="45">45</option>
                                 </select>
                             </div>
+                            <div class="input-field col s4">
+                                <select class="start-minute front">
+                                    <option value="am">AM</option>
+                                    <option value="pm">PM</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -337,21 +342,21 @@
 {{!-- LOCATION MODAL ENDS --}}
 
 {{!-- EMPLOYEE MODAL BEGINS --}}
-<div id="modal-employees" class="modal">
+<div id="modal-employees" class="modal dark-border">
     <div class="modal-content alt-dark blue-grey-text text-darken-4">
         <h2 class="modal-header center">Add A New Employee</h2>
         <form>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="employee-name">
-                    <label for="employee-name">Employee Name</label>
+                    <input id="employee-name" type="text" class="validate">
+                    <label for="employee-name">Full Name</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="employee-email">
+                    <input id="employee-email" type="text" class="validate">
                     <label for="employee-email">Email</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="employee-password">
+                    <input id="employee-password" type="text" class="validate">
                     <label for="employee-password">Password</label>
                 </div>
                 {{!-- Address Information --}}
@@ -361,20 +366,20 @@
                 </div>
                 {{!-- Role and Status --}}
                 <div class="input-field col s12">
-                    <input id="employee-role">
+                    <input id="employee-role" type="text" class="validate">
                     <label for="employee-role">Role</label>
                 </div>
                 <div class="input-field col s6">
                     <select id="employee-status" class="front">
-                        <option value="employee">Employee</option>
-                        <option value="manager">Manager</option>
+                         <option value="employee">employee</option>
+                         <option value="manager">manager</option>
                     </select>
                     <label for="employee-status">Status</label>
                 </div>
                 <div class="input-field col s6">
                     <select id="employee-positionType" class="front">
-                        <option value="FT">Full-time</option>
-                        <option value="PT">Part-time</option>
+                         <option value="FT">Full-time</option>
+                         <option value="PT">Part-time</option>
                     </select>
                     <label for="employee-positionType"> Position Type</label>
                 </div>
@@ -389,7 +394,7 @@
                 Another Employee</button>
             <button class="finish-employee waves-effect waves-light btn blue-grey darken-1">Finished</button> --}}
                 <button class="btn addEmployee-btn">Add Employee</button>
-            </div>
+            </div>  
         </form>
     </div>
     <div class="modal-footer">
@@ -505,7 +510,6 @@
             newOptionMinutes30,
             newOptionMinutes45
         );
-
         // New Day
         let newDay = $("<div>");
         $(newDay).addClass("row new-day");
@@ -514,6 +518,9 @@
         $(newDay).append(newWeekDate);
         $(newDay).append(newHourAvailability);
         $(newDay).append(newMinuteAvailability);
+=======
+        $(".select-hours-minutes").append(newHourAvailability);
+        $(".select-hours-minutes").append(newMinuteAvailability);
     }
 </script>
 

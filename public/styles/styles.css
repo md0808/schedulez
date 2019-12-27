@@ -37,6 +37,15 @@ body{
   height: 75%;
 }
 
+.availability-select{
+  border: none;
+  margin: 10px 0;
+}
+
+.collapsible{
+  border: none;
+}
+
 .next-btn{
   color: #69f0ae;
 }
@@ -57,14 +66,28 @@ body{
   color: white;
 }
 
+.altdark-text{
+  color: #37474f;
+}
+
 .mint-dark-btn{
   color: #263238;
   font-weight: bold;
   background-color: #69f0ae;
 }
 
+.altdark-mint-btn{
+  color: #69f0ae;
+  font-weight: bold;
+  background-color: #37474f;
+}
+
 .border{
   border: solid 20px #69f0ae;
+}
+
+.dark-border{
+  border: solid 10px #37474f
 }
 
 .list-group-item {
