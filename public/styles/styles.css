@@ -26,6 +26,14 @@ body{
   padding-top: 6px;
 }
 
+.hide{
+  display: none;
+}
+
+i{
+  cursor: pointer;
+}
+
 .carousel-mid{
   width: 75%;
   margin: 0px auto;

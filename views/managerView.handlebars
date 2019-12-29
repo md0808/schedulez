@@ -210,14 +210,14 @@
     <!--Schedule============================================ -->
     <div class="col s12 margin100" id="schedule">
         <div class="card dark border blue-grey-text text-darken-4 padding40">
-            <a class="modal-trigger" href="#modal-schedule"> <i class="tooltipped right material-icons medium red-text"
-                    id="new-schedule-btn" data-tooltip="Generate Next Schedule">add_circle</i></a>
+            <i class="tooltipped right material-icons medium red-text"
+                    id="new-schedule-btn" data-tooltip="Generate Next Schedule">add_circle</i>
             <h3 class="center white-text">Schedule</h3>
             <div class="alt-dark z-depth-4">
                 <p class="white-text">This is where the schedule will go</p>
             </div>
         </div>
-        <div class="card dark border blue-grey-text text-darken-4  padding40">
+        <div id="new-schedule-section" class="card dark border blue-grey-text text-darken-4  padding40">
             <h2 class="center white-text">Generate a New Schedule</h2>
 
             <div class="col s8 offest-s2">
@@ -342,7 +342,8 @@
                     </li>
                 </ul>
 
-                <button class="btn mint-dark-btn">Cancel</button>
+                <button id="new-schedule-add-btn" class="btn mint-dark-btn">Add</button>
+                <button id="new-schedule-cancel-btn" class="btn mint-dark-btn">Cancel</button>
             </div>
         </div>
     </div>
@@ -1285,6 +1286,8 @@
 
 <script>
     $(document).ready(() => {
+        $("#new-schedule-section").hide();
+
         $(".sidenav").sidenav();
         $(".tooltipped").tooltip();
         $(".collapsible").collapsible();
@@ -1323,6 +1326,11 @@
         $("#notifications").hide();
 
     });
+
+    $("#new-schedule-btn").on("click", () => {
+        console.log("new schedule");
+        $("#new-schedule-section").show();
+    })
 
     var shifts = [1];
     var numOfShifts = shifts.length;
@@ -1437,6 +1445,14 @@
         $("#add-shift").append(newShift);
     });
 
+    $("#new-schedule-add-btn").on("click", () => {
+        $("#new-schedule-section").hide();
+    });
+
+    $("#new-schedule-cancel-btn").on("click", () => {
+        $("#new-schedule-section").hide();
+    });
+    
     //DAYS OF THE WEEK FOR SCHEDULE ADD //
     const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     for (let i = 0; i < daysOfWeek.length; i++) {
