@@ -31,6 +31,14 @@ body{
   padding-top: 6px;
 }
 
+.hide{
+  display: none;
+}
+
+i{
+  cursor: pointer;
+}
+
 .carousel-mid{
   width: 75%;
   margin: 0px auto;
@@ -80,6 +88,10 @@ body{
   color: #69f0ae;
   font-weight: bold;
   background-color: #37474f;
+}
+
+.no-background-btn{
+  background: none;
 }
 
 .border{

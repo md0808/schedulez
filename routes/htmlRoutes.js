@@ -28,7 +28,6 @@ module.exports = app => {
 
   // TESTING
   // enter url w/ companyName --> company # --> .get(/api/allLocations)
-
   app.get("/manager-view/:name", (req, res) => {
     const url = `http://localhost:3000/api/company/find/${req.params.name}`;
     fetch(url)
