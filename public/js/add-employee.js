@@ -1,4 +1,4 @@
-$("#addEmployee-btn").on("click", () => {
+$(".addEmployee-btn").on("click", () => {
     console.log("addEmployee btn clicked...");
 
     var employeeName = $("#employee-name").val().trim();

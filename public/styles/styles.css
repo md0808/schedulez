@@ -84,16 +84,22 @@ i{
   color: #37474f;
 }
 
+.lowercase{
+  text-transform: lowercase;
+}
+
 .mint-dark-btn{
   color: #263238;
   font-weight: bold;
   background-color: #69f0ae;
+  text-transform: uppercase;
 }
 
 .altdark-mint-btn{
   color: #69f0ae;
   font-weight: bold;
   background-color: #37474f;
+  text-transform: uppercase;
 }
 
 .no-background-btn{
