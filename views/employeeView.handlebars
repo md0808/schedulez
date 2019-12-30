@@ -131,44 +131,4 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<script>
-    $(document).ready(() => {
-        $(".sidenav").sidenav();
-        $(".tooltipped").tooltip();
-        $(".collapsible").collapsible();
-        $(".modal").modal()
-        $("select").formSelect();
-    });
-
-    $("#account-info-btn").on("click", () => {
-        $("#account-info").show();
-        $("#request-off").hide();
-        $("#emp-notifications").hide();
-        $("#emp-schedule").hide();
-
-    });
-
-    $("#emp-notifications-btn").on("click", () => {
-        $("#emp-notifications").show();
-        $("#emp-schedule").hide();
-        $("#account-info").hide();
-        $("#request-off").hide();
-
-    });
-    $("#request-off-btn").on("click", () => {
-        $("#request-off").show();
-        $("#emp-notifications").hide();
-        $("#emp-schedule").hide();
-        $("#account-info").hide();
-
-    });
-    $("#emp-schedule-btn").on("click", () => {
-        $("#emp-schedule").show();
-        $("#emp-notifications").hide();
-        $("#request-off").hide();
-        $("#account-info").hide();
-
-    });
-
-</script>
+<script src="../public/js/ui.js"></script>
