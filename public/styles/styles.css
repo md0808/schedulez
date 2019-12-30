@@ -12,6 +12,12 @@ body{
   height: 100px;
 }
 
+a, a:visited{
+  color: #263238
+}
+a:hover{
+  color: #37474f
+}
 
 .input-field>label{
   color: white;
@@ -119,6 +125,7 @@ i{
 .carousel{
   min-height: 600px;
 }
+
 .nav-wrapper{
   padding-left: 20px;
   padding-right: 20px;
@@ -146,6 +153,9 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
 
 .modal {
   border-radius: 1.5em;
+}
+.modal-long{
+  min-width: 900px;
 }
 
 label {
@@ -239,6 +249,9 @@ label {
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
+  }
+  .modal-long{
+    max-width: 100%;
   }
 }
 

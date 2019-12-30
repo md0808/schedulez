@@ -42,27 +42,27 @@
 
         <!--Notifications============================================ -->
         <div class="col s12 margin100" id="notifications">
-            <div class="white blue-grey-text text-darken-4 padding40">
+            <div class="card dark border white-text padding40">
                 <h3 class="center">Notifications</h3>
                 <div class="divider"></div>
                 <div class="row">
                     <!-- This is where the individual notication starts-->
-                    <div class="card s12" id="n-123">
+                    <div class="card s12 white-text" id="n-123">
                         <div class="col s3">
                             <form>
                                 <p>
                                     <label for="approve">
                                         <input name="n-123" type="radio" id="approve" value="approve" checked />
-                                        <span>Approve</span>
+                                        <span class="white-text">Approve</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label for="decline">
                                         <input name="n-123" type="radio" id="decline" value="decline" />
-                                        <span>Decline</span>
+                                        <span class="white-text">Decline</span>
                                     </label>
                                 </p>
-                                <button class="btn waves-effect waves-light blue-grey center" id="requests"
+                                <button class="btn waves-effect waves-light mint-dark-btn center" id="requests"
                                     type="submit" name="action">Submit
                                 </button>
                             </form>
@@ -82,7 +82,7 @@
         <!--Employees============================================ -->
 
         <div class="col s12" id="employee-list">
-            <div class="card white blue-grey-text text-darken-4  padding40">
+            <div class="card dark border white-text padding40">
                 <a href="#modal-employees" class="modal-trigger" id="new-employee-btn"><i
                         class="tooltipped right material-icons medium red-text"
                         data-tooltip="Add a new employee">add_circle</i></a>
@@ -101,7 +101,7 @@
     </div>
     <!--Locations============================================ -->
     <div class="col s12 margin100" id="location-list">
-        <div class="card white blue-grey-text text-darken-4  padding40">
+        <div class="card dark border white-text padding40">
             <a class="modal-trigger" id="new-location-btn" href="#modal-locations">
                 <i class=" tooltipped right material-icons medium red-text"
                     data-tooltip="Add a new location">add_circle</i></a>
@@ -115,18 +115,22 @@
     </div>
     <!--Schedule============================================ -->
     <div class="col s12 margin100" id="schedule">
-        <div class="card dark border blue-grey-text text-darken-4 padding40">
-            <i class="tooltipped right material-icons medium red-text"
-                    id="new-schedule-btn" data-tooltip="Generate Next Schedule">add_circle</i>
-            <h3 class="center white-text">Schedule</h3>
-            <div class="alt-dark z-depth-4">
-                <p class="white-text">This is where the schedule will go</p>
+        <div class="card dark border padding40">
+            <i class="tooltipped right material-icons medium red-text" id="new-schedule-btn"
+                data-tooltip="Generate Next Schedule">add_circle</i>
+            <h3 class="center white-text">Schedules</h3>
+            <div class="padding40 alt-dark z-depth-4">
+                <!-- Modals could be generated dynamically upon create of new schedule, link to modal appears here-->
+                <a href="#sched-modal-010220" class="white-text center modal-trigger">1/2/20 - 1/15/20</a><br>
+                <a href="#" class="white-text center">1/16/20 - 1//30</a><br>
+                <a href="#" class="white-text center">1/31/20 - 2/13/20</a>
+
             </div>
         </div>
-        <div id="new-schedule-section" class="card dark border blue-grey-text text-darken-4  padding40">
+        <div id="new-schedule-section" class="scrollspy section card dark border blue-grey-text text-darken-4 padding40">
             <h2 class="center white-text">Generate a New Schedule</h2>
 
-            <div class="col s8 offest-s2">
+            <div class=" col s8 offest-s2">
                 <button class="btn altdark-mint-btn datepicker">Choose Start Date</button>
                 {{!-- <span class="white-text">Choose Start Date</span> <span>
                     <input type="text" class="datepicker">
@@ -254,27 +258,118 @@
         </div>
     </div>
 
-    <!-- SCHEDULE Modal Structure -->
-    <div id="modal-schedule" class="modal">
-        <div class="modal-content blue-grey-text text-darken-4 ">
-            <h2 class="center">Generate a New Schedule</h2>
 
-            <div class="col s8 offest-s2">
-                <span>Choose Start Date</span> <span>
-                    <input type="text" class="datepicker">
-                </span><br>
-                <div class="row center">
-                    <button class="btn blue-grey waves-effect">Create</button>
-                </div>
-            </div>
+
+    <!-- Sample Schedule Table Modal Structure -->
+    <div id="sched-modal-010220" class="modal modal-long">
+        <div class="modal-content dark border blue-grey-text text-darken-4 ">
+            <h2 class="white-text center">Schedule 1/2-1/15</h2>
+
+            <table class="white-text highlight responsive-table">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th class="date1">1/2</th>
+                        <th class="date2">1/3</th>
+                        <th class="date3">1/4</th>
+                        <th class="date4">1/5</th>
+                        <th class="date5">1/6</th>
+                        <th class="date6">1/7</th>
+                        <th class="date7">1/8</th>
+                        <th class="date8">1/9</th>
+                        <th class="date9">1/10</th>
+                        <th class="date10">1/11</th>
+                        <th class="date11">1/12</th>
+                        <th class="date12">1/13</th>
+                        <th class="date13">1/14</th>
+                        <th class="date14">1/15</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Alex</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>10:00-16:00</td>
+                        <td>10:00-16:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Danielle</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>10:00-16:00</td>
+                        <td>10:00-16:00</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+                        <td>x</td>
+                        <td>x</td>
+
+
+                    </tr>
+                    <tr>
+                        <td>Paxton</td>
+                        <td>10:00-22:00</td>
+                        <td>10:00-22:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>10:00-22:00</td>
+                        <td>x</td>
+                        <td>6:00-12:00</td>
+                        <td>6:00-12:00</td>
+                        <td>10:00-16:00</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+                        <td>x</td>
+                        <td>x</td>
+
+                    </tr>
+                    <tr>
+                        <td>Monica</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>10:00-16:00</td>
+                        <td>10:00-16:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
 
     </div>
-    {{!-- SCHEDULE modal ends --}}
+    {{!-- Sample schedule modal ends --}}
 
     <!-- LOCATION Modal Structure -->
     <div id="modal-locations" class="modal">
@@ -500,22 +595,22 @@
                 </div>
                 <div class="input-field col s6">
                     <select id="employee-status" class="front">
-                         <option value="employee">employee</option>
-                         <option value="manager">manager</option>
+                        <option value="employee">employee</option>
+                        <option value="manager">manager</option>
                     </select>
                     <label for="employee-status">Status</label>
                 </div>
                 <div class="input-field col s6">
                     <select id="employee-positionType" class="front">
-                         <option value="FT">Full-time</option>
-                         <option value="PT">Part-time</option>
+                        <option value="FT">Full-time</option>
+                        <option value="PT">Part-time</option>
                     </select>
                     <label for="employee-positionType"> Position Type</label>
                 </div>
             </div>
             {{!-- Weekly Availability --}}
             <h5 class="sub-header col s10 offset-2">Weekly Availability</h5>
-            <div class="row">  
+            <div class="row">
                 <div class="select-hours-minutes"></div>
             </div>
             <div class="center">
@@ -523,7 +618,7 @@
                 Another Employee</button>
             <button class="finish-employee waves-effect waves-light btn blue-grey darken-1">Finished</button> --}}
                 <button class="btn addEmployee-btn">Add Employee</button>
-            </div>  
+            </div>
         </form>
     </div>
     <div class="modal-footer">
@@ -541,244 +636,5 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<script>
-    $(document).ready(() => {
-        $("#new-schedule-section").hide();
-
-        $(".sidenav").sidenav();
-        $(".tooltipped").tooltip();
-        $(".collapsible").collapsible();
-        $(".modal").modal()
-        $("select").formSelect();
-        $('.datepicker').datepicker();
-    });
-
-    $("#schedule-btn").on("click", () => {
-        $("#schedule").show();
-        $("#notifications").hide();
-        $("#employee-list").hide();
-        $("#location-list").hide();
-
-    });
-    $("#notifications-btn").on("click", () => {
-        $("#notifications").show();
-        $("#schedule").hide();
-        $("#employee-list").hide();
-        $("#location-list").hide();
-    });
-    $("#employees-btn").on("click", () => {
-        $("#employee-list").show();
-        $("#notifications").hide();
-        $("#schedule").hide();
-        $("#location-list").hide();
-    });
-    $("#locations-btn").on("click", () => {
-        $("#location-list").show();
-        $("#schedule").hide();
-        $("#employee-list").hide();
-        $("#notifications").hide();
-    });
-
-    $("#new-schedule-btn").on("click", () => {
-        console.log("new schedule");
-        $("#new-schedule-section").show();
-    })
-
-    var shifts = [1];
-    var numOfShifts = shifts.length;
-
-    $("#add_shift").on("click", () => {
-        console.log("add shift clicked");
-
-        numOfShifts++;
-        shifts.push(numOfShifts);
-
-        var newShift = $(
-            "<div id='Shift'" + numOfShifts + "''>" +
-            "<p class='white-text'>Shift" + numOfShifts + "</p>" +
-            "<div class='row'>" +
-            "<div class='col s4 offset-s2'>" +
-                "<div class='row'>" +
-                    "<p class='white-text'>Shift Starts at:</p>" +
-                    "<div class='input-field col s6'>" +
-                        "<select id='shiftStart'" + numOfShifts + "' class='start-hour front'>" +
-                            "<option value='' disable selected>Hour</option>" +
-                            "<option value='00'>12am</option>" +
-                            "<option value='01'>1am</option>" +
-                            "<option value='02'>2am</option>" + 
-                            "<option value='03'>3am</option>" +
-                            "<option value='04'>4am</option>" +
-                            "<option value='05'>5am</option>" +
-                            "<option value='06'>6am</option>" +
-                            "<option value='07'>7am</option>" +
-                            "<option value='08'>8am</option>" +
-                            "<option value='09'>9am</option>" +
-                            "<option value='10'>10am</option>" +
-                            "<option value='11'>11am</option>" +
-                            "<option value='12'>12pm</option>" +
-                            "<option value='13'>1pm</option>" +
-                            "<option value='14'>2pm</option>" +
-                            "<option value='15'>3pm</option>" +
-                            "<option value='16' > 4pm</option >" +
-                            "<option value='17'>5pm</option>" +
-                            "<option value='18'>6pm</option>" +
-                            "<option value='19'>7pm</option>" +
-                            "<option value='20'>8pm</option>" +
-                            "<option value='21'>9pm</option>" +
-                            "<option value='22'>10pm</option>" +
-                            "<option value='23'>11pm</option>" +
-                        "</select>" +
-                    "</div>" +
-                    "<div class='input-field col s6'>" +
-                        "<select class='start-minute front'>" +
-                            "<option value='' disable selected>minutes </option>" +
-                            "<option value='00'>00</option>" +
-                            "<option value='15'>15</option>" +
-                            "<option value='30'>30</option>" +
-                            "<option value='45'>45</option>" +
-                        "</select>" +
-                    "</div>" +
-                "</div>" +
-            "</div>" +
-            "<div class='row'>" +
-                "<div class='col s4'>" +
-                    "<p class='white-text'>Shift Ends at:</p>" +
-                    "<div class='row'>" +
-                        "<div class='input-field col s6'>" +
-                            "<select class='start-hour front'>" +
-                                "<option value='' disable selected>Hour</option>" +
-                                "<option value='00'>12am</option>" +
-                                "<option value='01'>1am</option>" +
-                                "<option value='02'>2am</option>" +
-                                "<option value='03'>3am</option>" +
-                                "<option value='04'>4am</option>" +
-                                "<option value='05'>5am</option>" +
-                                "<option value='06'>6am</option>" +
-                                "<option value='07'>7am</option>" +
-                                "<option value='08'>8am</option>" +
-                                "<option value='09'>9am</option>" +
-                                "<option value='10'>10am</option>" +
-                                "<option value='11'>11am</option>" +
-                                "<option value='12'>12pm</option>" +
-                                "<option value='13'>1pm</option>" +
-                                "<option value='14'>2pm</option>" +
-                                "<option value='15'>3pm</option>" +
-                                "<option value='16'>4pm</option>" +
-                                "<option value='17'>5pm</option>" +
-                                "<option value='18'>6pm</option>" +
-                                "<option value='19'>7pm</option>" +
-                                "<option value='20'>8pm</option>" +
-                                "<option value='21'>9pm</option>" +
-                                "<option value='22'>10pm</option>" +
-                                "<option value='23'>11pm</option>" +
-                            "</select>" +
-                       "</div>" +
-                        "<div class='input-field col s6'>" +
-                            "<select class='start-minute front'>" +
-                                "<option value='' disable selected>minutes </option>" +
-                                "<option value='00'>00</option>" +
-                                "<option value='15'>15</option>" +
-                                "<option value='30'>30</option>" +
-                                "<option value='45'>45</option>" +
-                            "</select>" +
-                        "</div>" +
-                    "</div>" +
-                "</div>" +
-            "</div>" +
-            "<div class='row'>" +
-               "<div class='col s8 offset-s2'>" +
-                    "<p class='white-text'>Number Of Employees Needed:</p>" +
-                    "<input id='numOfEmployees' type='text'>" +
-                    "<label for='numOfEmployees'># Of Employees</label>" +
-                "</div>" +
-           "</div>" +
-        "</div>");
-
-        $("#add-shift").append(newShift);
-    });
-
-    $("#new-schedule-add-btn").on("click", () => {
-        $("#new-schedule-section").hide();
-    });
-
-    $("#new-schedule-cancel-btn").on("click", () => {
-        $("#new-schedule-section").hide();
-    });
-    
-    //DAYS OF THE WEEK FOR SCHEDULE ADD //
-    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
-    for (let i = 0; i < daysOfWeek.length; i++) {
-
-        //To Append Date 
-        let newWeekDate = $("<div>");
-        $(newWeekDate).addClass("schedule-weekday-title col s8 offset-2");
-        let newWeekLabel = $("<label>");
-        $(newWeekLabel).addClass("newWeekLabel");
-        $(newWeekLabel).text(daysOfWeek[i]);
-        $(newWeekDate).append(newWeekLabel);
-
-        //To Append Hours
-        let newRow2 = $("<div>");
-        $(newRow2).addClass("row");
-        let newHourAvailability = $("<div>");
-        $(newHourAvailability).addClass("input-field col s5 offset-1");
-
-        let newSelectHours = $("<select>");
-        $(newSelectHours).addClass("start-hour front");
-        $(newHourAvailability).append(newSelectHours);
-
-        let disableHours = $("<option value='' disable selected>Hours</options>");
-        $(newSelectHours).append(disableHours);
-
-        for (let j = 0; j < 24; j++) {
-            let newOption = $(`<option value= ${j}>`);
-            $(newOption).text(`${j}`);
-            (newSelectHours).append(newOption);
-        }
-
-        //To Append Minutes
-        let newMinuteAvailability = $("<div>");
-        $(newMinuteAvailability).addClass("input-field col s5 offset-1");
-
-        let newSelectMinutes = $("<select>");
-        $(newSelectMinutes).addClass("start-minute front");
-        $(newMinuteAvailability).append(newSelectMinutes);
-
-        let disableMinutes = $("<option value='' disable selected>Minutes</options>");
-        $(newSelectMinutes).append(disableMinutes);
-
-        let newOptionMinutes00 = $("<option value=00>");
-        $(newOptionMinutes00).text("00");
-
-        let newOptionMinutes15 = $("<option value=15>");
-        $(newOptionMinutes15).text("15");
-
-        let newOptionMinutes30 = $("<option value=30>");
-        $(newOptionMinutes30).text("30");
-
-        let newOptionMinutes45 = $("<option value=45>");
-        $(newOptionMinutes45).text("45");
-
-        (newSelectMinutes).append(
-            newOptionMinutes00,
-            newOptionMinutes15,
-            newOptionMinutes30,
-            newOptionMinutes45
-        );
-        // New Day
-        let newDay = $("<div>");
-        $(newDay).addClass("row new-day");
-        $(".select-hours-minutes").append(newDay);
-
-        $(newDay).append(newWeekDate);
-        $(newDay).append(newHourAvailability);
-        $(newDay).append(newMinuteAvailability);
-=======
-        $(".select-hours-minutes").append(newHourAvailability);
-        $(".select-hours-minutes").append(newMinuteAvailability);
-    }
-</script>
-
+<script src="/js/dashboard.js"></script>
 <script src="/js/add-employee.js"></script>
