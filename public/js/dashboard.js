@@ -4,9 +4,10 @@ $(document).ready(() => {
     $(".sidenav").sidenav();
     $(".tooltipped").tooltip();
     $(".collapsible").collapsible();
-    $(".modal").modal()
+    $(".modal").modal();
     $("select").formSelect();
-    $('.datepicker').datepicker();
+    $(".datepicker").datepicker();
+    $(".scrollspy").scrollSpy();
 });
 
 $("#schedule-btn").on("click", () => {
@@ -38,6 +39,8 @@ $("#locations-btn").on("click", () => {
 $("#new-schedule-btn").on("click", () => {
     console.log("new schedule");
     $("#new-schedule-section").show();
+    $(".scrollspy").scrollSpy("activeClass");
+
 });
 
 $("#account-info-btn").on("click", () => {

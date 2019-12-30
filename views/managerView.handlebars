@@ -7,7 +7,7 @@
 </nav>
 
 <!-- Sidebar bar=============== -->
-<ul id="slide-out" class="green-text text-accent-3 sidenav sidenav-fixed">
+<ul id="slide-out" class="blue-grey-text text-darken-4 sidenav sidenav-fixed">
     <li>
         <div class="user-view">
             <h6 class="center">Manager Dashboard</h6>
@@ -42,24 +42,24 @@
 
         <!--Notifications============================================ -->
         <div class="col s12 margin100" id="notifications">
-            <div class="white blue-grey-text text-darken-4 padding40">
+            <div class="card dark border white-text padding40">
                 <h3 class="center">Notifications</h3>
                 <div class="divider"></div>
                 <div class="row">
                     <!-- This is where the individual notication starts-->
-                    <div class="card s12" id="n-123">
-                        <div class="col s3 blue-grey-text text-darken-4">
+                    <div class="card s12 white-text" id="n-123">
+                        <div class="col s3">
                             <form>
-                                <p class="blue-grey-text text-darken-4">
+                                <p>
                                     <label for="approve">
                                         <input name="n-123" type="radio" id="approve" value="approve" checked />
-                                        <span class="blue-grey-text text-darken-4">Approve</span>
+                                        <span class="white-text">Approve</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label for="decline">
                                         <input name="n-123" type="radio" id="decline" value="decline" />
-                                        <span class="blue-grey-text text-darken-4">Decline</span>
+                                        <span class="white-text">Decline</span>
                                     </label>
                                 </p>
                                 <button class="btn waves-effect waves-light mint-dark-btn center" id="requests"
@@ -82,7 +82,7 @@
         <!--Employees============================================ -->
 
         <div class="col s12" id="employee-list">
-            <div class="card white blue-grey-text text-darken-4  padding40">
+            <div class="card dark border white-text padding40">
                 <a href="#modal-employees" class="modal-trigger" id="new-employee-btn"><i
                         class="tooltipped right material-icons medium red-text"
                         data-tooltip="Add a new employee">add_circle</i></a>
@@ -101,7 +101,7 @@
     </div>
     <!--Locations============================================ -->
     <div class="col s12 margin100" id="location-list">
-        <div class="card white blue-grey-text text-darken-4  padding40">
+        <div class="card dark border white-text padding40">
             <a class="modal-trigger" id="new-location-btn" href="#modal-locations">
                 <i class=" tooltipped right material-icons medium red-text"
                     data-tooltip="Add a new location">add_circle</i></a>
@@ -115,18 +115,22 @@
     </div>
     <!--Schedule============================================ -->
     <div class="col s12 margin100" id="schedule">
-        <div class="card dark border blue-grey-text text-darken-4 padding40">
-            <i class="tooltipped right material-icons medium red-text"
-                    id="new-schedule-btn" data-tooltip="Generate Next Schedule">add_circle</i>
-            <h3 class="center white-text">Schedule</h3>
-            <div class="alt-dark z-depth-4">
-                <p class="white-text">This is where the schedule will go</p>
+        <div class="card dark border padding40">
+            <i class="tooltipped right material-icons medium red-text" id="new-schedule-btn"
+                data-tooltip="Generate Next Schedule">add_circle</i>
+            <h3 class="center white-text">Schedules</h3>
+            <div class="padding40 alt-dark z-depth-4">
+                <!-- Modals could be generated dynamically upon create of new schedule, link to modal appears here-->
+                <a href="#sched-modal-010220" class="white-text center modal-trigger">1/2/20 - 1/15/20</a><br>
+                <a href="#" class="white-text center">1/16/20 - 1//30</a><br>
+                <a href="#" class="white-text center">1/31/20 - 2/13/20</a>
+
             </div>
         </div>
-        <div id="new-schedule-section" class="card dark border blue-grey-text text-darken-4  padding40">
+        <div id="new-schedule-section" class="scrollspy section card dark border blue-grey-text text-darken-4 padding40">
             <h2 class="center white-text">Generate a New Schedule</h2>
 
-            <div class="col s8 offest-s2">
+            <div class=" col s8 offest-s2">
                 <button class="btn altdark-mint-btn datepicker">Choose Start Date</button>
                 {{!-- <span class="white-text">Choose Start Date</span> <span>
                     <input type="text" class="datepicker">
@@ -254,27 +258,118 @@
         </div>
     </div>
 
-    <!-- SCHEDULE Modal Structure -->
-    <div id="modal-schedule" class="modal">
-        <div class="modal-content blue-grey-text text-darken-4 ">
-            <h2 class="center">Generate a New Schedule</h2>
 
-            <div class="col s8 offest-s2">
-                <span>Choose Start Date</span> <span>
-                    <input type="text" class="datepicker">
-                </span><br>
-                <div class="row center">
-                    <button class="btn blue-grey waves-effect">Create</button>
-                </div>
-            </div>
+
+    <!-- Sample Schedule Table Modal Structure -->
+    <div id="sched-modal-010220" class="modal modal-long">
+        <div class="modal-content dark border blue-grey-text text-darken-4 ">
+            <h2 class="white-text center">Schedule 1/2-1/15</h2>
+
+            <table class="white-text highlight responsive-table">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th class="date1">1/2</th>
+                        <th class="date2">1/3</th>
+                        <th class="date3">1/4</th>
+                        <th class="date4">1/5</th>
+                        <th class="date5">1/6</th>
+                        <th class="date6">1/7</th>
+                        <th class="date7">1/8</th>
+                        <th class="date8">1/9</th>
+                        <th class="date9">1/10</th>
+                        <th class="date10">1/11</th>
+                        <th class="date11">1/12</th>
+                        <th class="date12">1/13</th>
+                        <th class="date13">1/14</th>
+                        <th class="date14">1/15</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Alex</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>10:00-16:00</td>
+                        <td>10:00-16:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Danielle</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>10:00-16:00</td>
+                        <td>10:00-16:00</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+                        <td>x</td>
+                        <td>x</td>
+
+
+                    </tr>
+                    <tr>
+                        <td>Paxton</td>
+                        <td>10:00-22:00</td>
+                        <td>10:00-22:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>10:00-22:00</td>
+                        <td>x</td>
+                        <td>6:00-12:00</td>
+                        <td>6:00-12:00</td>
+                        <td>10:00-16:00</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+                        <td>x</td>
+                        <td>x</td>
+
+                    </tr>
+                    <tr>
+                        <td>Monica</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>8:00-14:00</td>
+                        <td>10:00-16:00</td>
+                        <td>10:00-16:00</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>12:00-20:00</td>
+                        <td>12:00-20:00</td>
+
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
 
     </div>
-    {{!-- SCHEDULE modal ends --}}
+    {{!-- Sample schedule modal ends --}}
 
     <!-- LOCATION Modal Structure -->
     <div id="modal-locations" class="modal">
@@ -500,22 +595,22 @@
                 </div>
                 <div class="input-field col s6">
                     <select id="employee-status" class="front">
-                         <option value="employee">employee</option>
-                         <option value="manager">manager</option>
+                        <option value="employee">employee</option>
+                        <option value="manager">manager</option>
                     </select>
                     <label for="employee-status">Status</label>
                 </div>
                 <div class="input-field col s6">
                     <select id="employee-positionType" class="front">
-                         <option value="FT">Full-time</option>
-                         <option value="PT">Part-time</option>
+                        <option value="FT">Full-time</option>
+                        <option value="PT">Part-time</option>
                     </select>
                     <label for="employee-positionType"> Position Type</label>
                 </div>
             </div>
             {{!-- Weekly Availability --}}
             <h5 class="sub-header col s10 offset-2">Weekly Availability</h5>
-            <div class="row">  
+            <div class="row">
                 <div class="select-hours-minutes"></div>
             </div>
             <div class="center">
@@ -523,7 +618,7 @@
                 Another Employee</button>
             <button class="finish-employee waves-effect waves-light btn blue-grey darken-1">Finished</button> --}}
                 <button class="btn addEmployee-btn">Add Employee</button>
-            </div>  
+            </div>
         </form>
     </div>
     <div class="modal-footer">
