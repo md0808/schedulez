@@ -28,7 +28,7 @@ module.exports = app => {
 
   // TESTING
   // enter url w/ companyName --> company # --> .get(/api/allLocations)
-  app.get("/manager-view/:name", (req, res) => {
+  app.get(":locationNum/manager-view/:name", (req, res) => {
     const url = `http://localhost:3000/api/company/find/${req.params.name}`;
     fetch(url)
       .then(r => r.json())
@@ -43,6 +43,19 @@ module.exports = app => {
             res.render("managerView", { editedLocations });
           });
       });
+  });
+
+  app.get("/:locationNum/manager-view/:shiftNum", (req, res) => {
+    var numOfShifts = parseInt(req.params.shiftNum);
+    var shifts = [];
+
+    for(var i = 0; i < numOfShifts; i++){
+      var num = i + 1;
+      var shiftNum = { shiftnum: num};
+      shifts.push(shiftNum);
+    }
+
+    res.render("managerView", { shifts });
   });
 
   // ***************

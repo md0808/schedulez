@@ -1,5 +1,30 @@
+$("#new-schedule-section").hide();
+var url = window.location.href;
+var splitUrl = url.split("/");
+
+console.log(url);
+
 $(document).ready(() => {
-    $("#new-schedule-section").hide();
+    //shows correct div on page refresh
+    if(url.includes("notifications")){
+        showAndHideDiv("notifications");
+    }
+    else if(url.includes("employee-list")){
+        showAndHideDiv("employee-list");
+    }
+    else if(url.includes("locations-list")){
+        showAndHideDiv("employee-list");
+    }
+    else if(url.includes("schedule")){
+        showAndHideDiv("schedule");
+    }
+
+    if(url.includes("schedule/add")){
+        $("#new-schedule-section").show();
+    }
+    if(url.includes("schedule/add/shifts")){
+        $("#add-shifts-dropdown").addClass("active");
+    }
 
     $(".sidenav").sidenav();
     $(".tooltipped").tooltip();
@@ -11,36 +36,25 @@ $(document).ready(() => {
 });
 
 $("#schedule-btn").on("click", () => {
-    $("#schedule").show();
-    $("#notifications").hide();
-    $("#employee-list").hide();
-    $("#location-list").hide();
+    showAndHideDiv("schedule");
 
 });
 $("#notifications-btn").on("click", () => {
-    $("#notifications").show();
-    $("#schedule").hide();
-    $("#employee-list").hide();
-    $("#location-list").hide();
+    showAndHideDiv("notifications");
 });
 $("#employees-btn").on("click", () => {
-    $("#employee-list").show();
-    $("#notifications").hide();
-    $("#schedule").hide();
-    $("#location-list").hide();
+    showAndHideDiv("employee-list");
 });
 $("#locations-btn").on("click", () => {
-    $("#location-list").show();
-    $("#schedule").hide();
-    $("#employee-list").hide();
-    $("#notifications").hide();
+    showAndHideDiv("location-list");
 });
 
 $("#new-schedule-btn").on("click", () => {
     console.log("new schedule");
     $("#new-schedule-section").show();
-    $(".scrollspy").scrollSpy("activeClass");
+    //$(".scrollspy").scrollSpy("activeClass");
 
+    window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/" + splitUrl[6] + "/add";
 });
 
 $("#account-info-btn").on("click", () => {
@@ -73,118 +87,40 @@ $("#emp-schedule-btn").on("click", () => {
 
 });
 
-var shifts = [1];
-var numOfShifts = shifts.length;
+function showAndHideDiv(divNameToShow){
+    $("#schedule").hide();
+    $("#notifications").hide();
+    $("#employee-list").hide();
+    $("#location-list").hide();
+
+    $("#" + divNameToShow).show();
+}
+
+var numOfShifts = parseInt(splitUrl[5]);
+
 
 $("#add_shift").on("click", () => {
     console.log("add shift clicked");
-
     numOfShifts++;
-    shifts.push(numOfShifts);
 
-    var newShift = $(
-        "<div id='Shift'" + numOfShifts + "''>" +
-        "<p class='white-text'>Shift" + numOfShifts + "</p>" +
-        "<div class='row'>" +
-        "<div class='col s4 offset-s2'>" +
-        "<div class='row'>" +
-        "<p class='white-text'>Shift Starts at:</p>" +
-        "<div class='input-field col s6'>" +
-        "<select id='shiftStart'" + numOfShifts + "' class='start-hour front'>" +
-        "<option value='' disable selected>Hour</option>" +
-        "<option value='00'>12am</option>" +
-        "<option value='01'>1am</option>" +
-        "<option value='02'>2am</option>" +
-        "<option value='03'>3am</option>" +
-        "<option value='04'>4am</option>" +
-        "<option value='05'>5am</option>" +
-        "<option value='06'>6am</option>" +
-        "<option value='07'>7am</option>" +
-        "<option value='08'>8am</option>" +
-        "<option value='09'>9am</option>" +
-        "<option value='10'>10am</option>" +
-        "<option value='11'>11am</option>" +
-        "<option value='12'>12pm</option>" +
-        "<option value='13'>1pm</option>" +
-        "<option value='14'>2pm</option>" +
-        "<option value='15'>3pm</option>" +
-        "<option value='16' > 4pm</option >" +
-        "<option value='17'>5pm</option>" +
-        "<option value='18'>6pm</option>" +
-        "<option value='19'>7pm</option>" +
-        "<option value='20'>8pm</option>" +
-        "<option value='21'>9pm</option>" +
-        "<option value='22'>10pm</option>" +
-        "<option value='23'>11pm</option>" +
-        "</select>" +
-        "</div>" +
-        "<div class='input-field col s6'>" +
-        "<select class='start-minute front'>" +
-        "<option value='' disable selected>minutes </option>" +
-        "<option value='00'>00</option>" +
-        "<option value='15'>15</option>" +
-        "<option value='30'>30</option>" +
-        "<option value='45'>45</option>" +
-        "</select>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "<div class='row'>" +
-        "<div class='col s4'>" +
-        "<p class='white-text'>Shift Ends at:</p>" +
-        "<div class='row'>" +
-        "<div class='input-field col s6'>" +
-        "<select class='start-hour front'>" +
-        "<option value='' disable selected>Hour</option>" +
-        "<option value='00'>12am</option>" +
-        "<option value='01'>1am</option>" +
-        "<option value='02'>2am</option>" +
-        "<option value='03'>3am</option>" +
-        "<option value='04'>4am</option>" +
-        "<option value='05'>5am</option>" +
-        "<option value='06'>6am</option>" +
-        "<option value='07'>7am</option>" +
-        "<option value='08'>8am</option>" +
-        "<option value='09'>9am</option>" +
-        "<option value='10'>10am</option>" +
-        "<option value='11'>11am</option>" +
-        "<option value='12'>12pm</option>" +
-        "<option value='13'>1pm</option>" +
-        "<option value='14'>2pm</option>" +
-        "<option value='15'>3pm</option>" +
-        "<option value='16'>4pm</option>" +
-        "<option value='17'>5pm</option>" +
-        "<option value='18'>6pm</option>" +
-        "<option value='19'>7pm</option>" +
-        "<option value='20'>8pm</option>" +
-        "<option value='21'>9pm</option>" +
-        "<option value='22'>10pm</option>" +
-        "<option value='23'>11pm</option>" +
-        "</select>" +
-        "</div>" +
-        "<div class='input-field col s6'>" +
-        "<select class='start-minute front'>" +
-        "<option value='' disable selected>minutes </option>" +
-        "<option value='00'>00</option>" +
-        "<option value='15'>15</option>" +
-        "<option value='30'>30</option>" +
-        "<option value='45'>45</option>" +
-        "</select>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "<div class='row'>" +
-        "<div class='col s8 offset-s2'>" +
-        "<p class='white-text'>Number Of Employees Needed:</p>" +
-        "<input id='numOfEmployees' type='text'>" +
-        "<label for='numOfEmployees'># Of Employees</label>" +
-        "</div>" +
-        "</div>" +
-        "</div>");
+    var newUrl = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + numOfShifts + "/" + splitUrl[6] + "/add/shifts";
+    window.location.href = newUrl;
 
-    $("#add-shift").append(newShift);
+    console.log("num: " + numOfShifts);
 });
+
+$("#add-shift-section").on("click", () => {
+    var shiftDropdownClass = $("#add-shifts-dropdown").attr('class');
+
+    if(shiftDropdownClass !== "active"){
+        console.log("not active");
+        window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/" + splitUrl[6] + "/add/shifts";
+    }
+    else{
+        window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/" + splitUrl[6] + "/add";
+    }
+
+})
 
 $("#new-schedule-add-btn").on("click", () => {
     $("#new-schedule-section").hide();

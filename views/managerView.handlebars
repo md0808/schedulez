@@ -136,8 +136,8 @@
                     <input type="text" class="datepicker">
                 </span><br> --}}
                 <ul class="collapsible expandable">
-                    <li>
-                        <div
+                    <li id="add-shifts-dropdown">
+                        <div id="add-shift-section"
                             class="collapsible-header altdark-mint-btn availability-select employee-availability-sunday">
                             Add Shifts
                         </div>
@@ -146,7 +146,7 @@
                                 <button id="add_shift" class="btn no-background-btn mint"><i
                                         class="tooltipped material-icons" data-tooltip="Add Shift">add_box</i></button>
 
-                                <div id="shift1">
+                                {{!-- <div id="shift1">
                                     <p class="white-text">Shift 1</p>
                                     <div class="row">
                                         <div class="col s4 offset-s2">
@@ -247,7 +247,12 @@
                                             <label for="numOfEmployees"># Of Employees</label>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
+                                <ul class="collapsible expandable">
+                                    {{#each shifts}}
+                                    {{> scheduleShift-block}}
+                                    {{/each}}
+                                </ul>
                             </div>
                     </li>
                 </ul>
@@ -627,10 +632,6 @@
 </div>
 </div>
 {{!-- employee modal ends --}}
-
-
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
