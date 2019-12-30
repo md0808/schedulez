@@ -12,6 +12,12 @@ body{
   height: 100px;
 }
 
+a, a:visited{
+  color: #69f0ae
+}
+a:hover{
+  color: #00c853
+}
 
 .input-field>label{
   color: white;
