@@ -53,8 +53,11 @@ $("#new-schedule-btn").on("click", () => {
     console.log("new schedule");
     $("#new-schedule-section").show();
     //$(".scrollspy").scrollSpy("activeClass");
+    console.log(splitUrl);
 
-    window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/" + splitUrl[6] + "/add";
+    var newUrl = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/" + splitUrl[6] + "/add";
+    //window.location.href = newUrl;
+    console.log(newUrl);
 });
 
 $("#account-info-btn").on("click", () => {
@@ -103,7 +106,7 @@ $("#add_shift").on("click", () => {
     console.log("add shift clicked");
     numOfShifts++;
 
-    var newUrl = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + numOfShifts + "/" + splitUrl[6] + "/add/shifts";
+    var newUrl = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + numOfShifts + "/" + "#schedule/add/shifts";
     window.location.href = newUrl;
 
     console.log("num: " + numOfShifts);
@@ -114,10 +117,10 @@ $("#add-shift-section").on("click", () => {
 
     if(shiftDropdownClass !== "active"){
         console.log("not active");
-        window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/" + splitUrl[6] + "/add/shifts";
+        window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/#schedule/add/shifts";
     }
     else{
-        window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/" + splitUrl[6] + "/add";
+        window.location.href = "http://" + splitUrl[2] + "/" + splitUrl[3] + "/" + splitUrl[4] + "/" + splitUrl[5] + "/#schedule/add";
     }
 
 })
