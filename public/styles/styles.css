@@ -30,11 +30,11 @@ a:hover{
 }
 
 .page{
-  padding-top: 100px;
+  padding-top: 20%;
 }
 
 .long-page{
-  padding-top: 6px;
+  padding-top: 10%;
 }
 
 .hide{
@@ -45,10 +45,22 @@ i{
   cursor: pointer;
 }
 
-.carousel-mid{
-  width: 75%;
+.carousel {
+  margin-top: 10%;
+}
+
+.carousel-mid {
+  width: 90%;
   margin: 0px auto;
-  height: 75%;
+  height: 90%;
+}
+
+.carousel-mid .input-field {
+  font-size: 1rem;
+}
+
+.carousel-mid .heading-carousel {
+  font-size: 1.7rem;
 }
 
 .availability-select{
@@ -60,8 +72,18 @@ i{
   border: none;
 }
 
-.next-btn{
+.next-btn i,
+.prev-btn i {
   color: #69f0ae;
+  font-size: 2.5rem;
+}
+
+#edit-btn {
+  background-color: #b0bec5;
+}
+
+input {
+  color: #fff;
 }
 
 .dark{
@@ -128,7 +150,9 @@ i{
 .front {
   z-index: 5000;
 }
-.carousel{
+
+/* CAROUSEL STYLES */
+.carousel {
   min-height: 600px;
 }
 
@@ -138,8 +162,8 @@ i{
 }
 .carousel-btn-div{
   position: absolute;
-  bottom: 30px;
-  left: 50%
+  bottom: 10%;
+  left: 45%
 }
 
 #location-list, 
