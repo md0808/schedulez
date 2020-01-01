@@ -62,11 +62,27 @@
             <div class="card dark border white-text padding40">
                 <h3 class="center">Request off</h3>
                 <div class="divider"></div>
+                <div class="row" id="emp-schedule-div">
+                    <p>Enter the date you are requesting off: <input type="text" class="datepicker white-text"><br>
+                    </p>
+                </div>
                 <div class="row">
-                    <p>This is where the schedule will go</p>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="request-description" class="materialize-textarea white-text"
+                                    data-length="120"></textarea>
+                                <label for="request-description">Brief Description of your Request</label>
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="request-submit"
+                            id="request-submit">Submit</button>
+
+                    </form>
                 </div>
             </div>
         </div>
+
 
         <!--Notifications============================================ -->
         <div class="col s12 margin100" id="emp-notifications">
