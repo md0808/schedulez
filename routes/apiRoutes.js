@@ -90,6 +90,12 @@ module.exports = app => {
             res.json(dbAvailability);
         });
     });
+
+    app.post("/api/newNotification", (req, res) => {
+        db.Notification.create(req.body).then((dbNotification) => {
+            res.json(dbNotification);
+        });
+    });
     
     // Delete an example by id
     app.delete("/api/examples/:id", function (req, res) {

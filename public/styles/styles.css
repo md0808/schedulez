@@ -1,6 +1,5 @@
 body{
   background-color: #263238;
-  /* background-image: url("../images/8.png"); */
   background-position: fixed;
 }
 
@@ -142,14 +141,14 @@ i{
   left: 50%
 }
 
-#location-list, 
+/* #location-list, 
 #employee-list, 
 #schedule,
 #emp-schedule,
 #account-info, 
 #request-off {
   display:none;
-}
+} */
 
 header, main, .footer-content, .adjusted-container, .adjusted-center {
   padding-left: 300px;
