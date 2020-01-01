@@ -1,15 +1,15 @@
-<div class="container margin100">
-    <div class="carousel z-depth-4 carousel-slider center border" data-indicators="true">
+<div class="container">
+    <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-item dark blue-grey-text" href="#one!">
-            <img class="text-logo " src="/images/schedulez-text.png" />
-            <div class="carousel-mid z-depth-4 alt-dark">
+            {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
+            <div class="carousel-mid alt-dark">
                 <div class="page">
-                    <p class="mint">Create A Store</p>
+                    <h5 class="heading-carousel mint">Creating Your Store</h5>
+                    <p>Identify your company's name.</p>
                     <div class="row">
                         <form>
                             <div class="input-field col s8 offset-s2">
                                 <input id="company-name" type="text" class="validate">
-                                <label for="company-name">Company Name</label>
                             </div>
                         </form>
                     </div>
@@ -19,49 +19,17 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-item dark blue-grey-text" href="#two!">
-            <img class="text-logo" src="/images/schedulez-text.png" />
+        <div class="carousel-item dark blue-grey-text darken-4-text" href="#two!">
+            {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
             <div class="carousel-mid z-depth-4 alt-dark">
                 <div class="long-page">
-                    <p class="mint">Contact Information</p>
-                    <div class="row">
-                        <form>
-
-                            <div class="input-field col s8 offset-s2">
-                                <input id="employee-email" type="text">
-                                <label for="employee-email">Primary email address</label>
-                            </div>
-                            <div class="input-field col s8 offset-s2">
-                                <input id="employee-fullname" type="text">
-                                <label for="employee-fullname">Full Name of Primary Contact</label>
-                            </div>
-                            <div class="input-field col s8 offset-s2">
-                                <input id="employee-password" type="password">
-                                <label for="employee-password">Password</label>
-                            </div>
-                            <div class="input-field col s8 offset-s2">
-                                <input id="password-confirm" type="password">
-                                <label for="password-confirm">Confirm Password</label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="row center carousel-btn-div">
-                        <a class="next-btn center"><i class="material-icons">arrow_forward</i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item dark blue-grey-text darken-4-text" href="#three!">
-            <img class="text-logo" src="/images/schedulez-text.png" />
-            <div class="carousel-mid z-depth-4 alt-dark">
-                <div class="long-page">
-                    <p class="mint">Primary Location or Headquarters</p>
+                    <h5 class="mint heading-carousel">Set up your location</h5>
                     <div class="row">
                         <form>
                             <div class="row">
                                 <div class="input-field col s8 offset-s2">
                                     <input id="company-street" type="text">
-                                    <label for="company-street">Street Address</label>
+                                    <label for="company-street">Street address</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -124,7 +92,6 @@
                                         <option value="WI">Wisconsin</option>
                                         <option value="WY">Wyoming</option>
                                     </select>
-                                    <label>Select State</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -141,21 +108,21 @@
                         </form>
                     </div>
                     <div class="row center carousel-btn-div">
+                        <a class="prev-btn"><i class="material-icons center">arrow_back</i></a>
                         <a class="next-btn"><i class="material-icons">arrow_forward</i></a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="carousel-item dark blue-grey-text" href="#four!">
-            <img class="text-logo" src="/images/schedulez-text.png" />
+        <div class="carousel-item dark blue-grey-text" href="#three!">
+            {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
             <div class="carousel-mid z-depth-4 alt-dark">
                 <div class="page">
-                    <p class="mint">Set Company Hours</p>
+                    <h5 class="mint">Set Company Hours</h5>
                     <div class="row">
                         <div class="row">
                             <div class="col s4 offset-s2">
-                                <p class="mint">Store Opens at:</p>
+                                <p class="mint">Your location opens at:</p>
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <select class="start-hour front">
@@ -199,7 +166,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s4">
-                                    <p class="mint">Store Closes at:</p>
+                                    <p class="mint">Your location closes at:</p>
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <select class="start-hour front">
@@ -246,18 +213,54 @@
                         </div>
                     </div>
                     <div class="row carousel-btn-div">
+                        <a class="prev-btn"><i class="material-icons center">arrow_back</i></a>
                         <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="carousel-item dark blue-grey-text" href="#four!">
+            {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
+            <div class="carousel-mid z-depth-4 alt-dark">
+                <div class="long-page">
+                    <h5 class="mint heading-carousel">Configure Your Account</h5>
+                    <div class="row">
+                        <form>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="employee-email" type="text">
+                                <label for="employee-email">Email address</label>
+                            </div>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="employee-fullname" type="text">
+                                <label for="employee-fullname">Full Name</label>
+                            </div>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="employee-password" type="password">
+                                <label for="employee-password">Password</label>
+                            </div>
+                            <div class="input-field col s8 offset-s2">
+                                <input id="password-confirm" type="password">
+                                <label for="password-confirm">Confirm Password</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row center carousel-btn-div">
+                        <a class="prev-btn"><i class="material-icons center">arrow_back</i></a>
+                        <a class="next-btn center"><i class="material-icons">arrow_forward</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
 
         <div class="carousel-item dark blue-grey-text" href="#five!">
-            <img class="text-logo" src="/images/schedulez-text.png" />
+            {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
             <div class="carousel-mid z-depth-4 alt-dark">
                 <div class="long-page">
                     <div class="row">
-                        <h2 class="mint">Confirm Company Information</h2>
+                        <h2 class="mint">Confirm your company's information</h2>
                     </div>
                     <div class="row">
                         <p class="white-text"><span id="company-name-confirm"><strong>Company Name</strong></span><br>
@@ -276,7 +279,7 @@
                     </div>
                     <div class="row center">
                         <button id="create-btn" type="submit"
-                            class="waves-effect waves-light btn mint-dark-btn">Confirm</button>
+                            class="waves-effect waves-light btn mint-dark-btn"><i class="material-icons right">check</i>Confirm</button>
                         <button id="edit-btn" class="waves-effect waves-light btn mint-dark-btn">Edit</button>
                     </div>
                 </div>
@@ -307,11 +310,18 @@
                 // indicators: true
             });
 
-            $(".next-btn, #no").on("click", (e) => {
+            $(".next-btn, #forward").on("click", (e) => {
                 console.log('im being clicked');
                 e.preventDefault();
                 e.stopPropagation();
-                $('.carousel').carousel('next');
+                $(".carousel").carousel("next");
+            });
+
+            $(".prev-btn, #back").on("click", (e) => {
+                console.log('im being clicked');
+                e.preventDefault();
+                e.stopPropagation();
+                $(".carousel").carousel("prev");
             });
 
             $("#edit-btn").on("click", (e) => {
