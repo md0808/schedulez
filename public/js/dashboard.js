@@ -30,6 +30,8 @@ $(document).ready(() => {
   $("select").formSelect();
   $(".datepicker").datepicker();
   $(".scrollspy").scrollSpy();
+  $("input#input_text, textarea#request-description").characterCounter();
+
 });
 
 $("#schedule-btn").on("click", () => {
