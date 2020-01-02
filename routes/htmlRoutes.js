@@ -60,7 +60,7 @@ module.exports = app => {
   // VIEW EMPLOYEES
   app.get("/:locationNum/manager-view/employees", (req, res) => {
     const locationNumber = parseInt(req.params.locationNum);
-    console.log(locationNumber);
+    console.log("locNum: " + locationNumber);
     const url = `http://localhost:3000/api/allEmployees/${locationNumber}`;
     fetch(url)
       .then(r => r.json())

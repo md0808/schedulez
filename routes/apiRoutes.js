@@ -38,16 +38,24 @@ module.exports = app => {
             res.json(data);
         });
     });
-  app.get("/api/allEmployees/:locationNum", (req, res) => {
-    db.Employee.findAll({
-      where: {
-        locationNum: req.params.locationNum
-      },
-      include: [db.Availability]
-    }).then(dbEmployees => {
-      res.json(dbEmployees);
+    app.get("/api/allEmployees/:locationNum", (req, res) => {
+        db.Employee.findAll({
+            where: {
+                locationNum: req.params.locationNum
+            }
+        }).then((dbEmployees) => {
+            res.json(dbEmployees);
+        });
     });
-  });
+    app.get("/api/availability/:employeeNum", (req, res) => {
+        db.Availability.findOne({
+            where: {
+                EmployeeNum: req.params.employeeNum
+            }
+        }).then((data) => {
+            res.json(data);
+        });
+    });
     app.get("/api/allRequests", function (req, res) {
         db.dbRequests.findAll({}).then(function (dbRequests) {
             res.json(dbRequests);
@@ -57,7 +65,7 @@ module.exports = app => {
         db.Location.findAll({
             where: {
                 CompanyNum: req.params.company
-             },
+            },
             include: [db.Company]
         }).then((data) => {
             res.json(data)
@@ -90,7 +98,7 @@ module.exports = app => {
             res.json(dbAvailability);
         });
     });
-    
+
     // Delete an example by id
     app.delete("/api/examples/:id", function (req, res) {
         db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
