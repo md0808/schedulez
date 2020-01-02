@@ -405,6 +405,8 @@ label {
   margin-bottom: 1em;
 }
 
+/* MEDIA QUERIES */
+
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
