@@ -6,8 +6,8 @@
     </div>
 </nav>
 
-<!-- Sidebar bar=============== -->
-<ul id="slide-out" class="blue-grey-text text-darken-4 sidenav sidenav-fixed">
+<!-- SIDE BAR (medium and large screens)=============== -->
+<ul id="slide-out" class="blue-grey-text text-darken-4 sidenav sidenav-fixed hide-on-small-only">
     <li>
         <div class="user-view">
             <h6 class="center">Manager Dashboard</h6>
@@ -38,10 +38,41 @@
         </div>
     </li>
 </ul>
+<!-- SIDE BAR (small screens) ======================================= -->
+<div class="small-nav">
+    <div class="row">
+        <ul class="valign-wrapper">
+            <li class="col s3 center">
+                <a href="#notifications" id="notifications-btn"><i class="tooltipped material-icons"
+                        id="notifications-btn" data-position="right"
+                        data-tooltip="View Your Notifications">notifications</i>
+                </a>
+            </li>
+            <li class="col s3 center">
+                <a href="#schedule" id="schedule-btn"><i class="tooltipped material-icons" id="schedule-btn"
+                        data-position="right" data-tooltip="View Schedule">event</i>
+                </a>
+            </li>
+            <li class="col s3 center">
+                <a href="#employee-list" id="employees-btn"><i class="tooltipped material-icons"
+                        id="employees-btn" data-position="right" data-tooltip="View All 
+                    Employees">group</i>
+                </a>
+            </li>
+            <li class="col s3 center">
+                <a href="#locations-list" id="locations-btn"><i class="tooltipped material-icons"
+                        id="locations-btn" data-position="right" data-tooltip="View All Locations">business</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--GENERAL APP ============================================ -->
 
 <div class="container adjusted-container">
     <div class="row">
-<!--Notifications============================================ -->
+        <!--Notifications============================================ -->
         <div class="col s12 margin100" id="notifications">
             <div class="card border padding40">
                 <h3 class="center">Notifications</h3>
