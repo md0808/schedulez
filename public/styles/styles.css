@@ -1,11 +1,10 @@
 body{
   background-color: #eceff1;
-  /* background-image: url("../images/8.png"); */
-  background-position: fixed;
 }
 
 * {
   font-family: 'Varela Round', sans-serif;
+  font-size: 1.2rem;
 }
 
 .login-img{
@@ -29,16 +28,10 @@ a:hover{
 }
 
 .platform-top {
-  display: flex;
-  flex-direction: row;
   background-color: #263238;
 }
 
 .platform-img {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  justify-content: right;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
@@ -66,12 +59,6 @@ h3 {
 
 .carousel {
   margin-top: 2%;
-}
-
-.carousel-mid {
-  width: 90%;
-  margin: 0px auto;
-  height: 90%;
 }
 
 .carousel-mid .input-field {
@@ -113,7 +100,7 @@ input {
 }
 
 .mint{
-  color: #69f0ae;
+  color: #2bbc7d;
 }
 
 .create-steps {
@@ -126,11 +113,11 @@ input {
 }
 
 .white-text{
-  color: #fff;
+  color: #263238;
 }
 
 .altdark-text{
-  color: #37474f;
+  color: #263238;
 }
 
 .lowercase{
@@ -156,10 +143,6 @@ input {
   background: none;
 }
 
-.border{
-  border: solid 10px #2bbc7d;
-}
-
 .dark-border{
   border: solid 10px #37474f
 }
@@ -179,11 +162,33 @@ input {
   z-index: 5000;
 }
 
+/* MOBILE STYLES */
+
+.small-nav{
+  display: block;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+  background-color: #2bbc7d;
+}
+
+#schedule-btn,
+#notifications-btn,
+#employees-btn,
+#locations-btn {
+  font-size: 5rem;
+}
+
 /* DASHBOARD STYLES */
 
 .notification-radio {
   color: #263238;
 
+}
+
+.card {
+  margin-top: 3rem;
 }
 
 /* CAROUSEL STYLES */
@@ -221,6 +226,7 @@ input {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .carousel-btn-div{
   /* position: absolute;
   bottom: 10%; */
@@ -247,26 +253,15 @@ input {
   display:none;
 }
 
-header, main, .footer-content, .adjusted-container, .adjusted-center {
-  padding-left: 300px;
-}
-
-
 /* CREATE ACCOUNT */
 
 .platform-heading { 
-  display: flex;
-  align-items: center;
-  align-self: flex-end;
-  flex-direction: row;
-  justify-content: right;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
 }
 
 .platform-description {
-  margin-right: 15px;
   color: #fff;
 }
 
@@ -278,16 +273,6 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
   font-size: 1rem;
   background-color: #2bbc7d;
   color: #263238;
-}
-
-/* SIDEBARS */
-
-#notifications-btn,
-#employees-btn,
-#locations-btn, 
-#schedule-btn {
-  font-size: 3rem;
-  padding-top: 3rem;
 }
 
 /* MODALS STYLES */
@@ -314,7 +299,6 @@ label {
   color: #263238;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-
 }
 
 .sub-header {
@@ -414,6 +398,24 @@ label {
   .modal-long{
     max-width: 100%;
   }
+
+  .container {
+    width: 85%;
+  }
+
+  .carousel-mid {
+    width: 90%;
+    margin: 0px auto;
+    height: 95%;
+  }
+
+  #schedule-btn,
+  #notifications-btn,
+  #employees-btn,
+  #locations-btn {
+    font-size: 4rem;
+  }
+
 }
 
 @media only screen and (min-width: 992px) {
@@ -428,6 +430,44 @@ label {
     margin-top: 4em;
   }
 
+  .small-nav {
+    display: none;
+  }
 
+  .container {
+    min-width: 80%;
+  }
 
+  /* CREATE ACCOUNT */
+
+  .carousel-mid {
+    width: 90%;
+    margin: 0px auto;
+    height: 90%;
+  }
+
+  /* SIDEBARS */
+
+  #notifications-btn,
+  #employees-btn,
+  #locations-btn, 
+  #schedule-btn {
+    font-size: 3rem;
+    padding-top: 3rem;
+  }
+
+  /* MAIN CONTENT */
+
+  header, 
+  main, 
+  .footer-content, 
+  .adjusted-container, 
+  .adjusted-center {
+    padding-left: 300px;
+  }
+
+  .border{
+    border: solid 10px #2bbc7d;
+  }
+  
 }
