@@ -89,34 +89,39 @@ $("#new-schedule-add-btn").on("click", () => {
     }
 
     var scheduleShifts = [];
-    var employeesScheduledToWork = [];
 
     for (var i = 0; i < scheduleDates.length; i++) {
         var weekday = scheduleDaysOfWeek[i];
         var date = scheduleDates[i];
 
+        var shiftObject = createShiftInfo(date, weekday);
+
         console.log("date: " + scheduleDates.length);
-
-        for(var j = 0; j < shiftTimes.length; j++){
-            findEmployeesForSchedule(shiftTimes[j], weekday, function(employeeToWork){
-                employeesScheduledToWork.push(employeeToWork);
-            });
-        }
-
-        createShift(date, weekday);
 
         console.log(scheduleShifts);
     }
 
+    function createShiftInfo(date, weekday){
+        var employeesScheduledToWork = [];
 
-    function createShift(date, weekday){
+        for(var i = 0; i < shiftTimes.length; i++){
+            findEmployeesForSchedule(shiftTimes[i], weekday, function(employeeToWork){
+                employeesScheduledToWork.push(employeeToWork);
+            })
+        }
+
+        var newShift = createShift(date, weekday, employeesScheduledToWork);
+        console.log("newly created Shift: " + newShift);
+    }
+
+    function createShift(date, weekday, employeesToWork){
         var newShift = {};
 
         newShift.date = date;
         newShift.weekday = weekday;
         newShift.shiftTimes = shiftTimes;
         newShift.numberOfEmployees = numOfEmployeesNeeded;
-        newShift.scheduledEmployees = employeesScheduledToWork;
+        newShift.scheduledEmployees = employeesToWork;
 
         scheduleShifts.push(newShift);
     }
@@ -144,13 +149,10 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
                 //console.log(employeeAvailability);
                 var thisEmployeeNum = result.EmployeeNum;
 
-                switch (day) {
+                switch (weekday) {
                     case "sunday":
                         //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("sunday", employeeAvailability[0], startHR, thisEmployeeNum);
-                        //chosenEmployee = selectEmployee();
-                        //choosenEmployee = selectEmployee();
-                        console.log()
                         break;
                     case "monday":
                         //console.log("this sunday: " + thisEmployeeNum);
@@ -191,15 +193,10 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
 
         }
 
-        console.log("av: " + employeesAvailableForShift)
-
         function checkAvailability(weekday, availability, shiftStartHR, employeeNum) {
             console.log("weekday: " + weekday + " availability: " + availability + " employeeNum: " + employeeNum);
 
             var employeeAvailability = parseInt(availability.split(":")[0]);
-            //console.log("sunday: " + availability);
-            //console.log("shiftstart: " + shift);
-
             if (shiftStartHR >= employeeAvailability) {
                 console.log("Employee-" + employeeNum + " can work one of the " + weekday + " shifts starting at " + shiftStartHR);
                 employeesAvailableForShift.push(employeeNum);
@@ -219,7 +216,6 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
             }
             else{
                 var employeeSelected = employeesAvailableForShift[0];
-
                 return employeeSelected;
             }
         }
