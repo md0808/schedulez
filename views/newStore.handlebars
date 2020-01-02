@@ -1,11 +1,24 @@
+<div class="row platform-top">
+    <div class="col s6">
+        <div class="platform-img">
+            <img class="text-logo" src="/images/schedulez-text.png" />
+        </div>
+    </div>
+    <div class="col s4 offset-s4">
+        <div class="platform-heading">
+            <p class="platform-description">Already have an account?</p>
+            <a class="platform-btn waves-effect waves-light btn">Login</a>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-item dark blue-grey-text" href="#one!">
-            {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
             <div class="carousel-mid alt-dark">
                 <div class="page">
-                    <h5 class="heading-carousel mint">Creating Your Store</h5>
-                    <p>Identify your company's name.</p>
+                    <h3>Get Started Now.</h3>
+                    <h5 class="heading-carousel altdark-text">Create Your Store</h5>
+                    <p><span class="create-steps">Step 1:</span> Identify your company's name.</p>
                     <div class="row">
                         <form>
                             <div class="input-field col s8 offset-s2">
@@ -15,15 +28,16 @@
                     </div>
                 </div>
                 <div class="row carousel-btn-div">
-                    <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
+                    <a class="next-btn btn center-align"><i class="material-icons right">arrow_forward</i>Next</a>
                 </div>
             </div>
         </div>
         <div class="carousel-item dark blue-grey-text darken-4-text" href="#two!">
             {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
-            <div class="carousel-mid z-depth-4 alt-dark">
+            <div class="carousel-mid alt-dark">
                 <div class="long-page">
-                    <h5 class="mint heading-carousel">Set up your location</h5>
+                    <h5 class="altdark-text heading-carousel">Set up your location</h5>
+                    <p><span class="create-steps">Step 2:</span> Choose which location you'd like to set up.</p>
                     <div class="row">
                         <form>
                             <div class="row">
@@ -104,29 +118,29 @@
                                     <label for="company-country">Country</label>
                                 </div>
                             </div>
-
                         </form>
                     </div>
-                    <div class="row center carousel-btn-div">
-                        <a class="prev-btn"><i class="material-icons center">arrow_back</i></a>
-                        <a class="next-btn"><i class="material-icons">arrow_forward</i></a>
+                    <div class="row carousel-btn-div">
+                        <a class="prev-btn btn"><i class="material-icons left">arrow_back</i>Previous</a>
+                        <a class="next-btn btn"><i class="material-icons right">arrow_forward</i>Next</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item dark blue-grey-text" href="#three!">
             {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
-            <div class="carousel-mid z-depth-4 alt-dark">
-                <div class="page">
-                    <h5 class="mint">Set Company Hours</h5>
-                    <div class="row">
+            <div class="carousel-mid alt-dark">
+                <div class="long-page">
+                    <h5 class="heading-carousel altdark-text">Set Your Location's Hours</h5>
+                    <p><span class="create-steps">Step 3:</span> Choose the hours you will need to schedule for your location.</p>
+                    <div class="row location-hours">
                         <div class="row">
                             <div class="col s4 offset-s2">
                                 <p class="mint">Your location opens at:</p>
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <select class="start-hour front">
-                                            <option value="" disable selected>Hour</option>
+                                            <option value="" disable selected>Hours</option>
                                             <option value="00">00</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -155,7 +169,7 @@
                                     </div>
                                     <div class="input-field col s6">
                                         <select class="start-minute front">
-                                            <option value="" disable selected>minutes </option>
+                                            <option value="" disable selected>Minutes</option>
                                             <option value="00">00</option>
                                             <option value="15">15</option>
                                             <option value="30">30</option>
@@ -170,7 +184,7 @@
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <select class="start-hour front">
-                                                <option value="" disable selected>Hour</option>
+                                                <option value="" disable selected>Hours</option>
                                                 <option value="00">00</option>
                                                 <option value="01">01</option>
                                                 <option value="02">02</option>
@@ -199,7 +213,7 @@
                                         </div>
                                         <div class="input-field col s6">
                                             <select class="start-minute front">
-                                                <option value="" disable selected>minutes </option>
+                                                <option value="" disable selected>Minutes</option>
                                                 <option value="00">00</option>
                                                 <option value="15">15</option>
                                                 <option value="30">30</option>
@@ -213,17 +227,17 @@
                         </div>
                     </div>
                     <div class="row carousel-btn-div">
-                        <a class="prev-btn"><i class="material-icons center">arrow_back</i></a>
-                        <a class="next-btn"><i class="material-icons center">arrow_forward</i></a>
+                        <a class="prev-btn btn"><i class="material-icons left">arrow_back</i>Previous</a>
+                        <a class="next-btn btn"><i class="material-icons right">arrow_forward</i>Next</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item dark blue-grey-text" href="#four!">
-            {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
-            <div class="carousel-mid z-depth-4 alt-dark">
+            <div class="carousel-mid alt-dark">
                 <div class="long-page">
-                    <h5 class="mint heading-carousel">Configure Your Account</h5>
+                    <h5 class="altdark-text heading-carousel">Configure Your Account</h5>
+                    <p><span class="create-steps">Step 4:</span> Create an account you will use to login to Schedulez.</p>
                     <div class="row">
                         <form>
                             <div class="input-field col s8 offset-s2">
@@ -232,7 +246,7 @@
                             </div>
                             <div class="input-field col s8 offset-s2">
                                 <input id="employee-fullname" type="text">
-                                <label for="employee-fullname">Full Name</label>
+                                <label for="employee-fullname">Full name</label>
                             </div>
                             <div class="input-field col s8 offset-s2">
                                 <input id="employee-password" type="password">
@@ -240,27 +254,24 @@
                             </div>
                             <div class="input-field col s8 offset-s2">
                                 <input id="password-confirm" type="password">
-                                <label for="password-confirm">Confirm Password</label>
+                                <label for="password-confirm">Confirm password</label>
                             </div>
                         </form>
                     </div>
-                    <div class="row center carousel-btn-div">
-                        <a class="prev-btn"><i class="material-icons center">arrow_back</i></a>
-                        <a class="next-btn center"><i class="material-icons">arrow_forward</i></a>
+                    <div class="row carousel-btn-div">
+                        <a class="prev-btn btn"><i class="material-icons left">arrow_back</i>Previous</a>
+                        <a class="next-btn btn"><i class="material-icons right">arrow_forward</i>Next</a>
                     </div>
                 </div>
             </div>
         </div>
-        
-
-        
-
         <div class="carousel-item dark blue-grey-text" href="#five!">
             {{!-- <img class="text-logo" src="/images/schedulez-text.png" /> --}}
-            <div class="carousel-mid z-depth-4 alt-dark">
+            <div class="carousel-mid alt-dark">
                 <div class="long-page">
                     <div class="row">
-                        <h2 class="mint">Confirm your company's information</h2>
+                        <h3 class="mint">Almost Done!</h3>
+                        <h5 class="heading-carousel altdark-text">Confirm your information</h5>
                     </div>
                     <div class="row">
                         <p class="white-text"><span id="company-name-confirm"><strong>Company Name</strong></span><br>
@@ -278,9 +289,9 @@
                         </p>
                     </div>
                     <div class="row center">
-                        <button id="create-btn" type="submit"
-                            class="waves-effect waves-light btn mint-dark-btn"><i class="material-icons right">check</i>Confirm</button>
-                        <button id="edit-btn" class="waves-effect waves-light btn mint-dark-btn">Edit</button>
+                        <button id="create-btn" type="submit" class="waves-effect waves-light btn"><i
+                                class="material-icons right">check</i>Confirm</button>
+                        <button id="edit-btn" class="waves-effect waves-light btn">Edit</button>
                     </div>
                 </div>
             </div>

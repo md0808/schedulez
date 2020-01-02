@@ -1,11 +1,11 @@
 body{
-  background-color: #263238;
+  background-color: #eceff1;
   /* background-image: url("../images/8.png"); */
   background-position: fixed;
 }
 
 * {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .login-img{
@@ -19,22 +19,35 @@ a:hover{
   color: #37474f
 }
 
+.btn:hover{
+  background-color: #2bbd7e;
+}
+
 .input-field>label{
-  color: white;
+  color: #263238;
   font-size: 1em;
 }
 
-.carousel .carousel-item>img{
-  height: 100px;
-  width: 220px;
+.platform-top {
+  display: flex;
+  flex-direction: row;
+  background-color: #263238;
 }
 
-.page{
-  padding-top: 20%;
+.platform-img {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  justify-content: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
-.long-page{
-  padding-top: 10%;
+.text-logo {
+  display: flex;
+  height: 30px;
+  align-items: center;
 }
 
 .hide{
@@ -45,8 +58,14 @@ i{
   cursor: pointer;
 }
 
+h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  color: #263238;
+}
+
 .carousel {
-  margin-top: 10%;
+  margin-top: 2%;
 }
 
 .carousel-mid {
@@ -59,8 +78,10 @@ i{
   font-size: 1rem;
 }
 
-.carousel-mid .heading-carousel {
-  font-size: 1.7rem;
+.heading-carousel {
+  font-size: 2.25rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
 }
 
 .availability-select{
@@ -72,34 +93,40 @@ i{
   border: none;
 }
 
-.next-btn i,
-.prev-btn i {
-  color: #69f0ae;
-  font-size: 2.5rem;
+.next-btn,
+.prev-btn,
+.logout-btn,
+.requests-btn {
+  color: #263238;
+  background-color: #2bbc7d;
+  border-radius: 6px;
 }
 
 #edit-btn {
-  background-color: #b0bec5;
+  background-color: #babdbe;
+  color: #263238;
+  border-radius: 6px;
 }
 
 input {
-  color: #fff;
-}
-
-.dark{
-  background-color: #263238;
-}
-
-.alt-dark{
-  background-color: #37474f;
+  color: #263238;
 }
 
 .mint{
   color: #69f0ae;
 }
 
+.create-steps {
+  color: #2bbc7d;
+  font-weight: 700; 
+}
+
+#company-name {
+  border-bottom: 1px solid #2bbc7d;
+}
+
 .white-text{
-  color: white;
+  color: #fff;
 }
 
 .altdark-text{
@@ -113,7 +140,8 @@ input {
 .mint-dark-btn{
   color: #263238;
   font-weight: bold;
-  background-color: #69f0ae;
+  border-radius: 6px;
+  background-color: #2bbc7d;
   text-transform: uppercase;
 }
 
@@ -129,7 +157,7 @@ input {
 }
 
 .border{
-  border: solid 20px #69f0ae;
+  border: solid 10px #2bbc7d;
 }
 
 .dark-border{
@@ -145,10 +173,17 @@ input {
 }
 
 .margin100{
-  margin-top: 100px;
+  margin-top: 3rem;
 }
 .front {
   z-index: 5000;
+}
+
+/* DASHBOARD STYLES */
+
+.notification-radio {
+  color: #263238;
+
 }
 
 /* CAROUSEL STYLES */
@@ -156,14 +191,51 @@ input {
   min-height: 600px;
 }
 
+.carousel-mid h3 {
+  line-height: 1.2;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: .8em;
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.dark{
+  background-color: #eceff1;
+}
+
+.alt-dark{
+  background-color: #fff;
+  border: 1px solid #eceff1;
+  border-radius: 6px;
+}
+
+.alt-dark-schedules {
+  background-color: #eceff1;
+  border: 1px solid #eceff1;
+  border-radius: 6px;
+}
+
 .nav-wrapper{
   padding-left: 20px;
   padding-right: 20px;
 }
 .carousel-btn-div{
-  position: absolute;
-  bottom: 10%;
-  left: 45%
+  /* position: absolute;
+  bottom: 10%; */
+}
+
+.page{
+  padding-top: 15%;
+}
+
+.long-page{
+  padding-top: 5%;
+}
+
+.location-hours {
+  margin-top: 40px;
 }
 
 #location-list, 
@@ -179,17 +251,58 @@ header, main, .footer-content, .adjusted-container, .adjusted-center {
   padding-left: 300px;
 }
 
+
+/* CREATE ACCOUNT */
+
+.platform-heading { 
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  flex-direction: row;
+  justify-content: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.platform-description {
+  margin-right: 15px;
+  color: #fff;
+}
+
+.platform-btn,
+#create-btn {
+  text-transform: uppercase; 
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2bbc7d;
+  color: #263238;
+}
+
+/* SIDEBARS */
+
+#notifications-btn,
+#employees-btn,
+#locations-btn, 
+#schedule-btn {
+  font-size: 3rem;
+  padding-top: 3rem;
+}
+
 /* MODALS STYLES */
 
 .modal {
-  border-radius: 1.5em;
+  border-radius: 6px;
+  max-height: 85%;
 }
+
 .modal-long{
   min-width: 900px;
 }
 
 label {
-  color: #fff;
+  color: #263238;
 }
 
 .newWeekLabel {
@@ -197,13 +310,22 @@ label {
   font-size: 1em;
 }
 
+.modal h2 {
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+
+}
+
 .sub-header {
-  color: #fff;
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
   font-size: 1.5em;
 }
 
 .new-day {
-  border: solid #9fffe0 1px;
+  border: solid #2bbc7d 1px;
+  background-color: #fff;
   padding: 1em;
   border-radius: 1em;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
@@ -218,13 +340,20 @@ label {
 }
 
 .addEmployee-btn {
-  background-color: #9fffe0; 
+  background-color: #2bbc7d; 
   color: #263238;
 }
 
 .modal-header {
   font-size: 2.5em;
-  color: #fff;
+  color: #263238;
+}
+
+.employee-account {
+  border: solid #2bbc7d 1px;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
 .partial-header {

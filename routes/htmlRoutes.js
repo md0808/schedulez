@@ -26,8 +26,7 @@ module.exports = app => {
   // REAL WORLD
   // LogIn --> User Info (location#) --> Locations# --> Company # --> .get(/api/allLocations/:companyNum)
 
-  // TESTING
-  // enter url w/ companyName --> company # --> .get(/api/allLocations)
+  // Access Location Information
   app.get(":locationNum/manager-view/:name", (req, res) => {
     const url = `http://localhost:3000/api/company/find/${req.params.name}`;
     fetch(url)
@@ -49,9 +48,9 @@ module.exports = app => {
     var numOfShifts = parseInt(req.params.shiftNum);
     var shifts = [];
 
-    for(var i = 0; i < numOfShifts; i++){
+    for (var i = 0; i < numOfShifts; i++) {
       var num = i + 1;
-      var shiftNum = { shiftnum: num};
+      var shiftNum = { shiftnum: num };
       shifts.push(shiftNum);
     }
 
