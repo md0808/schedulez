@@ -2,7 +2,7 @@
 <nav class="blue-grey darken-4">
     <div class="nav-wrapper">
         <span class="adjusted-center"><a href="#!" class="brand-logo">SchedulEZ</a></span>
-        <span class="right"><a class="logout">Logout</a></span>
+        <span class="right"><a class="logout-btn btn">Logout</a></span>
     </div>
 </nav>
 
@@ -13,56 +13,57 @@
             <h6 class="center">Manager Dashboard</h6>
             <h4 class="user-name center">User Name</h4>
             <div class="row center">
-                <a href="#notifications" id="notifications-btn"><i class="tooltipped material-icons medium padding40"
-                        data-position="right" data-tooltip="View Notification">notifications</i>
+                <a href="#notifications" id="notifications-btn"><i class="tooltipped material-icons"
+                        id="notifications-btn" data-position="right"
+                        data-tooltip="View Your Notifications">notifications</i>
                 </a>
             </div>
             <div class="row center">
-                <a href="#employee-list" id="employees-btn"><i class="tooltipped material-icons medium padding40"
-                        data-position="right" data-tooltip="View Employees">group</i>
-                </a>
-            </div>
-            <div class="row center">
-                <a href="#locations-list" id="locations-btn"><i class="tooltipped material-icons medium padding40"
-                        data-position="right" data-tooltip="View Locations">business</i>
-                </a>
-            </div>
-            <div class="row center">
-                <a href="#schedule" id="schedule-btn"><i class="tooltipped material-icons medium padding40"
+                <a href="#schedule" id="schedule-btn"><i class="tooltipped material-icons medium" id="schedule-btn"
                         data-position="right" data-tooltip="View Schedule">event</i>
                 </a>
             </div>
+            <div class="row center">
+                <a href="#employee-list" id="employees-btn"><i class="tooltipped material-icons medium"
+                        id="employees-btn" data-position="right" data-tooltip="View All 
+                Employees">group</i>
+                </a>
+            </div>
+            <div class="row center">
+                <a href="#locations-list" id="locations-btn"><i class="tooltipped material-icons medium"
+                        id="locations-btn" data-position="right" data-tooltip="View All Locations">business</i>
+                </a>
+            </div>
+
         </div>
     </li>
 </ul>
 
 <div class="container adjusted-container">
     <div class="row">
-
-
-        <!--Notifications============================================ -->
+<!--Notifications============================================ -->
         <div class="col s12 margin100" id="notifications">
-            <div class="card dark border white-text padding40">
+            <div class="card border padding40">
                 <h3 class="center">Notifications</h3>
                 <div class="divider"></div>
                 <div class="row">
                     <!-- This is where the individual notication starts-->
-                    <div class="card s12 white-text" id="n-123">
+                    <div class="card s12" id="n-123">
                         <div class="col s3">
                             <form>
                                 <p>
                                     <label for="approve">
                                         <input name="n-123" type="radio" id="approve" value="approve" checked />
-                                        <span class="white-text">Approve</span>
+                                        <span class="notification-radio">Approve</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label for="decline">
                                         <input name="n-123" type="radio" id="decline" value="decline" />
-                                        <span class="white-text">Decline</span>
+                                        <span class="notification-radio">Decline</span>
                                     </label>
                                 </p>
-                                <button class="btn waves-effect waves-light mint-dark-btn center" id="requests"
+                                <button class="btn waves-effect waves-light center requests-btn" id="requests"
                                     type="submit" name="action">Submit
                                 </button>
                             </form>
@@ -80,13 +81,11 @@
             </div>
         </div>
         <!--Employees============================================ -->
-
         <div class="col s12" id="employee-list">
-            <div class="card dark border white-text padding40">
+            <div class="card border padding40">
                 <a href="#modal-employees" class="modal-trigger" id="new-employee-btn"><i
                         class="tooltipped right material-icons medium red-text"
                         data-tooltip="Add a new employee">add_circle</i></a>
-
                 {{!-- EMPLOYEES LIST --}}
                 <h3 class="center">Employees</h3>
                 <ul class="collapsible expandable">
@@ -101,7 +100,7 @@
     </div>
     <!--Locations============================================ -->
     <div class="col s12 margin100" id="location-list">
-        <div class="card dark border white-text padding40">
+        <div class="card border padding40">
             <a class="modal-trigger" id="new-location-btn" href="#modal-locations">
                 <i class=" tooltipped right material-icons medium red-text"
                     data-tooltip="Add a new location">add_circle</i></a>
@@ -115,20 +114,21 @@
     </div>
     <!--Schedule============================================ -->
     <div class="col s12 margin100" id="schedule">
-        <div class="card dark border padding40">
+        <div class="card border padding40">
             <i class="tooltipped right material-icons medium red-text" id="new-schedule-btn"
                 data-tooltip="Generate Next Schedule">add_circle</i>
-            <h3 class="center white-text">Schedules</h3>
-            <div class="padding40 alt-dark z-depth-4">
+            <h3 class="center">Schedules</h3>
+            <div class="padding40 alt-dark-schedules">
                 <!-- Modals could be generated dynamically upon create of new schedule, link to modal appears here-->
-                <a href="#sched-modal-010220" class="white-text center modal-trigger">1/2/20 - 1/15/20</a><br>
-                <a href="#" class="white-text center">1/16/20 - 1//30</a><br>
-                <a href="#" class="white-text center">1/31/20 - 2/13/20</a>
+                <a href="#sched-modal-010220" class="center modal-trigger">1/2/20 - 1/15/20</a><br>
+                <a href="#" class="center">1/16/20 - 1//30</a><br>
+                <a href="#" class="center">1/31/20 - 2/13/20</a>
 
             </div>
         </div>
-        <div id="new-schedule-section" class="scrollspy section card dark border blue-grey-text text-darken-4 padding40">
-            <h2 class="center white-text">Generate a New Schedule</h2>
+        <div id="new-schedule-section"
+            class="scrollspy section card dark border blue-grey-text text-darken-4 padding40">
+            <h2 class="center">Generate a New Schedule</h2>
 
             <div class=" col s8 offest-s2">
                 <button class="btn altdark-mint-btn datepicker">Choose Start Date</button>
@@ -268,9 +268,8 @@
     <!-- Sample Schedule Table Modal Structure -->
     <div id="sched-modal-010220" class="modal modal-long">
         <div class="modal-content dark border blue-grey-text text-darken-4 ">
-            <h2 class="white-text center">Schedule 1/2-1/15</h2>
-
-            <table class="white-text highlight responsive-table">
+            <h2 class="center">Schedule 1/2-1/15</h2>
+            <table class="highlight responsive-table">
                 <thead>
                     <tr>
                         <th>Employee</th>
@@ -376,9 +375,9 @@
     </div>
     {{!-- Sample schedule modal ends --}}
 
-    <!-- LOCATION Modal Structure -->
+    <!-- LOCATION MODAL STRUCTURE-->
     <div id="modal-locations" class="modal">
-        <div class="modal-content blue-grey-text text-darken-4 ">
+        <div class="modal-content blue-grey-text text-darken-4">
             <h2 class="center">Add Locations</h2>
             <form>
                 <div class="row">
@@ -573,12 +572,12 @@
 {{!-- EMPLOYEE MODAL BEGINS --}}
 <div id="modal-employees" class="modal dark-border">
     <div class="modal-content alt-dark blue-grey-text text-darken-4">
-        <h2 class="modal-header center">Add A New Employee</h2>
+        <h2 class="modal-header center">Add a new employee</h2>
         <form>
             <div class="row">
                 <div class="input-field col s12">
                     <input id="employee-name" type="text" class="validate">
-                    <label for="employee-name">Full Name</label>
+                    <label for="employee-name">Full name</label>
                 </div>
                 <div class="input-field col s12">
                     <input id="employee-email" type="text" class="validate">
@@ -600,8 +599,8 @@
                 </div>
                 <div class="input-field col s6">
                     <select id="employee-status" class="front">
-                        <option value="employee">employee</option>
-                        <option value="manager">manager</option>
+                        <option value="employee">Employee</option>
+                        <option value="manager">Manager</option>
                     </select>
                     <label for="employee-status">Status</label>
                 </div>
