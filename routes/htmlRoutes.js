@@ -44,18 +44,18 @@ module.exports = app => {
       });
   });
 
-  // app.get("/:locationNum/manager-view/:shiftNum", (req, res) => {
-  //   var numOfShifts = parseInt(req.params.shiftNum);
-  //   var shifts = [];
+  app.get("/:locationNum/manager-view/:shiftNum", (req, res) => {
+    var numOfShifts = parseInt(req.params.shiftNum);
+    var shifts = [];
 
-  //   for (var i = 0; i < numOfShifts; i++) {
-  //     var num = i + 1;
-  //     var shiftNum = { shiftnum: num };
-  //     shifts.push(shiftNum);
-  //   }
+    for (var i = 0; i < numOfShifts; i++) {
+      var num = i + 1;
+      var shiftNum = { shiftnum: num };
+      shifts.push(shiftNum);
+    }
 
-  //   res.render("managerView", { shifts });
-  // });
+    res.render("managerView", { shifts });
+  });
 
   // VIEW EMPLOYEES
   app.get("/:locationNum/manager-view/employees", (req, res) => {
