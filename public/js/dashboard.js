@@ -34,15 +34,56 @@ $(document).ready(() => {
 
 $("#schedule-btn").on("click", () => {
   showAndHideDiv("schedule");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/1/#schedule";
+  window.location.href = newUrl;
 });
 $("#notifications-btn").on("click", () => {
   showAndHideDiv("notifications");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/#notifications";
+  window.location.href = newUrl;
 });
 $("#employees-btn").on("click", () => {
   showAndHideDiv("employee-list");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/employees/#employee-list";
+  window.location.href = newUrl;
 });
 $("#locations-btn").on("click", () => {
   showAndHideDiv("location-list");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/#locations-list";
+  window.location.href = newUrl;
+
 });
 
 $("#new-schedule-btn").on("click", () => {
@@ -128,7 +169,6 @@ $("#add-shift-section").on("click", () => {
   var shiftDropdownClass = $("#add-shifts-dropdown").attr("class");
 
   if (shiftDropdownClass !== "active") {
-    console.log("not active");
     window.location.href =
       "http://" +
       splitUrl[2] +
@@ -172,6 +212,10 @@ const daysOfWeek = [
   "Sunday"
 ];
 
+const times = ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am"
+, "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm"
+, "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"];
+
 for (let i = 0; i < daysOfWeek.length; i++) {
   //To Append Date
   let newWeekDate = $("<div>");
@@ -187,7 +231,10 @@ for (let i = 0; i < daysOfWeek.length; i++) {
   let newHourAvailability = $("<div>");
   $(newHourAvailability).addClass("input-field col s5 offset-1");
 
+  var day = daysOfWeek[i].toLowerCase();
+
   let newSelectHours = $("<select>");
+  $(newSelectHours).attr("id", "ea-" + day + "-hr");
   $(newSelectHours).addClass("start-hour front");
   $(newHourAvailability).append(newSelectHours);
 
@@ -196,7 +243,7 @@ for (let i = 0; i < daysOfWeek.length; i++) {
 
   for (let j = 0; j < 24; j++) {
     let newOption = $(`<option value= ${j}>`);
-    $(newOption).text(`${j}`);
+    $(newOption).text(times[j]);
     newSelectHours.append(newOption);
   }
 
@@ -205,6 +252,7 @@ for (let i = 0; i < daysOfWeek.length; i++) {
   $(newMinuteAvailability).addClass("input-field col s5 offset-1");
 
   let newSelectMinutes = $("<select>");
+  $(newSelectMinutes).attr("id", "ea-" + day + "-min");
   $(newSelectMinutes).addClass("start-minute front");
   $(newMinuteAvailability).append(newSelectMinutes);
 

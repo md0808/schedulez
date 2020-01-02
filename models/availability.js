@@ -4,13 +4,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       foreignKey: true
     },
-    Sunday: DataTypes.STRING,
-    Monday: DataTypes.STRING,
-    Tuesday: DataTypes.STRING,
-    Wednesday: DataTypes.STRING,
-    Thursday: DataTypes.STRING,
-    Friday: DataTypes.STRING,
-    Saturday: DataTypes.STRING,
+    sunday: DataTypes.STRING,
+    monday: DataTypes.STRING,
+    tuesday: DataTypes.STRING,
+    wednesday: DataTypes.STRING,
+    thursday: DataTypes.STRING,
+    friday: DataTypes.STRING,
+    saturday: DataTypes.STRING,
     RequestStatus: DataTypes.STRING
   });
 
