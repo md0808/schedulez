@@ -11,7 +11,7 @@ $(document).ready(() => {
   } else if (url.includes("employee-list")) {
     showAndHideDiv("employee-list");
   } else if (url.includes("locations-list")) {
-    showAndHideDiv("employee-list");
+    showAndHideDiv("location-list");
   } else if (url.includes("schedule")) {
     showAndHideDiv("schedule");
   }
@@ -31,7 +31,6 @@ $(document).ready(() => {
   $(".datepicker").datepicker();
   $(".scrollspy").scrollSpy();
   $("input#input_text, textarea#request-description").characterCounter();
-
 });
 
 $("#schedule-btn").on("click", () => {
@@ -44,7 +43,7 @@ $("#schedule-btn").on("click", () => {
     splitUrl[3] +
     "/" +
     splitUrl[4] +
-    "/1/#schedule";
+    "/1/employees/#schedule";
   window.location.href = newUrl;
 });
 $("#notifications-btn").on("click", () => {
@@ -70,7 +69,8 @@ $("#employees-btn").on("click", () => {
     splitUrl[3] +
     "/" +
     splitUrl[4] +
-    "/employees/#employee-list";
+    "/1/employees/#employee-list";
+  window.location.href = newUrl;
   window.location.href = newUrl;
 });
 $("#locations-btn").on("click", () => {
@@ -85,7 +85,6 @@ $("#locations-btn").on("click", () => {
     splitUrl[4] +
     "/#locations-list";
   window.location.href = newUrl;
-
 });
 
 $("#new-schedule-btn").on("click", () => {
@@ -105,7 +104,7 @@ $("#new-schedule-btn").on("click", () => {
     splitUrl[5] +
     "/" +
     splitUrl[6] +
-    "/add";
+    "/employees/#schedule/add";
   //window.location.href = newUrl;
   console.log(newUrl);
 });
@@ -160,8 +159,7 @@ $("#add_shift").on("click", () => {
     splitUrl[4] +
     "/" +
     numOfShifts +
-    "/" +
-    "#schedule/add/shifts";
+    "/employees/#schedule/add/shifts";
   window.location.href = newUrl;
 
   console.log("num: " + numOfShifts);
@@ -180,7 +178,7 @@ $("#add-shift-section").on("click", () => {
       splitUrl[4] +
       "/" +
       splitUrl[5] +
-      "/#schedule/add/shifts";
+      "/employees/#schedule/add/shifts";
   } else {
     window.location.href =
       "http://" +
@@ -191,7 +189,7 @@ $("#add-shift-section").on("click", () => {
       splitUrl[4] +
       "/" +
       splitUrl[5] +
-      "/#schedule/add";
+      "/employees/#schedule/add";
   }
 });
 
