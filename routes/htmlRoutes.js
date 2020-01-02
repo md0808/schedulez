@@ -44,7 +44,7 @@ module.exports = app => {
       });
   });
 
-  app.get("/:locationNum/manager-view/:shiftNum", (req, res) => {
+  app.get("/:locationNum/manager-view/:shiftNum/employees", (req, res) => {
     var numOfShifts = parseInt(req.params.shiftNum);
     var shifts = [];
 
@@ -54,11 +54,6 @@ module.exports = app => {
       shifts.push(shiftNum);
     }
 
-    res.render("managerView", { shifts });
-  });
-
-  // VIEW EMPLOYEES
-  app.get("/:locationNum/manager-view/employees", (req, res) => {
     const locationNumber = parseInt(req.params.locationNum);
     console.log("locNum: " + locationNumber);
     const url = `http://localhost:3000/api/allEmployees/${locationNumber}`;
@@ -66,7 +61,7 @@ module.exports = app => {
       .then(r => r.json())
       .then(locationEmployees => {
         console.log(locationEmployees);
-        res.render("managerView", { locationEmployees });
+        res.render("managerView", { locationEmployees, shifts });
       });
   });
 
