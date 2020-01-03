@@ -467,8 +467,10 @@ function showScheduleInfo(shifts) {
             allEmployeesScheduled.push(employeesScheduled[j]);
         }
 
+
         console.log("scheduled: " + allEmployeesScheduled);
         console.log("Position: " + shiftPosition + " Date: " + shiftDate + " Weekday: " + shiftWeekday + " Shifts: " + allShiftTimes + " Employee: " + allEmployeesScheduled);
+
 
         for (var j = 0; j < allEmployeesScheduled.length; j++) {
             var employeeNum = allEmployeesScheduled[j];

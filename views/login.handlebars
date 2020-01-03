@@ -4,32 +4,33 @@
             <div class="card border z-depth-4 alt-dark darken-1 padding40 margin100">
                 <div class="title center-align blue-grey-text darken-4-text">
                     <img class="login-img" src="/images/schedulez-text.png">
-                    <p>Login or <a href="create-store">create an account</a> for your company</p>
+                    <p>Login or <a href="/create-store">create an account</a> for your company</p>
                 </div>
-
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <div class="col s1"> 
-                            <i class="material-icons mint darken-4-text">person</i> 
+                <form>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <div class="col s1">
+                                <i class="material-icons mint darken-4-text">person</i>
+                            </div>
+                            <div class="col s11">
+                                <input id="login-email" type="email" name="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
                         </div>
-                        <div class="col s11">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
+                        <div class="input-field col s8 offset-s2">
+                            <div class="col s1"> <i class="material-icons mint darken-4-text">vpn_key</i> </div>
+                            <div class="col s11">
+
+                                <input id="login-password" type="password" name="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="input-field col s8 offset-s2">
-                        <div class="col s1"> <i class="material-icons mint darken-4-text">vpn_key</i> </div>
-                        <div class="col s11">
-
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
+                    <div id ="login-btn-div" class="row center-align">
+                        <button id="login-btn" class="btn waves-effect mint-dark-btn waves-light" type="submit">Sign In
+                        </button>
                     </div>
-                </div>
-                <div class="row center-align">
-                    <button id="login-btn" class="btn waves-effect mint-dark-btn waves-light" type="submit">Sign In
-                    </button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
