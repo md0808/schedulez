@@ -137,15 +137,61 @@ function addEmployeeToDB(companyName, storeCity) {
             console.log("locationResult: " + data.id);
     
             employeeInfo.LocationNum = data.id;
+            var locationNum = employeeInfo.LocationNum;
+            var fullname = employeeInfo.FullName;
+
+            console.log(".get locationNum: " + locationNum + " fullName: " + fullname);
+
         }).then(() => {
-            addEmployee();
+            var locationNum = employeeInfo.LocationNum;
+            var fullname = employeeInfo.FullName;
+
+            console.log("in .then locationNum: " + locationNum + " fullname: ");
+            addEmployee(locationNum, fullname);
         });
     }
 
-    function addEmployee(){
+    function addEmployee(locationNum, fullname, cb){
+        var fullNameSplit = fullname.split(" ");
+        var firstName = fullNameSplit[0];
+        var lastName = fullNameSplit[1];
+
+        console.log("location: " + locationNum + " first name: " + firstName + " last name: " + lastName);
+
         $.post("/api/newEmployee", employeeInfo)
             .then(() => {
                 console.log(employeeInfo + " was added as a new employee!")
+
+                $.get(`/api/employee/find/${locationNum}/${firstName}/${lastName}`, (result) => {
+                }).then((result => {
+                    console.log(result);
+
+                    var employeeNum = result.id;
+
+                    addAvailabilityToDB(employeeNum);
+                }))
             });
+    }
+
+    function addAvailabilityToDB(employeeNum){
+        console.log("in addAvailability: " + employeeNum);
+
+        var availability = "0:00";
+
+        var availabilityInfo = {
+            EmployeeNum: employeeNum,
+            sunday: availability,
+            monday: availability,
+            tuesday: availability,
+            wednesday: availability,
+            thursday: availability,
+            friday: availability,
+            saturday: availability
+        }
+
+        $.post("/api/newAvailability", availabilityInfo)
+            .then(() => {
+                console.log("Availability was added to db");
+            })
     }
 }
