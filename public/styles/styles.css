@@ -1,25 +1,32 @@
-body{
+body {
   background-color: #eceff1;
+  height: 100%;
 }
 
 * {
   font-family: 'Varela Round', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
-.login-img{
+.login-img {
   height: 100px;
 }
 
-a, a:visited{
-  color: #263238
-}
-a:hover{
-  color: #37474f
+.brand-logo {
+  font-family: 'Work Sans', sans-serif;
 }
 
-.btn:hover{
-  background-color: #2bbd7e;
+a, a:visited {
+  color: #263238
+}
+
+a:hover {
+  color: #008c51
+}
+
+.btn:hover {
+  background-color: #008c51;
+  color: #fff;
 }
 
 .input-field>label{
@@ -47,7 +54,7 @@ a:hover{
   display: none;
 }
 
-i{
+i {
   cursor: pointer;
 }
 
@@ -80,10 +87,7 @@ h3 {
   border: none;
 }
 
-.next-btn,
-.prev-btn,
-.logout-btn,
-.requests-btn {
+.btn {
   color: #263238;
   background-color: #2bbc7d;
   border-radius: 6px;
@@ -164,7 +168,9 @@ input {
 
 /* MOBILE STYLES */
 
-.small-nav{
+
+
+.small-nav {
   display: block;
   width: 100%;
   height: 10%;
@@ -189,6 +195,7 @@ input {
 
 .card {
   margin-top: 3rem;
+  max-height: 90%;
 }
 
 /* CAROUSEL STYLES */
@@ -232,11 +239,11 @@ input {
   bottom: 10%; */
 }
 
-.page{
+.page {
   padding-top: 15%;
 }
 
-.long-page{
+.long-page {
   padding-top: 5%;
 }
 
@@ -273,6 +280,14 @@ input {
   font-size: 1rem;
   background-color: #2bbc7d;
   color: #263238;
+}
+
+/* LAYOUT SPECIFIC STYLES */
+
+#new-employee-btn, 
+#new-location-btn,
+#new-schedule-btn {
+  color: #2bbc7d;
 }
 
 /* MODALS STYLES */
@@ -342,6 +357,9 @@ label {
 
 .partial-header {
   font-size: 1.5em;
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
 }
 
 .employee-list-name {
@@ -350,11 +368,12 @@ label {
 
 .partial-main {
   font-weight: bold;
+  text-transform: uppercase;
+  color: #34515e
 }
 
 .partial-medium { 
   font-weight: bold; 
-  text-transform: uppercase;
 }
 
 .partial-button{
@@ -420,6 +439,10 @@ label {
 
 @media only screen and (min-width: 992px) {
 
+  * {
+    font-size: 1rem;
+  }
+  
   .modal {
     position: absolute;
     left: 25%;

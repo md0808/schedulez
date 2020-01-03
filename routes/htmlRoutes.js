@@ -23,11 +23,8 @@ module.exports = app => {
     res.render("managerView");
   });
 
-  // REAL WORLD
-  // LogIn --> User Info (location#) --> Locations# --> Company # --> .get(/api/allLocations/:companyNum)
-
   // Access Location Information
-  app.get(":locationNum/manager-view/:name", (req, res) => {
+  app.get("/:locationNum/manager-view/:name", (req, res) => {
     const url = `http://localhost:3000/api/company/find/${req.params.name}`;
     fetch(url)
       .then(r => r.json())
@@ -44,6 +41,7 @@ module.exports = app => {
       });
   });
 
+  // Access Employees and Shifts
   app.get("/:locationNum/manager-view/:shiftNum/employees", (req, res) => {
     var numOfShifts = parseInt(req.params.shiftNum);
     var shifts = [];
