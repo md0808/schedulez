@@ -12,46 +12,46 @@ $(document).ready(() => {
 
             var allDivs = $(`
             <div id="main-day1">
-                    <p>Day 1:</p>
+                    <p class="partial-main">Day 1</p>
                 </div>
                 <div id="main-day2">
-                    <p>Day 2:</p>
+                    <p class="partial-main">Day 2</p>
                 </div>
                 <div id="main-day3">
-                    <p>Day 3:</p>
+                    <p class="partial-main">Day 3</p>
                 </div>
                 <div id="main-day4">
-                    <p>Day 4:</p>
+                    <p class="partial-main">Day 4</p>
                 </div>
                 <div id="main-day5">
-                    <p>Day 5:</p>
+                    <p class="partial-main">Day 5</p>
                 </div>
                 <div id="main-day6">
-                    <p>Day 6:</p>
+                    <p class="partial-main">Day 6</p>
                 </div>
                 <div id="main-day7">
-                    <p>Day 7:</p>
+                    <p class="partial-main">Day 7</p>
                 </div>
                 <div id="main-day8">
-                    <p>Day 8:</p>
+                    <p class="partial-main">Day 8</p>
                 </div>
                 <div id="main-day9">
-                    <p>Day 9:</p>
+                    <p class="partial-main">Day 9</p>
                 </div>
                 <div id="main-day10">
-                    <p>Day 10:</p>
+                    <p class="partial-main">Day 10</p>
                 </div>
                 <div id="main-day11">
-                    <p>Day 11:</p>
+                    <p class="partial-main">Day 11</p>
                 </div>
                 <div id="main-day12">
-                    <p>Day 12:</p>
+                    <p class="partial-main">Day 12</p>
                 </div>
                 <div id="main-day13">
-                    <p>Day 13:</p>
+                    <p class="partial-main">Day 13</p>
                 </div>
                 <div id="main-day14">
-                    <p>Day 14:</p>
+                    <p class="partial-main">Day 14</p>
                 </div>
             `);
 
