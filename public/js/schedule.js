@@ -473,6 +473,10 @@ function showScheduleInfo(shifts) {
         }
 
         //console.log("Position: " + shiftPosition + " Date: " + shiftDate + " Weekday: " + shiftWeekday + " Shifts: " + allShiftTimes + " Employee: " + allEmployeesScheduled);
+        console.log("scheduled: " + allEmployeesScheduled);
+        console.log("Position: " + shiftPosition + " Date: " + shiftDate + " Weekday: " + shiftWeekday + " Shifts: " + allShiftTimes + " Employee: " + allEmployeesScheduled);
+
+
 
         for (var j = 0; j < allEmployeesScheduled.length; j++) {
             var employeeNum = allEmployeesScheduled[j];
@@ -487,6 +491,8 @@ function showScheduleInfo(shifts) {
 }
 
 function pushScheduleInfoFrontEnd(position, employeeNum, shiftDate, shiftTime) {
+    console.log("Position: " + position + " Date: " + shiftDate + " Shift: " + shiftTime + " Employee: " + employeeNum);
+
     $.get(`/api/employee/find/${employeeNum}`, (result) => {
     }).then((result) => {
         //console.log(result);
