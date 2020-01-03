@@ -97,9 +97,12 @@ function pushMainScheduleToFrontEnd(position, date, shift, employeeNum) {
 }
 
 $("#new-schedule-add-btn").on("click", () => {
-
     getGeneratedSchedule();
-    console.log(generatedScheduleShifts);
+
+    setTimeout(function () {
+        $("#loadingGeneratingSchedule").hide();
+        $("#generated-schedule-section").show();
+    }, 7000);
 
     function getGeneratedSchedule() {
         clearDivs();

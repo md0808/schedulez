@@ -1,5 +1,6 @@
 $("#new-schedule-section").hide();
 $("#generated-schedule-section").hide();
+$("#loadingGeneratingSchedule").hide();
 
 var url = window.location.href;
 var splitUrl = url.split("/");
@@ -171,6 +172,7 @@ $("#locations-btn-small").on("click", () => {
 
 $("#new-schedule-btn").on("click", () => {
   console.log("new schedule");
+  $("#schedule").hide();
   $("#new-schedule-section").show();
   //$(".scrollspy").scrollSpy("activeClass");
   console.log(splitUrl);
@@ -277,7 +279,8 @@ $("#add-shift-section").on("click", () => {
 
 $("#new-schedule-add-btn").on("click", () => {
   $("#new-schedule-section").hide();
-  $("#generated-schedule-section").show();
+  // $("#generated-schedule-section").show();
+  $("#loadingGeneratingSchedule").show();
 });
 
 $("#new-schedule-cancel-btn").on("click", () => {
