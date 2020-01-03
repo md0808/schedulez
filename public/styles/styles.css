@@ -168,22 +168,21 @@ input {
 
 /* MOBILE STYLES */
 
-
-
 .small-nav {
   display: block;
   width: 100%;
   height: 10%;
   position: absolute;
   bottom: 0;
+  margin-bottom: 0px;
   background-color: #2bbc7d;
+  z-index: 400;
 }
 
-#schedule-btn,
-#notifications-btn,
-#employees-btn,
-#locations-btn {
-  font-size: 5rem;
+.small-nav-btn {
+  font-size: 97%;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* DASHBOARD STYLES */

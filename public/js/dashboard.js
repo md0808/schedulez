@@ -48,7 +48,46 @@ $("#schedule-btn").on("click", () => {
     "/1/employees/#schedule";
   window.location.href = newUrl;
 });
+$("#schedule-btn-small").on("click", () => {
+  showAndHideDiv("schedule");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/1/employees/#schedule";
+  window.location.href = newUrl;
+});
+$("#shedule-partial").on("click", () => {
+  showAndHideDiv("schedule");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/1/employees/#schedule";
+  window.location.href = newUrl;
+});
 $("#notifications-btn").on("click", () => {
+  showAndHideDiv("notifications");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/#notifications";
+  window.location.href = newUrl;
+});
+$("#notifications-btn-small").on("click", () => {
   showAndHideDiv("notifications");
 
   var newUrl =
@@ -75,7 +114,48 @@ $("#employees-btn").on("click", () => {
   window.location.href = newUrl;
   window.location.href = newUrl;
 });
+$("#employees-btn-small").on("click", () => {
+  showAndHideDiv("employee-list");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/1/employees/#employee-list";
+  window.location.href = newUrl;
+  window.location.href = newUrl;
+});
+$("#employee-list-partial").on("click", () => {
+  showAndHideDiv("employee-list");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/1/employees/#employee-list";
+  window.location.href = newUrl;
+  window.location.href = newUrl;
+});
 $("#locations-btn").on("click", () => {
+  showAndHideDiv("location-list");
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/#locations-list";
+  window.location.href = newUrl;
+});
+$("#locations-btn-small").on("click", () => {
   showAndHideDiv("location-list");
 
   var newUrl =
