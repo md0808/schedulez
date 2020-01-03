@@ -1,21 +1,36 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Schedule = sequelize.define("Schedule", {
-        EmployeeNum: DataTypes.INTEGER,
-        Day1: DataTypes.STRING,
-        Day2: DataTypes.STRING,
-        Day3: DataTypes.STRING,
-        Day4: DataTypes.STRING,
-        Day5: DataTypes.STRING,
-        Day6: DataTypes.STRING,
-        Day7: DataTypes.STRING,
-        Day8: DataTypes.STRING,
-        Day9: DataTypes.STRING,
-        Day10: DataTypes.STRING,
-        Day11: DataTypes.STRING,
-        Day12: DataTypes.STRING,
-        Day13: DataTypes.STRING,
-        Day14: DataTypes.STRING
+        LocationNum: DataTypes.INTEGER,
+        ScheduleStartDate: DataTypes.STRING,
+        Day1Shift: DataTypes.STRING,
+        Day1Employees: DataTypes.STRING,
+        Day2Shift: DataTypes.STRING,
+        Day2Employees: DataTypes.STRING,       
+        Day3Shift: DataTypes.STRING,
+        Day3Employees: DataTypes.STRING,        
+        Day4Shift: DataTypes.STRING,
+        Day4Employees: DataTypes.STRING,        
+        Day5Shift: DataTypes.STRING,
+        Day5Employees: DataTypes.STRING,        
+        Day6Shift: DataTypes.STRING,
+        Day6Employees: DataTypes.STRING,        
+        Day7Shift: DataTypes.STRING,
+        Day7Employees: DataTypes.STRING,        
+        Day8Shift: DataTypes.STRING,
+        Day8Employees: DataTypes.STRING,        
+        Day9Shift: DataTypes.STRING,
+        Day9Employees: DataTypes.STRING,        
+        Day10Shift: DataTypes.STRING,
+        Day10Employees: DataTypes.STRING,        
+        Day11Shift: DataTypes.STRING,
+        Day11Employees: DataTypes.STRING,       
+        Day12Shift: DataTypes.STRING,
+        Day12Employees: DataTypes.STRING,       
+        Day13Shift: DataTypes.STRING,
+        Day13Employees: DataTypes.STRING,       
+        Day14Shift: DataTypes.STRING,
+        Day14Employees: DataTypes.STRING,
     });
-  
+
     return Schedule;
-  };
+};

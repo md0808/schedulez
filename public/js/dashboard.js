@@ -1,4 +1,6 @@
 $("#new-schedule-section").hide();
+$("#generated-schedule-section").hide();
+
 var url = window.location.href;
 var splitUrl = url.split("/");
 
@@ -195,6 +197,7 @@ $("#add-shift-section").on("click", () => {
 
 $("#new-schedule-add-btn").on("click", () => {
   $("#new-schedule-section").hide();
+  $("#generated-schedule-section").show();
 });
 
 $("#new-schedule-cancel-btn").on("click", () => {

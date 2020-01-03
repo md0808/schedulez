@@ -56,6 +56,15 @@ module.exports = app => {
             res.json(data);
         });
     });
+    app.get("/api/employee/find/:employeeNum", (req, res) => {
+        db.Employee.findOne({
+            where: {
+                id: req.params.employeeNum
+            }
+        }).then((data) => {
+            res.json(data);
+        });
+    });
     app.get("/api/allRequests", function (req, res) {
         db.dbRequests.findAll({}).then(function (dbRequests) {
             res.json(dbRequests);
@@ -70,6 +79,15 @@ module.exports = app => {
         }).then((data) => {
             res.json(data)
         })
+    });
+    app.get("/api/getSchedule/:locationNum", (req, res) => {
+        db.Schedule.findOne({
+            where: {
+                LocationNum: req.params.locationNum
+            }
+        }).then((data) => {
+            res.json(data);
+        });
     });
 
     // Create a new example
@@ -96,6 +114,11 @@ module.exports = app => {
     app.post("/api/newAvailability", (req, res) => {
         db.Availability.create(req.body).then((dbAvailability) => {
             res.json(dbAvailability);
+        });
+    });
+    app.post("/api/newSchedule", (req, res) => {
+        db.Schedule.create(req.body).then((dbSchedule) => {
+            res.json(dbSchedule);
         });
     });
 
