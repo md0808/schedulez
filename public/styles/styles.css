@@ -1,3 +1,572 @@
+body {
+  background-color: #eceff1;
+  height: 100%;
+}
+
+* {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1rem;
+}
+
+.login-img {
+  height: 100px;
+}
+
+.loading-gif{
+  height: 75px;
+  width: 75px;
+}
+
+.brand-logo {
+  font-family: 'Work Sans', sans-serif;
+}
+
+a, a:visited {
+  color: #263238
+}
+
+a:hover {
+  color: #008c51
+}
+
+.btn:hover {
+  background-color: #008c51;
+  color: #fff;
+}
+
+.input-field>label{
+  color: #263238;
+  font-size: 1em;
+}
+
+.platform-top {
+  background-color: #263238;
+}
+
+.platform-img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.text-logo {
+  display: flex;
+  height: 30px;
+  align-items: center;
+}
+
+.hide{
+  display: none;
+}
+
+i {
+  cursor: pointer;
+}
+
+h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  color: #263238;
+}
+
+.carousel {
+  margin-top: 2%;
+}
+
+.carousel-mid .input-field {
+  font-size: 1rem;
+}
+
+.heading-carousel {
+  font-size: 2.25rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
+
+.availability-select{
+  border: none;
+  margin: 10px 0;
+}
+
+.collapsible{
+  border: none;
+}
+
+.btn {
+  color: #263238;
+  background-color: #2bbc7d;
+  border-radius: 6px;
+}
+
+#edit-btn {
+  background-color: #babdbe;
+  color: #263238;
+  border-radius: 6px;
+}
+
+input {
+  color: #263238;
+}
+
+.mint{
+  color: #2bbc7d;
+}
+
+.create-steps {
+  color: #2bbc7d;
+  font-weight: 700; 
+}
+
+#company-name {
+  border-bottom: 1px solid #2bbc7d;
+}
+
+.white-text{
+  color: #263238;
+}
+
+.altdark-text{
+  color: #263238;
+}
+
+.lowercase{
+  text-transform: lowercase;
+}
+
+.mint-dark-btn{
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: #2bbc7d;
+  text-transform: uppercase;
+}
+
+.no-background-btn{
+  background: none;
+}
+
+.dark-border{
+  border: solid 10px #37474f
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+
+.padding40{
+  padding: 40px;
+}
+
+.margin100{
+  margin-top: 3rem;
+}
+.front {
+  z-index: 5000;
+}
+
+/* MOBILE STYLES */
+
+.small-nav {
+  display: block;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0px;
+  background-color: #2bbc7d;
+  z-index: 400;
+}
+
+.small-nav-btn {
+  font-size: 97%;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* DASHBOARD STYLES */
+
+.notification-radio {
+  color: #263238;
+
+}
+
+.card {
+  margin-top: 3rem;
+  max-height: 90%;
+}
+
+/* CAROUSEL STYLES */
+.carousel {
+  min-height: 600px;
+}
+
+.carousel-mid h3 {
+  line-height: 1.2;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: .8em;
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.dark{
+  background-color: #eceff1;
+}
+
+.alt-dark{
+  background-color: #fff;
+  border: 1px solid #eceff1;
+  border-radius: 6px;
+}
+
+/* DATE PICKER */
+
+.datepicker-modal {
+  width: 90%;
+}
+
+.datepicker-date-display {
+  background-color: #2bbc7d;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.datepicker-table td.is-selected {
+  background-color:  #2bbc7d;
+}
+
+.datepicker-table
+td.is-today {
+  color: #2bbc7d;
+}
+
+.datepicker-table
+td.is-today, 
+.datepicker-table td.is-selected {
+  color: #fff;
+}
+
+.datepicker-cancel,
+.datepicker-done {
+  color: #2bbc7d;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* SCHEDULE */
+
+.collapsible,
+.expandable {
+  border-radius: 6px;
+}
+
+.complete-schedule-btns {
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+
+.collapsible-header {
+  text-transform: uppercase;
+  color: #2bbc7d;
+  font-weight: bold; 
+  font-family: 'Work Sans', sans-serif;
+}
+.collapsible-head-schedule {
+  text-transform: uppercase; 
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2bbc7d;
+  color: #263238;
+}
+
+#add-shift-section {
+  margin-bottom: 5px;
+}
+
+.new-schedule-header {
+  font-size: 2.2rem;
+}
+
+.shift-times {
+  margin-bottom: 5px;
+}
+
+
+.alt-dark-schedules {
+  background-color: #eceff1;
+  border: 1px solid #eceff1;
+  border-radius: 6px;
+}
+
+.nav-wrapper{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.carousel-btn-div{
+  /* position: absolute;
+  bottom: 10%; */
+}
+
+.page {
+  padding-top: 15%;
+}
+
+.long-page {
+  padding-top: 5%;
+}
+
+.location-hours {
+  margin-top: 40px;
+}
+
+#location-list, 
+#employee-list, 
+#schedule,
+#emp-schedule,
+#account-info, 
+#request-off {
+  display:none;
+}
+
+/* CREATE ACCOUNT */
+
+.platform-heading { 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.platform-description {
+  color: #fff;
+}
+
+.platform-btn,
+#create-btn {
+  text-transform: uppercase; 
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2bbc7d;
+  color: #263238;
+}
+
+/* LAYOUT SPECIFIC STYLES */
+
+#new-employee-btn, 
+#new-location-btn,
+#new-schedule-btn {
+  color: #2bbc7d;
+}
+
+/* MODALS STYLES */
+
+.modal {
+  border-radius: 6px;
+  max-height: 85%;
+}
+
+.modal-long{
+  min-width: 900px;
+}
+
+label {
+  color: #263238;
+}
+
+.newWeekLabel {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.modal-header {
+  font-size: 2.5em;
+  color: #263238;
+}
+
+.modal h2 {
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
+
+.sub-header {
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5em;
+}
+
+.new-day {
+  border: solid #2bbc7d 1px;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.employee-content-cap {
+  text-transform: capitalize; 
+}
+
+.employee-content-up {
+  text-transform: uppercase;
+}
+
+.addEmployee-btn {
+  background-color: #2bbc7d; 
+  color: #263238;
+}
+
+.employee-account {
+  border: solid #2bbc7d 1px;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.partial-header {
+  font-size: 1.5em;
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
+
+.employee-list-name {
+  font-size: 1em;
+}
+
+.partial-main,
+.partial-main-shifts {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #34515e
+}
+
+.partial-main-shifts {
+  margin-bottom: 5px;
+}
+
+.partial-medium { 
+  font-weight: bold; 
+}
+
+.partial-button{
+  margin-top: 1em;
+}
+
+.day-partial {
+  font-size: 1em;
+}
+
+.time-partial {
+  font-size: 1em; 
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.profile-pic {
+  font-size: 10em;
+}
+
+.contact {
+  font-size: 1em; 
+  font-weight: bold;
+}
+
+.section-head,
+.employee-list-name {
+  text-transform: uppercase;
+}
+
+.weekly-avail-header { 
+  margin-bottom: 1em;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+  .modal-long{
+    max-width: 100%;
+  }
+
+  .container {
+    width: 85%;
+  }
+
+  .carousel-mid {
+    width: 90%;
+    margin: 0px auto;
+    height: 95%;
+  }
+
+  #schedule-btn,
+  #notifications-btn,
+  #employees-btn,
+  #locations-btn {
+    font-size: 4rem;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+  * {
+    font-size: 1rem;
+  }
+  
+  .modal {
+    position: absolute;
+    left: 25%;
+  }
+
+  #employee-list {
+    border-radius: 1.5em;
+    margin-top: 4em;
+  }
+
+  .small-nav {
+    display: none;
+  }
+
+  .container {
+    min-width: 80%;
+  }
+
+  /* CREATE ACCOUNT */
+
+  .carousel-mid {
+    width: 90%;
+    margin: 0px auto;
+    height: 90%;
+  }
+
+  /* SIDEBARS */
+
+  #notifications-btn,
+  #employees-btn,
+  #locations-btn, 
+  #schedule-btn {
+    font-size: 3rem;
+    padding-top: 3rem;
+  }
+
+  /* MAIN CONTENT */
+
+  header, 
+  main, 
+  .footer-content, 
+  .adjusted-container, 
+  .adjusted-center {
+    padding-left: 300px;
+  }
+
+  .border{
+    border: solid 10px #2bbc7d;
+  }
+  
 }

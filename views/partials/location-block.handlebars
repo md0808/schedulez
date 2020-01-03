@@ -1,0 +1,70 @@
+<li>
+    <div class="collapsible-header location-list-name">{{ this.Company.Name }} : {{ this.City }}</div>
+    <div class="collapsible-body location-list-info">
+        <h2 class="partial-header">{{  this.Company.Name  }}<span> #{{  this.id  }}</span></h2>
+        <div class="row">
+            <div class="col s6">
+                <div class="col s10 left-align">
+                    <span class="partial-main">Location Number</span>
+                </div>
+                <div class="col s2 right-align">
+                    <span>{{ this.id }}</span>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="col s10">
+                    <span class="partial-main">Company Number</span>
+                </div>
+                <div class="col s2 right-align">
+                    <span>{{ this.CompanyNum }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s4">
+                    <span class="partial-main">Address: </span>
+                </div>
+                <div class="col s8">
+                    <span class="right-align">{{  this.Address  }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="col s4">
+                    <span class="partial-main left-align">City</span>
+                </div>
+                <div class="col s8 right-align">
+                    <span class="right-align">{{  this.City  }}</span>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="col s4">
+                    <span class="partial-main">State</span>
+                </div>
+                <div class="col s8 right-align">
+                    <span>{{  this.State  }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 partial-button">
+                <a href="#employee-list" id="employee-list-partial" class="waves-effect waves-light btn"><i class="material-icons left">group</i>View This Location's Employees</a>
+            </div>
+        </div>
+        <h2 class="partial-header">Hours</h2>
+        <div class="row">
+            <div class="col s6">
+                <span class="partial-main">Opening:</span><span>{{  this.OpeningTime  }}</span>
+            </div>
+            <div class="col s6">
+                <span class="partial-main">Closing:</span><span>{{  this.ClosingTime  }}</span><br><br>
+            </div>
+            <div class="col s12 partial-button">
+                <a href="#schedule" id="schedule-partial" class="waves-effect waves-light btn"><i class="material-icons left">event</i>View This Location's Schedule</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</li>
