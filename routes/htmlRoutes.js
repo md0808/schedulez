@@ -23,11 +23,8 @@ module.exports = app => {
     res.render("managerView");
   });
 
-  // REAL WORLD
-  // LogIn --> User Info (location#) --> Locations# --> Company # --> .get(/api/allLocations/:companyNum)
-
   // Access Location Information
-  app.get(":locationNum/manager-view/:name", (req, res) => {
+  app.get("/:locationNum/manager-view/:name", (req, res) => {
     const url = `http://localhost:3000/api/company/find/${req.params.name}`;
     fetch(url)
       .then(r => r.json())
@@ -44,7 +41,8 @@ module.exports = app => {
       });
   });
 
-  app.get("/:locationNum/manager-view/:shiftNum", (req, res) => {
+  // Access Employees and Shifts
+  app.get("/:locationNum/manager-view/:shiftNum/employees", (req, res) => {
     var numOfShifts = parseInt(req.params.shiftNum);
     var shifts = [];
 
@@ -54,11 +52,6 @@ module.exports = app => {
       shifts.push(shiftNum);
     }
 
-    res.render("managerView", { shifts });
-  });
-
-  // VIEW EMPLOYEES
-  app.get("/:locationNum/manager-view/employees", (req, res) => {
     const locationNumber = parseInt(req.params.locationNum);
     console.log("locNum: " + locationNumber);
     const url = `http://localhost:3000/api/allEmployees/${locationNumber}`;
@@ -66,7 +59,7 @@ module.exports = app => {
       .then(r => r.json())
       .then(locationEmployees => {
         console.log(locationEmployees);
-        res.render("managerView", { locationEmployees });
+        res.render("managerView", { locationEmployees, shifts });
       });
   });
 
