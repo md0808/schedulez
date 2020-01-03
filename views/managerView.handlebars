@@ -192,6 +192,17 @@
 
                 </div>
             </div>
+        </div>
+    </div>
+
+
+    <div id="new-schedule-section"
+                class="scrollspy section card dark border blue-grey-text text-darken-4 padding40">
+                <h2 class="center">Generate a New Schedule</h2>
+
+                <div class=" col s8 offest-s2">
+                    <button id="schedule-start-date" class="btn altdark-mint-btn datepicker">Choose Start Date</button>
+                    {{!-- <span class="white-text">Choose Start Date</span> <span>
             <div id="new-schedule-section" class="scrollspy alt-dark section card padding40">
                 <h3 class="new-schedule-header center">Generate a new schedule</h3>
                 <div class="row">
@@ -238,10 +249,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+    </div>
 
-        <div id="generated-schedule-section"
+    <div id="generated-schedule-section"
             class="scrollspy section card dark border blue-grey-text text-darken-4 padding40">
             <h2 class="center">Generated Schedule</h2>
 
@@ -295,10 +305,16 @@
                 <button type="button" id="new-schedule-push-btn" class="btn mint-dark-btn">Push Out Schedule</button>
                 <button id="gen-schedule-cancel-btn" class="btn mint-dark-btn">Cancel</button>
             </div>
-        </div>
     </div>
 
-
+    <div class="col s12 margin100" id="loadingGeneratingSchedule">
+        <div class="card border padding40">
+            <div class="center">   
+                <img class="loading-gif" src="https://www.wpfaster.org/wp-content/uploads/2013/06/loading-gif.gif">
+                <h3>Generating Schedule</h3>    
+            </div>
+        </div>
+    </div>
 
 
     <!-- Sample Schedule Table Modal Structure -->
