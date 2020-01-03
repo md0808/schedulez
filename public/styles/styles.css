@@ -135,16 +135,10 @@ input {
 
 .mint-dark-btn{
   color: #263238;
+  font-family: 'Work Sans', sans-serif;
   font-weight: bold;
   border-radius: 6px;
   background-color: #2bbc7d;
-  text-transform: uppercase;
-}
-
-.altdark-mint-btn{
-  color: #69f0ae;
-  font-weight: bold;
-  background-color: #37474f;
   text-transform: uppercase;
 }
 
@@ -226,6 +220,79 @@ input {
   border: 1px solid #eceff1;
   border-radius: 6px;
 }
+
+/* DATE PICKER */
+
+.datepicker-modal {
+  width: 90%;
+}
+
+.datepicker-date-display {
+  background-color: #2bbc7d;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.datepicker-table td.is-selected {
+  background-color:  #2bbc7d;
+}
+
+.datepicker-table
+td.is-today {
+  color: #2bbc7d;
+}
+
+.datepicker-table
+td.is-today, 
+.datepicker-table td.is-selected {
+  color: #fff;
+}
+
+.datepicker-cancel,
+.datepicker-done {
+  color: #2bbc7d;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* SCHEDULE */
+
+.collapsible,
+.expandable {
+  border-radius: 6px;
+}
+
+.complete-schedule-btns {
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+
+.collapsible-header {
+  text-transform: uppercase;
+  color: #2bbc7d;
+  font-weight: bold; 
+  font-family: 'Work Sans', sans-serif;
+}
+.collapsible-head-schedule {
+  text-transform: uppercase; 
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2bbc7d;
+  color: #263238;
+}
+
+#add-shift-section {
+  margin-bottom: 5px;
+}
+
+.new-schedule-header {
+  font-size: 2.2rem;
+}
+
+.shift-times {
+  margin-bottom: 5px;
+}
+
 
 .alt-dark-schedules {
   background-color: #eceff1;
@@ -314,6 +381,11 @@ label {
   font-size: 1em;
 }
 
+.modal-header {
+  font-size: 2.5em;
+  color: #263238;
+}
+
 .modal h2 {
   color: #263238;
   font-family: 'Work Sans', sans-serif;
@@ -347,11 +419,6 @@ label {
   color: #263238;
 }
 
-.modal-header {
-  font-size: 2.5em;
-  color: #263238;
-}
-
 .employee-account {
   border: solid #2bbc7d 1px;
   padding: 1em;
@@ -370,10 +437,15 @@ label {
   font-size: 1em;
 }
 
-.partial-main {
+.partial-main,
+.partial-main-shifts {
   font-weight: bold;
   text-transform: uppercase;
   color: #34515e
+}
+
+.partial-main-shifts {
+  margin-bottom: 5px;
 }
 
 .partial-medium { 
@@ -405,7 +477,7 @@ label {
 
 .section-head,
 .employee-list-name {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .weekly-avail-header { 

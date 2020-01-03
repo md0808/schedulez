@@ -1,4 +1,41 @@
-$("#create-btn").on("click", function () {
+
+//============ login 
+$("#login-btn").on("click", function (event){
+    event.preventDefault()
+    let email = $("#login-email").val().trim();
+    let password = $("#login-password").val().trim();
+    console.log("email:" + email + "password:" + password )
+    checkEmailAndPassword(email, password)
+})
+
+
+
+function checkEmailAndPassword(email, password) {
+    const url = `/api/employee/find/${email}/${password}`;
+    console.log(url);
+    $.get(url, (result) => {
+
+    }).then((result)=> {
+        console.log(result);
+        if (result) {
+            console.log(result);
+            const locationNum = result.LocationNum;
+            console.log(locationNum);
+            
+            window.location.replace(`/${locationNum}/manager-view`);
+        } else {
+            const incorrectMessage = $("<div> Your password or email address was incorrect.</div>");
+            $("#login-btn-id").append(incorrectMessage);
+        }
+    })
+
+    
+}
+//============================================================
+
+
+$("#create-btn").on("click", function (event) {
+    event.preventDefault();
     var companyName = $("#company-name").val().trim();
     var storeCity = $("#company-city").val().trim();
 
@@ -62,6 +99,16 @@ function addCompanyAndLocationToDB(companyName, cb) {
                     console.log(locationInfo.City + " was added as a location");
 
                     cb();
+                    $.get(`/api/location/find/${locationInfo.City}`, (result)=> {
+                    }).then((result)=>{
+                        console.log(result);
+                        console.log(result.id);
+                        window.location.replace(`/${result.id}/manager-view`);
+
+                    }
+
+                    )
+
                 });
 
         };

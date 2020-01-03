@@ -28,6 +28,17 @@ module.exports = app => {
             res.json(data);
         });
     });
+    app.get("/api/employee/find/:email/:password", (req, res) => {
+        db.Employee.findOne({
+            where: {
+                Email: req.params.email,
+                Password: req.params.password
+
+            }
+        }).then((data) => {
+            res.json(data);
+        });
+    });
     app.get("/api/employee/find/:locationNum/:firstName/:lastName", (req, res) => {
         db.Employee.findOne({
             where: {
