@@ -8,10 +8,6 @@ body {
   font-size: 1rem;
 }
 
-.login-img {
-  height: 100px;
-}
-
 .loading-gif{
   height: 75px;
   width: 75px;
@@ -163,6 +159,61 @@ input {
 }
 .front {
   z-index: 5000;
+}
+
+/* LOGIN PAGE */
+
+h2.sub-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 3rem;
+  margin-top: 0px;
+  margin-bottom: .65rem;
+}
+
+.create-login-btn {
+  background-color: #fff;
+  color: #2bbc7d;
+}
+
+.sub-copy {
+  line-height: 1.5;
+  margin-top: 0px;
+  margin-bottom: 52px;
+  color: #37474f;
+  font-size: 1.15rem;
+}
+
+#login-btn {
+  margin-top: 65px;
+}
+
+
+.login-img {
+  height: 2.5rem;
+  margin-bottom: 0px;
+}
+
+.login-side1 {
+  background-color: #2bbc7d;
+  color: #fff;
+  height: 100vh;
+}
+
+.paddingtest {
+  padding-top: 15%;
+  padding-left: 10%;
+  margin-bottom: 0px;
+}
+
+.login-side2 {
+  background-color: #fff;
+  height: 100vh;
+  padding: 100px;
+}
+
+.login-menu {
+  background-color: #fff;
 }
 
 /* MOBILE STYLES */

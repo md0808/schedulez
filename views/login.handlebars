@@ -1,39 +1,96 @@
-<div class="container">
-    <div class="row">
-        <div class="col s12">
-            <div class="card border z-depth-4 alt-dark darken-1 padding40 margin100">
-                <div class="title center-align blue-grey-text darken-4-text">
-                    <img class="login-img" src="/images/schedulez-text.png">
-                    <p>Login or <a href="/create-store">create an account</a> for your company</p>
+<div class="row">
+    <div class="col s6 login-side1">
+        <div class="row paddingtest">
+             <div class="row">
+                <img class="login-img" src="/images/schedulez-text.png">
+            </div>
+            <div class="row">
+                <div class="col s11">
+                    <h2 class="sub-title">Effective. Efficient. Exact. Get work schedules made EZ!</h2>
                 </div>
-                <form>
+            </div>
+            <div class="row">
+                <div class="col s11">
+                    <p class="sub-copy">Your state of the art work scheduling app, where getting your work schedule is
+                        made EZ! Manager can see time slots for each individual employee when creating schedule for the
+                        day.</p>
+                </div>
+            </div>
+            <div class="row left">
+                <a class="btn create-login-btn" href="/create-store">Create an account for your company</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s6 login-side2">
+        <div class="row paddingtest">
+            <h2 class="sub-title">Login</h2>
+            <form>
+                <div class="login-menu">
                     <div class="row">
-                        <div class="input-field col s8 offset-s2">
+                        <div class="input-field col s10 left">
                             <div class="col s1">
                                 <i class="material-icons mint darken-4-text">person</i>
                             </div>
                             <div class="col s11">
                                 <input id="login-email" type="email" name="email" class="validate">
-                                <label for="email">Email</label>
+                                <label for="email">Username (Email)</label>
                             </div>
                         </div>
-                        <div class="input-field col s8 offset-s2">
-                            <div class="col s1"> <i class="material-icons mint darken-4-text">vpn_key</i> </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s10 left">
+                            <div class="col s1">
+                                <i class="material-icons mint darken-4-text">vpn_key</i>
+                            </div>
                             <div class="col s11">
-
                                 <input id="login-password" type="password" name="password" class="validate">
                                 <label for="password">Password</label>
                             </div>
                         </div>
                     </div>
-                    <div id ="login-btn-div" class="row center-align">
-                        <button id="login-btn" class="btn waves-effect mint-dark-btn waves-light" type="submit">Sign In
-                        </button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div id="login-btn-div" class="row">
+                    <button id="login-btn" class="btn waves-effect mint-dark-btn waves-light" type="submit">Sign In
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+
+
+
+
+{{!-- <div class="title center-align blue-grey-text darken-4-text">
+
+
+</div>
+
+<div class="row">
+    <div class="input-field col s8 offset-s2">
+        <div class="col s1">
+            <i class="material-icons mint darken-4-text">person</i>
+        </div>
+        <div class="col s11">
+            <input id="login-email" type="email" name="email" class="validate">
+            <label for="email">Email</label>
+        </div>
+    </div>
+    <div class="input-field col s8 offset-s2">
+        <div class="col s1"> <i class="material-icons mint darken-4-text">vpn_key</i> </div>
+        <div class="col s11">
+
+            <input id="login-password" type="password" name="password" class="validate">
+            <label for="password">Password</label>
+        </div>
+    </div>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</div> --}}
 
 <script src="/js/login-register.js" type="text/javascript"></script>
