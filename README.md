@@ -8,6 +8,9 @@ In this app the employee and the management are able to do the following:
 - Manager can see time slots for each individual employee when creating schedule for the day
 - Select boxes: employee selects exact times and dates to create their schedule
 
+![alt test](public/images/p1.png)
+![alt test](public/images/p2.png)e
+
  # Log-in Functionality
 Admin status accounts
 Employee status accounts
