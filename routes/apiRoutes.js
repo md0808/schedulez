@@ -19,6 +19,24 @@ module.exports = app => {
             res.json(data);
         });
     });
+    app.get("/api/company/findNum/:locationNum", (req, res) => {
+        db.Location.findOne({
+            where: {
+                id: req.params.locationNum
+            }
+        }).then((data) => {
+            res.json(data);
+        });
+    });
+    app.get("/api/company/findName/:companyNum", (req, res) => {
+        db.Company.findOne({
+            where: {
+                id: req.params.companyNum
+            }
+        }).then((data) => {
+            res.json(data);
+        });
+    });
     app.get("/api/location/find/:city", (req, res) => {
         db.Location.findOne({
             where: {

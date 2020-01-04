@@ -5,7 +5,7 @@ $("#loadingGeneratingSchedule").hide();
 var url = window.location.href;
 var splitUrl = url.split("/");
 
-console.log(url);
+var locationNum = window.location.pathname[1];
 
 $(document).ready(() => {
   //shows correct div on page refresh
@@ -149,28 +149,12 @@ $("#employee-list-partial").on("click", () => {
 $("#locations-btn").on("click", () => {
   showAndHideDiv("location-list");
 
-  var newUrl =
-    "http://" +
-    splitUrl[2] +
-    "/" +
-    splitUrl[3] +
-    "/" +
-    splitUrl[4] +
-    "/#locations-list";
-  window.location.href = newUrl;
+  showLocations();
 });
 $("#locations-btn-small").on("click", () => {
   showAndHideDiv("location-list");
 
-  var newUrl =
-    "http://" +
-    splitUrl[2] +
-    "/" +
-    splitUrl[3] +
-    "/" +
-    splitUrl[4] +
-    "/#locations-list";
-  window.location.href = newUrl;
+  showLocations();
 });
 
 $("#new-schedule-btn").on("click", () => {
@@ -308,6 +292,29 @@ const daysOfWeek = [
   "Saturday",
   "Sunday"
 ];
+
+function showLocations(){
+  $.get(`/api/company/findNum/${locationNum}`, (result) => {
+  }).then((result) => {
+    var companyNum = result.CompanyNum;
+    
+    $.get(`/api/company/findName/${companyNum}`, (res) => {
+    }).then((res) => {
+      var companyName = res.Name;
+
+      var newUrl =
+      "http://" +
+      splitUrl[2] +
+      "/" +
+      splitUrl[3] +
+      "/" +
+      splitUrl[4] + "/" + companyName +
+      "/#locations-list";
+
+      window.location.href = newUrl;
+    });
+  });
+}
 
 const times = ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am"
 , "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm"
