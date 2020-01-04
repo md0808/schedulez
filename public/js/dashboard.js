@@ -47,6 +47,9 @@ $("#schedule-btn").on("click", () => {
     "/" +
     splitUrl[4] +
     "/1/employees/#schedule";
+
+    console.log("url: " + url)
+
   window.location.href = newUrl;
 });
 $("#schedule-btn-small").on("click", () => {
