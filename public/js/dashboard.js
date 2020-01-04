@@ -195,6 +195,14 @@ $("#new-schedule-btn").on("click", () => {
   //window.location.href = newUrl;
   console.log(newUrl);
 });
+$("#add-employee-btn").on("click", function(){
+  $(".modal").modal("close");
+})
+
+$("#new-schedule-push-btn").on("click", function(){
+  $("#schedule").show();
+  $("#generated-schedule-section").hide();
+})
 
 $("#account-info-btn").on("click", () => {
   $("#account-info").show();
