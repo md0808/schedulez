@@ -48,7 +48,7 @@ $("#schedule-btn").on("click", () => {
     splitUrl[4] +
     "/1/employees/#schedule";
 
-    console.log("url: " + url)
+    console.log("url: " + newUrl);
 
   window.location.href = newUrl;
 });
