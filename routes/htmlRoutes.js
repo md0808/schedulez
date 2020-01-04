@@ -2,6 +2,8 @@ const db = require("../models");
 const fetch = require("isomorphic-unfetch");
 
 module.exports = app => {
+  const baseURL = process.env.NODE_ENV !== "production" ? "http://localhost:3000" : "https://scheduleez.herokuapp.com";
+
   // Load index page
   app.get("/", (req, res) => {
     res.render("login", {
@@ -25,13 +27,13 @@ module.exports = app => {
 
   // Access Location Information
   app.get("/:locationNum/manager-view/:name", (req, res) => {
-    const url = `http://scheduleez.herokuapp.com/api/company/find/${req.params.name}`;
+    const url = `${baseURL}/api/company/find/${req.params.name}`;
     fetch(url)
       .then(r => r.json())
       .then(data => {
         console.log(data);
         const userCompanyId = data.id;
-        const url2 = `http://scheduleez.herokuapp.com/api/allLocations/${userCompanyId}`;
+        const url2 = `${baseURL}/api/allLocations/${userCompanyId}`;
         fetch(url2)
           .then(res2 => res2.json())
           .then(locations => {
@@ -54,7 +56,7 @@ module.exports = app => {
 
     const locationNumber = parseInt(req.params.locationNum);
     console.log("locNum: " + locationNumber);
-    const url = `http://scheduleez.herokuapp.com/api/allEmployees/${locationNumber}`;
+    const url = `${baseURL}/api/allEmployees/${locationNumber}`;
     fetch(url)
       .then(r => r.json())
       .then(locationEmployees => {
