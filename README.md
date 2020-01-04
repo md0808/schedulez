@@ -2,6 +2,8 @@
 
 # Your state of the art work scheduling app, where getting your work schedule is made EZ!
 
+Try it here : https://scheduleez.herokuapp.com/
+
 In this app the employee and the management are able to do the following:
 
 - Employees create their own schedule they can work when they sign up
