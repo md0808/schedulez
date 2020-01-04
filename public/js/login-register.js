@@ -171,6 +171,10 @@ function addEmployeeToDB(companyName, storeCity) {
                     addAvailabilityToDB(employeeNum);
                 }))
             });
+            $("#employee-email").val("")
+            $("#employee-fullname").val("")
+            $("#employee-password").val("")
+            v$("#password-confirm").val("")
     }
 
     function addAvailabilityToDB(employeeNum){
