@@ -138,6 +138,15 @@ input {
   text-transform: uppercase;
 }
 
+.mint-dark-btn-alt{
+  color: #263238;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: #babdbe;
+  text-transform: uppercase;
+}
+
 .no-background-btn{
   background: none;
 }
@@ -328,8 +337,19 @@ td.is-today,
   text-align: center;
   border-radius: 6px;
   font-size: 1rem;
-  background-color: #2bbc7d;
+  background-color: #fff;
   color: #263238;
+}
+
+.col.s12.datepick > .btn {
+  width: 100%;
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.collapsible-body {
+  padding-top: 0px;
 }
 
 #add-shift-section {
