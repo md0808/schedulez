@@ -2,10 +2,17 @@ $("#new-schedule-section").hide();
 $("#generated-schedule-section").hide();
 $("#loadingGeneratingSchedule").hide();
 
+$('.dropdown-trigger').dropdown();
+// $('.collapsible').collapsible();
+
 var url = window.location.href;
 var splitUrl = url.split("/");
 
 var locationNum = window.location.pathname[1];
+
+function showScheduleForDate(element, val){
+  $("#schedule-date").text(val);
+}
 
 $(document).ready(() => {
   //shows correct div on page refresh
@@ -181,13 +188,12 @@ $("#new-schedule-btn").on("click", () => {
 });
 $("#add-employee-btn").on("click", function(){
   $(".modal").modal("close");
-})
+});
 
 $("#new-schedule-push-btn").on("click", function(){
   $("#schedule").show();
   $("#generated-schedule-section").hide();
-})
-
+});
 $("#account-info-btn").on("click", () => {
   $("#account-info").show();
   $("#request-off").hide();
