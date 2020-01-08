@@ -8,6 +8,10 @@ body {
   font-size: 1rem;
 }
 
+.schedule-date{
+  padding-left: 28px;
+}
+
 .loading-gif{
   height: 75px;
   width: 75px;
@@ -123,6 +127,10 @@ input {
 
 .altdark-text{
   color: #263238;
+}
+
+.mint-text{
+  color: #2bbc7d;
 }
 
 .lowercase{

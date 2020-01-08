@@ -2,10 +2,42 @@ $("#new-schedule-section").hide();
 $("#generated-schedule-section").hide();
 $("#loadingGeneratingSchedule").hide();
 
+$('.dropdown-trigger').dropdown();
+// $("#schedule-date-dropdown").dropdown();
+// $('.collapsible').collapsible();
+
 var url = window.location.href;
 var splitUrl = url.split("/");
 
 var locationNum = window.location.pathname[1];
+
+function showScheduleForDate(element, position){
+  $("#schedule-date").text($(element).attr("data-date"));
+  hideAndShowScheduleDays(position);
+
+  $(`#main-day${position}`).show();
+}
+
+function hideAndShowScheduleDays(dayToShowNum){
+  $("#main-day1").hide();
+  $("#main-day2").hide();
+  $("#main-day3").hide();
+  $("#main-day4").hide();
+  $("#main-day5").hide();
+  $("#main-day6").hide();
+  $("#main-day7").hide();
+  $("#main-day8").hide();
+  $("#main-day9").hide();
+  $("#main-day10").hide();
+  $("#main-day11").hide();
+  $("#main-day12").hide();
+  $("#main-day13").hide();
+  $("#main-day14").hide();
+
+  if(dayToShow !== null){
+      $(`#main-day${dayToShowNum}`).show();
+  }
+}
 
 $(document).ready(() => {
   //shows correct div on page refresh
@@ -161,8 +193,6 @@ $("#new-schedule-btn").on("click", () => {
   console.log("new schedule");
   $("#schedule").hide();
   $("#new-schedule-section").show();
-  //$(".scrollspy").scrollSpy("activeClass");
-  console.log(splitUrl);
 
   var newUrl =
     "http://" +
@@ -176,18 +206,15 @@ $("#new-schedule-btn").on("click", () => {
     "/" +
     splitUrl[6] +
     "/employees/#schedule/add";
-  //window.location.href = newUrl;
-  console.log(newUrl);
 });
 $("#add-employee-btn").on("click", function(){
   $(".modal").modal("close");
-})
+});
 
 $("#new-schedule-push-btn").on("click", function(){
   $("#schedule").show();
   $("#generated-schedule-section").hide();
-})
-
+});
 $("#account-info-btn").on("click", () => {
   $("#account-info").show();
   $("#request-off").hide();
@@ -226,7 +253,6 @@ function showAndHideDiv(divNameToShow) {
 var numOfShifts = parseInt(splitUrl[5]);
 
 $("#add_shift").on("click", () => {
-  console.log("add shift clicked");
   numOfShifts++;
 
   var newUrl =
@@ -240,8 +266,6 @@ $("#add_shift").on("click", () => {
     numOfShifts +
     "/employees/#schedule/add/shifts";
   window.location.href = newUrl;
-
-  console.log("num: " + numOfShifts);
 });
 
 $("#add-shift-section").on("click", () => {

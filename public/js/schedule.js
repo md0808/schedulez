@@ -1,71 +1,165 @@
 var generatedScheduleShifts = [];
+var dbSchedule = [];
 
 $(document).ready(() => {
     var locationNum = window.location.pathname[1];
 
     $.get(`/api/getSchedule/${locationNum}`, (result) => {
     }).then((result) => {
-        console.log(result);
-
         if (result !== null) {
             $("#location-schedule").empty();
 
             var allDivs = $(`
-            <div id="main-day1">
-                    <p class="partial-main">Day 1</p>
-                </div>
-                <div id="main-day2">
-                    <p class="partial-main">Day 2</p>
-                </div>
-                <div id="main-day3">
-                    <p class="partial-main">Day 3</p>
-                </div>
-                <div id="main-day4">
-                    <p class="partial-main">Day 4</p>
-                </div>
-                <div id="main-day5">
-                    <p class="partial-main">Day 5</p>
-                </div>
-                <div id="main-day6">
-                    <p class="partial-main">Day 6</p>
-                </div>
-                <div id="main-day7">
-                    <p class="partial-main">Day 7</p>
-                </div>
-                <div id="main-day8">
-                    <p class="partial-main">Day 8</p>
-                </div>
-                <div id="main-day9">
-                    <p class="partial-main">Day 9</p>
-                </div>
-                <div id="main-day10">
-                    <p class="partial-main">Day 10</p>
-                </div>
-                <div id="main-day11">
-                    <p class="partial-main">Day 11</p>
-                </div>
-                <div id="main-day12">
-                    <p class="partial-main">Day 12</p>
-                </div>
-                <div id="main-day13">
-                    <p class="partial-main">Day 13</p>
-                </div>
-                <div id="main-day14">
-                    <p class="partial-main">Day 14</p>
-                </div>
+            <div id="main-day1">              
+            </div>
+            <div id="main-day2">             
+            </div>
+            <div id="main-day3">    
+            </div>
+            <div id="main-day4">
+            </div>
+            <div id="main-day5">
+            </div>
+            <div id="main-day6">
+            </div>
+            <div id="main-day7">
+            </div>
+            <div id="main-day8">
+            </div>
+            <div id="main-day9">
+            </div>
+            <div id="main-day10">
+            </div>
+            <div id="main-day11">
+            </div>
+            <div id="main-day12">
+            </div>
+            <div id="main-day13">
+            </div>
+            <div id="main-day14">
+            </div>
             `);
 
             $("#location-schedule").append(allDivs);
 
-            for (var i = 0; i < 14; i++) {
+            hideAndShowScheduleDays();
 
-                var date = result[`ScheduleStartDate`];
-                var shifts = result[`Day${i + 1}Shift`].split(",");
-                var employees = result[`Day${i + 1}Employees`].split(",");
+            var scheduleDate = [];
+            var date = new Date(result.ScheduleStartDate);
+            var formattedDate = formatDate(date);
+            scheduleDate.push(formattedDate);
 
-                for (var j = 0; j < shifts.length; j++) {
-                    pushMainScheduleToFrontEnd(i + 1, date, shifts[j], employees[j]);
+            for(var i = 0; i < 14; i++){
+                var employeeNums = result[`Day${i + 1}Employees`].split(",");
+                var position = i;
+                showSchedule(position);
+
+                function showSchedule(position){
+                    var employeeNames = [];
+
+                    for(var j = 0; j < employeeNums.length; j++){
+                        var employeeNum = employeeNums[j];                        
+                        getEmployeeName(employeeNum, (name) => {
+                            employeeNames.push(name)
+                        }); 
+                    }
+
+                    setTimeout(function () {
+                        createShiftObject(employeeNames, position);
+                    }, 200);
                 }
+
+                function getEmployeeName(employeeNum, cb){
+                    $.get(`/api/employee/find/${employeeNum}`, (result) => {
+                    }).then((result) => {
+                        cb(result.FullName);
+                    })
+                }
+            }
+            
+            for (var i = 1; i < 14; i++){
+                date.setDate(date.getDate() +1);
+
+                var newFormattedDate = formatDate(date);
+                scheduleDate.push(newFormattedDate);
+            }
+
+            function createShiftObject(employeesNames, position){
+                var newShift = {};
+                newShift.dayPosition = position + 1;
+                newShift.date = scheduleDate[position];
+                newShift.shiftTimes = result[`Day${position + 1}Shift`];
+                newShift.scheduledEmployees = result[`Day${position + 1}Employees`];
+                newShift.employeeNames = employeesNames;
+
+                dbSchedule.push(newShift);
+            }
+
+            setTimeout(function (){
+                createScheduleTable();
+            }, 300);
+
+            function createScheduleTable(){
+                for (var i = 0; i < 14; i++) {
+                    var shift = dbSchedule[i];
+                    var dayPosition = shift["dayPosition"];
+                    var date = shift["date"];
+                    var shiftSplit = shift["shiftTimes"].split(",");
+                    var employees = shift["scheduledEmployees"];
+                    var employeeNames = shift["employeeNames"];
+
+                    shiftStartTimes = [];
+                    shiftEndTimes = [];
+
+                    var dateSplit = date.split("/");
+                    var newDate = `${dateSplit[0]}T${dateSplit[1]}T${dateSplit[2]}`;
+
+                    $(`#date${dayPosition}`).text(date);
+                    $(`#date${dayPosition}`).attr("data-date", date);
+
+                    for(var j = 0; j < shiftSplit.length; j++){
+                        var shiftTimeSplit = shiftSplit[j].split("-");
+
+                        shiftStartTimes.push(shiftTimeSplit[0]);
+                        shiftEndTimes.push(shiftTimeSplit[1]);
+                    }
+    
+                    var table = $(`
+                    <table>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Start-Time</th>
+                            <th>End-Time</th>
+                            <th>Hours Scheduled</th>
+                        </tr>
+                    </table>
+                    `);
+    
+                    //does this for each shift and employee
+                    for (var j = 0; j < shiftSplit.length; j++) {
+                        var employeeName = employeeNames[j];
+
+                        var shiftStart = shiftStartTimes[j];
+                        var shiftEnd = shiftEndTimes[j];
+    
+                        var row = $(`
+                        <tr>
+                            <td>${employeeName}</td>
+                            <td>${shiftStart}</td>
+                            <td>${shiftEnd}</td>
+                            <td>0</td>
+                        </tr>
+                        `);
+
+                        $(table).append(row);
+                        $(`#main-day${dayPosition}`).append(table);
+                    }
+                }
+
+                hideAndShowScheduleDays("1");
+
+                var startDate = dbSchedule[0]["date"];
+                $("#schedule-date").text(startDate);
             }
         }
 
@@ -78,22 +172,25 @@ $(document).ready(() => {
     });
 });
 
-//Day1: (1/3/20) 1:30-2:00
+function hideAndShowScheduleDays(dayToShow){
+    $("#main-day1").hide();
+    $("#main-day2").hide();
+    $("#main-day3").hide();
+    $("#main-day4").hide();
+    $("#main-day5").hide();
+    $("#main-day6").hide();
+    $("#main-day7").hide();
+    $("#main-day8").hide();
+    $("#main-day9").hide();
+    $("#main-day10").hide();
+    $("#main-day11").hide();
+    $("#main-day12").hide();
+    $("#main-day13").hide();
+    $("#main-day14").hide();
 
-function pushMainScheduleToFrontEnd(position, date, shift, employeeNum) {
-    console.log("postion: " + " date: " + date + " shift: " + shift + " num: " + employeeNum);
-
-    $.get(`/api/employee/find/${employeeNum}`, (result) => {
-    }).then((result) => {
-        console.log(result.FullName);
-        var name = result.FullName;
-
-        var dateSentenceified = "(" + date + ") ";
-
-        var shiftInfoSentence = dateSentenceified + shift + " : " + name + " Works";
-        var shiftInfo = $(`<p>${shiftInfoSentence}</p>`)
-        $(`#main-day${position}`).append(shiftInfo);
-    });
+    if(dayToShow !== null){
+        $(`#main-day${dayToShow}`).show();
+    }
 }
 
 $("#new-schedule-add-btn").on("click", () => {
@@ -106,8 +203,6 @@ $("#new-schedule-add-btn").on("click", () => {
 
     function getGeneratedSchedule() {
         clearDivs();
-
-        console.log("create schedule clicked");
 
         var scheduleStartShifthr = document.getElementsByClassName("schedule-shift-start-hr");
         var scheduleStartShiftmin = document.getElementsByClassName("schedule-shift-start-min");
@@ -138,7 +233,7 @@ $("#new-schedule-add-btn").on("click", () => {
         for (var i = 1; i < 14; i++) {
             newDate.setDate(newDate.getDate() + 1);
 
-            var newFormattedDate = formatDate(newDate)
+            var newFormattedDate = formatDate(newDate);
             scheduleDates.push(newFormattedDate);
         }
 
@@ -172,12 +267,6 @@ $("#new-schedule-add-btn").on("click", () => {
             }
         }
 
-
-        // var scheduleShifts = 
-        //     { date:"12/31/2019", weekday="" shiftTimes:["10:00-15:00", "15:00-20:00"], employees:["2", "1"]},
-        //     { date:"01/01/2020", shiftTimes:["12:00-15:00", "15:00-23:00"], employees:["2", "1"]}
-        // ]
-
         //get all the shift times
         var shiftTimes = [];
         for (var i = 0; i < startHr.length; i++) {
@@ -208,17 +297,19 @@ $("#new-schedule-add-btn").on("click", () => {
 
             function createShiftInfo(date, weekday, dayPosition) {
                 var employeesScheduledToWork = [];
+                var employeesNames = [];
 
                 for (var i = 0; i < shiftTimes.length; i++) {
-                    findEmployeesForSchedule(shiftTimes[i], weekday, (employeeToWork) => {
+                    findEmployeesForSchedule(shiftTimes[i], weekday, (employeeToWork, employeeName) => {
                         employeesScheduledToWork.push(employeeToWork);
-                    })
+                        employeesNames.push(employeeName);
+                    });
                 }
 
-                createShift(date, weekday, dayPosition, employeesScheduledToWork);
+                createShift(date, weekday, dayPosition, employeesScheduledToWork, employeesNames);
             }
 
-            function createShift(date, weekday, dayPosition, employeesToWork) {
+            function createShift(date, weekday, dayPosition, employeesToWork, employeesNames) {
                 var newShift = {};
                 newShift.dayPosition = dayPosition;
                 newShift.date = date;
@@ -226,6 +317,7 @@ $("#new-schedule-add-btn").on("click", () => {
                 newShift.shiftTimes = shiftTimes;
                 newShift.numberOfEmployees = numOfEmployeesNeeded;
                 newShift.scheduledEmployees = employeesToWork;
+                newShift.employeeNames = employeesNames;
                 scheduleShifts.push(newShift);
             }
         }
@@ -307,10 +399,6 @@ function addScheduleToDB(shiftInfo) {
     var day14Shift = info.day14Shift.toString();
     var day14Employees = info.day14Employees.toString();
 
-
-    console.log(info);
-    console.log(scheduleStartDate);
-
     var dbObject = {
         LocationNum: locationNum,
         ScheduleStartDate: scheduleStartDate,
@@ -355,12 +443,11 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
     var employeesAvailableForShift = [];
     var locationNum = window.location.pathname[1];
     var employeeNum = [];
-    var employeeAvailability = [];
 
     $.get(`/api/allEmployees/${locationNum}`, (result) => {
     }).then((result) => {
 
-        //     //gets all employee nums
+        //gets all employee nums
         for (var i = 0; i < result.length; i++) {
             employeeNum.push(result[i].id);
         }
@@ -370,47 +457,41 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
             $.get(`/api/availability/${employeeNum[i]}`, (result) => {
             }).then((result) => {
                 var employeeAvailability = [result.sunday, result.monday, result.tuesday, result.wednesday, result.thursday, result.friday, result.saturday];
-                //console.log(employeeAvailability);
                 var thisEmployeeNum = result.EmployeeNum;
 
                 switch (weekday) {
                     case "sunday":
-                        //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("sunday", employeeAvailability[0], startHR, thisEmployeeNum);
                         break;
                     case "monday":
-                        //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("monday", employeeAvailability[1], startHR, thisEmployeeNum);
                         break;
                     case "tuesday":
-                        //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("tuesday", employeeAvailability[2], startHR, thisEmployeeNum);
                         break;
                     case "wednesday":
-                        //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("wednesday", employeeAvailability[3], startHR, thisEmployeeNum);
                         break;
                     case "thursday":
-                        //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("thursday", employeeAvailability[4], startHR, thisEmployeeNum);
                         break;
                     case "friday":
-                        //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("friday", employeeAvailability[5], startHR, thisEmployeeNum);
                         break;
                     case "saturday":
-                        //console.log("this sunday: " + thisEmployeeNum);
                         checkAvailability("saturday", employeeAvailability[6], startHR, thisEmployeeNum);
                         break;
 
                 }
 
                 if (thisEmployeeNum === employeeNum[employeeNum.length - 1]) {
-                    //console.log("av: " + employeesAvailableForShift);
                     var employeeChose = selectEmployee();
-                    //console.log("employeeChose: " + employeeChose);
 
-                    cb(employeeChose);
+                    $.get(`/api/employee/find/${employeeChose}`, (result) => {                        
+                    }).then((result) => {
+                        var employeeName = result.FullName
+                        cb(employeeChose, employeeName);
+                    })
                 }
             });
 
@@ -418,24 +499,17 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
         }
 
         function checkAvailability(weekday, availability, shiftStartHR, employeeNum) {
-            //console.log("weekday: " + weekday + " availability: " + availability + " employeeNum: " + employeeNum);
-
             var employeeAvailability = parseInt(availability.split(":")[0]);
             if (shiftStartHR >= employeeAvailability) {
-                //console.log("Employee-" + employeeNum + " can work one of the " + weekday + " shifts starting at " + shiftStartHR);
                 employeesAvailableForShift.push(employeeNum);
             }
         }
-
 
         function selectEmployee() {
             if (employeesAvailableForShift.length > 1) {
                 var numberOfEmployeesAvailable = employeesAvailableForShift.length;
                 var randomNum = Math.floor(Math.random() * Math.floor(numberOfEmployeesAvailable));
                 var employeeSelected = employeesAvailableForShift[randomNum];
-
-                //console.log("Random number: " + randomNum + " -- employeeSelected: " + employeeSelected);
-
                 return employeeSelected;
             }
             else {
@@ -447,58 +521,74 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
 }
 
 function showScheduleInfo(shifts) {
-    //console.log(JSON.stringify(shifts));
-
     for (var i = 0; i < shifts.length; i++) {
+        // console.log(shifts[i]);
         var objectValues = Object.values(shifts[i]);
         var allShiftTimes = [];
         var shiftPosition = shifts[i].dayPosition;
-        var shiftDate = "(" + shifts[i].date + ") ";
+        var shiftDate = shifts[i].date;
         var shiftWeekday = shifts[i].weekday;
         var allShiftValues = shifts[i].shiftTimes;
+
+        var table = $(`
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Start-Time</th>
+                <th>End-Time</th>
+                <th>Hours Scheduled</th>
+            </tr>
+        </table>   
+        `);
 
         //Pushes shiftTimes to arr
         for (var j = 0; j < allShiftValues.length; j++) {
             allShiftTimes.push(allShiftValues[j]);
         }
 
+        //tracks employee num
         var allEmployeesScheduled = []
         var employeesScheduled = shifts[i].scheduledEmployees;
+
+        //tracks employee name
+        var allEmployeeNames = [];
+        var employeesScheduledNames = shifts[i].employeeNames;
 
         //Pushes employee to arr
         for (var j = 0; j < employeesScheduled.length; j++) {
             allEmployeesScheduled.push(employeesScheduled[j]);
         }
 
+        //Pushed employee names to arr
+        for(var j = 0; j < employeesScheduledNames.length; j++){
+            allEmployeeNames.push(employeesScheduledNames[j]);
+        }
 
-        console.log("scheduled: " + allEmployeesScheduled);
-        console.log("Position: " + shiftPosition + " Date: " + shiftDate + " Weekday: " + shiftWeekday + " Shifts: " + allShiftTimes + " Employee: " + allEmployeesScheduled);
-
-
+        //creates a new row for every shift
         for (var j = 0; j < allEmployeesScheduled.length; j++) {
             var employeeNum = allEmployeesScheduled[j];
-            var shiftTime = allShiftTimes[j];
-            //console.log("num: " + employeeNum);
+            var employeeName = allEmployeeNames[j];
+            var shiftTimeSplit = allShiftTimes[j].split("-");
+            var shiftStart = shiftTimeSplit[0];
+            var shiftEnd = shiftTimeSplit[1];
 
-            pushScheduleInfoFrontEnd(shiftPosition, employeeNum, shiftDate, shiftTime);
+            var row = $(`
+            <tr>
+                <td>${employeeName}</td>
+                <td>${shiftStart}</td>
+                <td>${shiftEnd}</td>
+                </td>0</td>
+            </tr>
+            `);
+
+            $(`#day${shiftPosition}-title`).text(shiftDate);
+
+            $(table).append(row);
+            $(`#day${shiftPosition}Shift`).append(table);
         }
     }
 
     generatedScheduleShifts.push(shifts);
-}
-
-function pushScheduleInfoFrontEnd(position, employeeNum, shiftDate, shiftTime) {
-    console.log("Position: " + position + " Date: " + shiftDate + " Shift: " + shiftTime + " Employee: " + employeeNum);
-
-    $.get(`/api/employee/find/${employeeNum}`, (result) => {
-    }).then((result) => {
-        //console.log(result);
-        employeeName = result.FullName;
-
-        var shiftInfoSentence = shiftDate + shiftTime + " : " + employeeName + " Works";
-        var shiftInfo = $(`<p id=${position}>${shiftInfoSentence}</p>`);
-        $(`#day${position}Shift`).append(shiftInfo);
-    })
 }
 
 function formatDate(newDate) {
