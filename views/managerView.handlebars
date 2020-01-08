@@ -206,14 +206,16 @@
         </div>
     </div>
 
-    <div id="new-schedule-section" class="scrollspy section card dark border blue-grey-text text-darken-4 padding40">
-        <h2 class="center">Generate a New Schedule</h2>
+
+<div id="new-schedule-section" class="scrollspy section card border padding40">
+        <h3 class="center">Create a new schedule</h3>
 
         <div class=" col s8 offest-s2">
+            <p><span class="create-steps">Step 1:</span> Add shifts to your schedule</p>
             <ul class="collapsible expandable">
                 <li id="add-shifts-dropdown">
                     <div id="add-shift-section"
-                        class="collapsible-header collapsible-head-schedule availability-select employee-availability-sunday">
+                        class="collapsible-header collapsible-head-schedule availability-select employee-availability-sunday"><i class="material-icons left">add</i>
                         Add Shifts
                     </div>
                     <div class="collapsible-body employee-sunday-info">
@@ -223,7 +225,7 @@
                                 {{> scheduleShift-block}}
                                 {{/each}}
                             </ul>
-                            <button id="add_shift" class="btn no-background-btn mint"><i
+                            <button id="add_shift" class="btn no-background-btn mint-dark-btn"><i
                                     class="tooltipped material-icons left" data-tooltip="Add Shift">add_box</i>Add
                                 Another Shift</button>
                         </div>
@@ -234,17 +236,17 @@
             <div class="col s12">
                 <p><span class="create-steps">Step 2:</span> Choose your schedule's start date.</p>
             </div>
-            <div class="col s12">
-                <button id="schedule-start-date" class="btn mint-dark-btn datepicker">Choose Start
+            <div class="col s12 datepick">
+                <button id="schedule-start-date" class="btn mint-dark-btn datepicker left"><i class="material-icons left">date_range</i>Choose Start
                     Date</button>
             </div>
         </div>
         <div class="row complete-schedule-btns">
-            <div class="col s5 offset-s1">
+            <div class="col s6 center">
                 <button type="button" id="new-schedule-add-btn" class="btn mint-dark-btn">Add Your Schedules</button>
             </div>
-            <div class="col s6">
-                <button id="new-schedule-cancel-btn" class="btn mint-dark-btn">Cancel</button>
+            <div class="col s6 center">
+                <button id="new-schedule-cancel-btn-alt" class="btn mint-dark-btn">Cancel</button>
             </div>
         </div>
     </div>
