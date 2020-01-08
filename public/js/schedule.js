@@ -101,7 +101,6 @@ $(document).ready(() => {
 
             function createScheduleTable(){
                 for (var i = 0; i < 14; i++) {
-                    console.log(dbSchedule[i]);
                     var shift = dbSchedule[i];
                     var dayPosition = shift["dayPosition"];
                     var date = shift["date"];
@@ -113,7 +112,6 @@ $(document).ready(() => {
                     shiftEndTimes = [];
 
                     var dateSplit = date.split("/");
-                    console.log(dateSplit)
                     var newDate = `${dateSplit[0]}T${dateSplit[1]}T${dateSplit[2]}`;
 
                     $(`#date${dayPosition}`).text(date);
@@ -205,8 +203,6 @@ $("#new-schedule-add-btn").on("click", () => {
 
     function getGeneratedSchedule() {
         clearDivs();
-
-        console.log("create schedule clicked");
 
         var scheduleStartShifthr = document.getElementsByClassName("schedule-shift-start-hr");
         var scheduleStartShiftmin = document.getElementsByClassName("schedule-shift-start-min");
@@ -403,10 +399,6 @@ function addScheduleToDB(shiftInfo) {
     var day14Shift = info.day14Shift.toString();
     var day14Employees = info.day14Employees.toString();
 
-
-    console.log(info);
-    console.log(scheduleStartDate);
-
     var dbObject = {
         LocationNum: locationNum,
         ScheduleStartDate: scheduleStartDate,
@@ -530,7 +522,7 @@ function findEmployeesForSchedule(shiftTime, weekday, cb) {
 
 function showScheduleInfo(shifts) {
     for (var i = 0; i < shifts.length; i++) {
-        console.log(shifts[i]);
+        // console.log(shifts[i]);
         var objectValues = Object.values(shifts[i]);
         var allShiftTimes = [];
         var shiftPosition = shifts[i].dayPosition;
