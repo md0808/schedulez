@@ -12,8 +12,6 @@ var splitUrl = url.split("/");
 var locationNum = window.location.pathname[1];
 
 function showScheduleForDate(element, position){
-  console.log("position: " + position);
-
   $("#schedule-date").text($(element).attr("data-date"));
   hideAndShowScheduleDays(position);
 
