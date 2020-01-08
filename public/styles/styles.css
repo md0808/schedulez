@@ -129,6 +129,10 @@ input {
   color: #263238;
 }
 
+.mint-text{
+  color: #2bbc7d;
+}
+
 .lowercase{
   text-transform: lowercase;
 }

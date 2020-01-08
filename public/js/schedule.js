@@ -1,12 +1,11 @@
 var generatedScheduleShifts = [];
+var dbSchedule = [];
 
 $(document).ready(() => {
     var locationNum = window.location.pathname[1];
 
     $.get(`/api/getSchedule/${locationNum}`, (result) => {
     }).then((result) => {
-        console.log(result);
-
         if (result !== null) {
             $("#location-schedule").empty();
 
@@ -43,55 +42,126 @@ $(document).ready(() => {
 
             $("#location-schedule").append(allDivs);
 
-            for (var i = 0; i < 14; i++) {
-                var date = result[`ScheduleStartDate`];
-                var shifts = result[`Day${i + 1}Shift`].split(",");
-                var employees = result[`Day${i + 1}Employees`].split(",");
+            hideAndShowScheduleDays();
 
-                var table = $(`
-                <table class="responsive-table">
-                    <tr>
-                        <th>Employee Name</th>
-                        <th>Role</th>
-                        <th>Start-Time</th>
-                        <th>End-Time</th>
-                        <th>Break At</th>
-                        <th>Hours Scheduled</th>
-                    </tr>
-                </table>
-                `);
+            var scheduleDate = [];
+            var date = new Date(result.ScheduleStartDate);
+            var formattedDate = formatDate(date);
+            scheduleDate.push(formattedDate);
 
-                for (var j = 0; j < shifts.length; j++) {
-                    pushMainScheduleToFrontEnd(i + 1, date, shifts[j], employees[j]);
+            for(var i = 0; i < 14; i++){
+                var employeeNums = result[`Day${i + 1}Employees`].split(",");
+                var position = i;
+                showSchedule(position);
+
+                function showSchedule(position){
+                    var employeeNames = [];
+
+                    for(var j = 0; j < employeeNums.length; j++){
+                        var employeeNum = employeeNums[j];                        
+                        getEmployeeName(employeeNum, (name) => {
+                            employeeNames.push(name)
+                        }); 
+                    }
+
+                    setTimeout(function () {
+                        createShiftObject(employeeNames, position);
+                    }, 200);
+                }
+
+                function getEmployeeName(employeeNum, cb){
                     $.get(`/api/employee/find/${employeeNum}`, (result) => {
                     }).then((result) => {
-                        var splitShift = shifts[j].split("-");
+                        cb(result.FullName);
+                    })
+                }
+            }
+            
+            for (var i = 1; i < 14; i++){
+                date.setDate(date.getDate() +1);
 
-                        var name = result.FullName;
-                        var role = result.Role;
-                        var shiftStart = splitShift[0];
-                        var shiftEnd = splitShift[1];
+                var newFormattedDate = formatDate(date);
+                scheduleDate.push(newFormattedDate);
+            }
 
-                        if(role === null){
-                            role = "N/A";
-                        }
-                
+            function createShiftObject(employeesNames, position){
+                var newShift = {};
+                newShift.dayPosition = position + 1;
+                newShift.date = scheduleDate[position];
+                newShift.shiftTimes = result[`Day${position + 1}Shift`];
+                newShift.scheduledEmployees = result[`Day${position + 1}Employees`];
+                newShift.employeeNames = employeesNames;
+
+                dbSchedule.push(newShift);
+            }
+
+            setTimeout(function (){
+                createScheduleTable();
+            }, 300);
+
+            function createScheduleTable(){
+                for (var i = 0; i < 14; i++) {
+                    console.log(dbSchedule[i]);
+                    var shift = dbSchedule[i];
+                    var dayPosition = shift["dayPosition"];
+                    var date = shift["date"];
+                    var shiftSplit = shift["shiftTimes"].split(",");
+                    var employees = shift["scheduledEmployees"];
+                    var employeeNames = shift["employeeNames"];
+
+                    shiftStartTimes = [];
+                    shiftEndTimes = [];
+
+                    var dateSplit = date.split("/");
+                    console.log(dateSplit)
+                    var newDate = `${dateSplit[0]}T${dateSplit[1]}T${dateSplit[2]}`;
+
+                    $(`#date${dayPosition}`).text(date);
+                    $(`#date${dayPosition}`).attr("data-date", date);
+
+                    for(var j = 0; j < shiftSplit.length; j++){
+                        var shiftTimeSplit = shiftSplit[j].split("-");
+
+                        shiftStartTimes.push(shiftTimeSplit[0]);
+                        shiftEndTimes.push(shiftTimeSplit[1]);
+                    }
+    
+                    var table = $(`
+                    <table>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Start-Time</th>
+                            <th>End-Time</th>
+                            <th>Hours Scheduled</th>
+                        </tr>
+                    </table>
+                    `);
+    
+                    //does this for each shift and employee
+                    for (var j = 0; j < shiftSplit.length; j++) {
+                        var employeeName = employeeNames[j];
+
+                        var shiftStart = shiftStartTimes[j];
+                        var shiftEnd = shiftEndTimes[j];
+    
                         var row = $(`
                         <tr>
-                            <td>${name}</td>
-                            <td>${role}</td>
+                            <td>${employeeName}</td>
                             <td>${shiftStart}</td>
                             <td>${shiftEnd}</td>
-                            <td>0</td>
                             <td>0</td>
                         </tr>
                         `);
 
-                        
-                        $(table).appendRow(row);
-                        $(`#main-day${position}`).append(table);
-                    });
+                        $(table).append(row);
+                        $(`#main-day${dayPosition}`).append(table);
+                    }
                 }
+
+                hideAndShowScheduleDays("1");
+
+                var startDate = dbSchedule[0]["date"];
+                $("#schedule-date").text(startDate);
             }
         }
 
@@ -104,21 +174,25 @@ $(document).ready(() => {
     });
 });
 
-//Day1: (1/3/20) 1:30-2:00
+function hideAndShowScheduleDays(dayToShow){
+    $("#main-day1").hide();
+    $("#main-day2").hide();
+    $("#main-day3").hide();
+    $("#main-day4").hide();
+    $("#main-day5").hide();
+    $("#main-day6").hide();
+    $("#main-day7").hide();
+    $("#main-day8").hide();
+    $("#main-day9").hide();
+    $("#main-day10").hide();
+    $("#main-day11").hide();
+    $("#main-day12").hide();
+    $("#main-day13").hide();
+    $("#main-day14").hide();
 
-function pushMainScheduleToFrontEnd(position, date, shift, employeeNum) {
-    console.log("postion: " + " date: " + date + " shift: " + shift + " num: " + employeeNum);
-
-    $.get(`/api/employee/find/${employeeNum}`, (result) => {
-    }).then((result) => {
-        console.log(result.FullName);
-        var name = result.FullName;
-
-        
-        var shiftInfoSentence = dateSentenceified + shift + " : " + name + " Works";
-        var shiftInfo = $(`<p>${shiftInfoSentence}</p>`)
-        $(`#main-day${position}`).append(table);
-    });
+    if(dayToShow !== null){
+        $(`#main-day${dayToShow}`).show();
+    }
 }
 
 $("#new-schedule-add-btn").on("click", () => {
@@ -163,7 +237,7 @@ $("#new-schedule-add-btn").on("click", () => {
         for (var i = 1; i < 14; i++) {
             newDate.setDate(newDate.getDate() + 1);
 
-            var newFormattedDate = formatDate(newDate)
+            var newFormattedDate = formatDate(newDate);
             scheduleDates.push(newFormattedDate);
         }
 
@@ -196,12 +270,6 @@ $("#new-schedule-add-btn").on("click", () => {
                     break;
             }
         }
-
-
-        // var scheduleShifts = 
-        //     { date:"12/31/2019", weekday="" shiftTimes:["10:00-15:00", "15:00-20:00"], employees:["2", "1"]},
-        //     { date:"01/01/2020", shiftTimes:["12:00-15:00", "15:00-23:00"], employees:["2", "1"]}
-        // ]
 
         //get all the shift times
         var shiftTimes = [];
