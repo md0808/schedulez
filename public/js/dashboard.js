@@ -3,8 +3,6 @@ $("#generated-schedule-section").hide();
 $("#loadingGeneratingSchedule").hide();
 
 $('.dropdown-trigger').dropdown();
-// $("#schedule-date-dropdown").dropdown();
-// $('.collapsible').collapsible();
 
 var url = window.location.href;
 var splitUrl = url.split("/");
@@ -52,9 +50,11 @@ $(document).ready(() => {
   }
 
   if (url.includes("schedule/add")) {
+    $("#schedule").hide();
     $("#new-schedule-section").show();
   }
   if (url.includes("schedule/add/shifts")) {
+    $("#schedule").hide();
     $("#add-shifts-dropdown").addClass("active");
   }
 
@@ -79,8 +79,6 @@ $("#schedule-btn").on("click", () => {
     "/" +
     splitUrl[4] +
     "/1/employees/#schedule";
-
-    console.log("url: " + newUrl);
 
   window.location.href = newUrl;
 });
@@ -298,12 +296,23 @@ $("#add-shift-section").on("click", () => {
 
 $("#new-schedule-add-btn").on("click", () => {
   $("#new-schedule-section").hide();
-  // $("#generated-schedule-section").show();
   $("#loadingGeneratingSchedule").show();
 });
 
 $("#new-schedule-cancel-btn").on("click", () => {
   $("#new-schedule-section").hide();
+  $("#schedule").show();
+
+  var newUrl =
+    "http://" +
+    splitUrl[2] +
+    "/" +
+    splitUrl[3] +
+    "/" +
+    splitUrl[4] +
+    "/1/employees/#schedule";
+
+  window.location.href = newUrl;
 });
 
 // DAYS OF THE WEEK FOR SCHEDULE ADD //
