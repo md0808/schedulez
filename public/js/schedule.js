@@ -142,12 +142,18 @@ $(document).ready(() => {
                         var shiftStart = shiftStartTimes[j];
                         var shiftEnd = shiftEndTimes[j];
     
+
+                        var convertedStartTime = moment(shiftStart, ["HH:mm"]).format("h:mm A");
+                        var convertedEndTime = moment(shiftEnd, ["HH:mm"]).format("h:mm A");
+
+                        var diff = findMilitaryTimeDifference(shiftStart, shiftEnd);
+
                         var row = $(`
                         <tr>
                             <td>${employeeName}</td>
-                            <td>${shiftStart}</td>
-                            <td>${shiftEnd}</td>
-                            <td>0</td>
+                            <td>${convertedStartTime}</td>
+                            <td>${convertedEndTime}</td>
+                            <td>${diff}</td>
                         </tr>
                         `);
 
@@ -171,6 +177,39 @@ $(document).ready(() => {
         }
     });
 });
+
+function findMilitaryTimeDifference(shiftStart, shiftEnd){
+    var shiftStartHr = parseInt(shiftStart.split(":")[0]);
+    var shiftStartMin = parseInt(shiftStart.split(":")[1]);
+    var shiftEndHr = parseInt(shiftEnd.split(":")[0]);
+    var shiftEndMin = parseInt(shiftEnd.split(":")[1]);
+
+    console.log("start: " + shiftStart + " end: " + shiftEnd);
+
+    var diff = moment.utc(moment(shiftEnd, "HH:mm").diff(moment(shiftStart, "HH:mm"))).format("HH:mm");
+    console.log("diff: " + diff);
+
+    // var hrDiff = 0;
+    // var minDiff = 0;
+
+    // if(shiftStartMin !== shiftEndMin || shiftStartMin > shiftEndMin){
+    //     console.log("infunc -- start: " + shiftStartMin + " min: " + shiftEndMin);
+    //     hrDiff = hrDiff -1;
+    //     minDiffVal = shiftStartMin - shiftEndMin;
+    //     minDiff = 60 - minDiffVal; 
+    // }
+    // else{
+    //     hrDiff = shiftEndHr - shiftStartHr;
+    //     minDiff = shiftEndMin - shiftStartMin;
+    // }
+
+    // if(minDiff < 0){
+    //     minDiff = minDiff * -1;
+    // }
+
+    // var diff = hrDiff + ":" + minDiff;
+    return diff;
+}
 
 function hideAndShowScheduleDays(dayToShow){
     $("#main-day1").hide();
@@ -570,14 +609,18 @@ function showScheduleInfo(shifts) {
             var employeeName = allEmployeeNames[j];
             var shiftTimeSplit = allShiftTimes[j].split("-");
             var shiftStart = shiftTimeSplit[0];
+            var convertedStartTime = moment(shiftStart, ["HH:mm"]).format("h:mm A");
             var shiftEnd = shiftTimeSplit[1];
+            var convertedEndTime = moment(shiftEnd, ["HH:mm"]).format("h:mm A");
+
+            var diff = findMilitaryTimeDifference(shiftStart, shiftEnd);
 
             var row = $(`
             <tr>
                 <td>${employeeName}</td>
-                <td>${shiftStart}</td>
-                <td>${shiftEnd}</td>
-                </td>0</td>
+                <td>${convertedStartTime}</td>
+                <td>${convertedEndTime}</td>
+                <td>${diff}</td>
             </tr>
             `);
 
